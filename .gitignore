@@ -1,8 +1,6 @@
-# Power BI binaries and temporary files
-*.pbit
+# Power BI temporary files
 *.pbix.tmp
 *.lock
-report/
 
 # Raw and generated data
 data/
