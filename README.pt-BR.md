@@ -6,6 +6,10 @@
 
 Este projeto interativo transforma dados abertos oficiais do Tribunal Superior Eleitoral (TSE) em seis visões analíticas conectadas sobre candidaturas, eleitorado, patrimônio declarado, partidos e financiamento eleitoral.
 
+## Arquivo do Power BI
+
+[Baixe ou abra o projeto do Power BI (`2026tse_dados.pbix`)](2026tse_dados.pbix). É necessário ter o Power BI Desktop para editar o relatório.
+
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
 ![Fonte dos dados](https://img.shields.io/badge/Dados-TSE%20Dados%20Abertos-20c997)
 ![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-0b2239)
@@ -112,13 +116,14 @@ eleicoes-2026-powerbi/
 ├── docs/
 │   ├── DATA_SOURCES.md
 │   └── METHODOLOGY.md
+├── 2026tse_dados.pbix
 ├── .gitignore
 ├── LICENSE
 ├── README.md
 └── README.pt-BR.md
 ```
 
-Os arquivos brutos do TSE e o arquivo `.pbix` não são versionados por causa do tamanho, da frequência de atualização e da organização do repositório. Um link para o relatório público ou uma versão para download poderá ser adicionado após a publicação.
+Os arquivos brutos do TSE não são versionados por causa do tamanho, da frequência de atualização e da organização do repositório. O projeto completo em `.pbix` está incluído para download e consulta no Power BI Desktop.
 
 ## Observações metodológicas
 

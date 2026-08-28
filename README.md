@@ -6,6 +6,10 @@
 
 This interactive project transforms official open data from Brazil's Superior Electoral Court (TSE) into six connected analytical views covering candidacies, the electorate, declared assets, political parties and campaign financing.
 
+## Power BI file
+
+[Download or open the Power BI project (`2026tse_dados.pbix`)](2026tse_dados.pbix). Power BI Desktop is required to edit the report.
+
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
 ![Data source](https://img.shields.io/badge/Data-TSE%20Open%20Data-20c997)
 ![Status](https://img.shields.io/badge/Status-In%20development-0b2239)
@@ -112,12 +116,14 @@ eleicoes-2026-powerbi/
 ├── docs/
 │   ├── DATA_SOURCES.md
 │   └── METHODOLOGY.md
+├── 2026tse_dados.pbix
 ├── .gitignore
 ├── LICENSE
-└── README.md
+├── README.md
+└── README.pt-BR.md
 ```
 
-Raw TSE files and the `.pbix` file are intentionally excluded from version control because of size, update frequency and repository hygiene. A public report link or downloadable release can be added after publication.
+Raw TSE files are intentionally excluded from version control because of size, update frequency and repository hygiene. The complete `.pbix` project is included for download and inspection in Power BI Desktop.
 
 ## Methodological notes
 
