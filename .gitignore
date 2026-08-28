@@ -1,0 +1,35 @@
+# Power BI binaries and temporary files
+*.pbix
+*.pbit
+*.pbix.tmp
+*.lock
+
+# Raw and generated data
+data/
+dados/
+downloads/
+*.zip
+*.csv
+*.parquet
+*.xlsx
+
+# Local configuration and secrets
+.env
+.env.*
+*.log
+config.local.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Windows and editors
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Keep the curated documentation images
+!assets/screenshots/*.png
