@@ -1,0 +1,619 @@
+table Candidatos
+	lineageTag: 912bdcf3-f495-4386-8c2f-b01e3471e977
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 83c72a5b-3887-4a46-94b3-23161990b317
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: 0eb780ea-2883-47fb-85aa-9f852644f80d
+			defaultHierarchy: LocalDateTable_0ac4aba9-9053-4ebb-ae58-d3b156b5703a.'Hierarquia de datas'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: a0996110-c1b9-43bd-bf49-a1d47cb60abb
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column ANO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 01d5d2b0-3c42-4e62-85e7-adc9d5aa56b8
+		summarizeBy: sum
+		sourceColumn: ANO_ELEICAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: ce26f305-8927-4c32-8d0d-11ee149ae26e
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: 83f7d169-1c32-4cd6-8631-98a20769a60d
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_TURNO
+		dataType: int64
+		formatString: 0
+		lineageTag: 384e7068-c327-440d-adcb-0b575b323ab2
+		summarizeBy: sum
+		sourceColumn: NR_TURNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: f1247c91-05dd-4f6d-961b-d56377bd7f8e
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: 0dd6fa20-e0c4-4d4a-a31b-85bea4c25070
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ELEICAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: def3eaa6-2a1c-4aa0-8613-1e917aea3968
+		summarizeBy: none
+		sourceColumn: DT_ELEICAO
+
+		variation Variation
+			isDefault
+			relationship: e81460b7-13bb-4f28-bab2-f0848676853a
+			defaultHierarchy: LocalDateTable_9d14eb68-9a4f-4cdc-8b50-cb8c6430e1d3.'Hierarquia de datas'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TP_ABRANGENCIA
+		dataType: string
+		lineageTag: 9e64fd53-4008-4f5c-b80a-6df14e2fb6e3
+		summarizeBy: none
+		sourceColumn: TP_ABRANGENCIA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: 5d0472a6-85ff-4a96-82b1-e0ee172efcbd
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UE
+		dataType: string
+		lineageTag: 7c9cd408-d0e5-414d-98a4-5f6c98d0fbab
+		summarizeBy: none
+		sourceColumn: SG_UE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_UE
+		dataType: string
+		lineageTag: 35aa8a3a-a489-4762-b51b-3fb9e36204b8
+		summarizeBy: none
+		sourceColumn: NM_UE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CARGO
+		dataType: int64
+		formatString: 0
+		lineageTag: 408baa25-48ae-48c9-92cd-c239a03f8654
+		summarizeBy: sum
+		sourceColumn: CD_CARGO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CARGO
+		dataType: string
+		lineageTag: 6c38e307-9088-4f8d-a15a-ec24f86a42e6
+		summarizeBy: none
+		sourceColumn: DS_CARGO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: 959e430b-d257-4f81-8228-5745b1d8bd40
+		summarizeBy: sum
+		sourceColumn: SQ_CANDIDATO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: 92dbad1d-639c-4bae-abb9-23fb1d0ee935
+		summarizeBy: sum
+		sourceColumn: NR_CANDIDATO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_CANDIDATO
+		dataType: string
+		lineageTag: 460296bf-f7d1-4c86-afe4-387ba259b7ce
+		summarizeBy: none
+		sourceColumn: NM_CANDIDATO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_URNA_CANDIDATO
+		dataType: string
+		lineageTag: d6b126f5-2894-40de-90c3-c7459d6be0de
+		summarizeBy: none
+		sourceColumn: NM_URNA_CANDIDATO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_SOCIAL_CANDIDATO
+		dataType: string
+		lineageTag: 91c6f62c-a5b9-4337-af17-4ac50b63d542
+		summarizeBy: none
+		sourceColumn: NM_SOCIAL_CANDIDATO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_CANDIDATURA
+		dataType: int64
+		formatString: 0
+		lineageTag: e06e148f-20ed-4541-bdac-fbacdc390d1f
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_CANDIDATURA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_CANDIDATURA
+		dataType: string
+		lineageTag: 0b121eb7-bcd9-446b-bbc5-8ba6d636577a
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_CANDIDATURA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_AGREMIACAO
+		dataType: string
+		lineageTag: e9be9f2f-c7a4-413b-a6ac-c4d89a10970b
+		summarizeBy: none
+		sourceColumn: TP_AGREMIACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_PARTIDO
+		dataType: int64
+		formatString: 0
+		lineageTag: 5162705d-0d9d-43ac-91f8-1c2172b73291
+		summarizeBy: sum
+		sourceColumn: NR_PARTIDO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_PARTIDO
+		dataType: string
+		lineageTag: 9ecc0919-82a2-4375-b84f-f97efac4f5eb
+		summarizeBy: none
+		sourceColumn: SG_PARTIDO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_PARTIDO
+		dataType: string
+		lineageTag: 57532e8e-88a5-4857-a5e7-25dd58ed9a34
+		summarizeBy: none
+		sourceColumn: NM_PARTIDO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_FEDERACAO
+		dataType: int64
+		formatString: 0
+		lineageTag: e96544d1-f7f1-471b-8a36-15d1c96127e0
+		summarizeBy: sum
+		sourceColumn: NR_FEDERACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_FEDERACAO
+		dataType: string
+		lineageTag: 3911a5a1-e0d5-4ed9-a583-04cc73699412
+		summarizeBy: none
+		sourceColumn: NM_FEDERACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_FEDERACAO
+		dataType: string
+		lineageTag: a59cccf2-72d9-4d10-bcc9-657b7fbbfc05
+		summarizeBy: none
+		sourceColumn: SG_FEDERACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_COMPOSICAO_FEDERACAO
+		dataType: string
+		lineageTag: 4d7b37bd-440f-4a01-a543-198bc284d835
+		summarizeBy: none
+		sourceColumn: DS_COMPOSICAO_FEDERACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_COLIGACAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a8cf543-c09b-47bf-ab41-947653a9d062
+		summarizeBy: sum
+		sourceColumn: SQ_COLIGACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_COLIGACAO
+		dataType: string
+		lineageTag: 1d825a1a-e8a2-4f46-9db3-a0a5ffd3d5b4
+		summarizeBy: none
+		sourceColumn: NM_COLIGACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_COMPOSICAO_COLIGACAO
+		dataType: string
+		lineageTag: 0b5f3e6b-f0a2-412c-9c28-e6ef1ffb442b
+		summarizeBy: none
+		sourceColumn: DS_COMPOSICAO_COLIGACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF_NASCIMENTO
+		dataType: string
+		lineageTag: 83601d55-5e6c-456c-ad87-7789dc67ff73
+		summarizeBy: none
+		sourceColumn: SG_UF_NASCIMENTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_NASCIMENTO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 22d31917-4437-470f-889f-cfd10e1a775f
+		summarizeBy: none
+		sourceColumn: DT_NASCIMENTO
+
+		variation Variation
+			isDefault
+			relationship: 33cc04dd-f10f-4c45-b118-c8aa1e9cb065
+			defaultHierarchy: LocalDateTable_58db9d35-7b63-4cb6-bbb2-67e5f480049a.'Hierarquia de datas'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CD_GENERO
+		dataType: int64
+		formatString: 0
+		lineageTag: c57e10ba-1a87-495e-b363-9c145de2a5c1
+		summarizeBy: sum
+		sourceColumn: CD_GENERO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_GENERO
+		dataType: string
+		lineageTag: a3871e03-fb6c-4956-a98d-fdcb551847a9
+		summarizeBy: none
+		sourceColumn: DS_GENERO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_GRAU_INSTRUCAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 28bc7fa6-1692-4318-91ec-cbdae1c9e783
+		summarizeBy: sum
+		sourceColumn: CD_GRAU_INSTRUCAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_GRAU_INSTRUCAO
+		dataType: string
+		lineageTag: eb1ad8ac-27ad-48c3-b6d7-2f893388de29
+		summarizeBy: none
+		sourceColumn: DS_GRAU_INSTRUCAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ESTADO_CIVIL
+		dataType: int64
+		formatString: 0
+		lineageTag: b603461b-7178-47b7-a910-b42424124a1c
+		summarizeBy: sum
+		sourceColumn: CD_ESTADO_CIVIL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ESTADO_CIVIL
+		dataType: string
+		lineageTag: b0dd9dc9-9108-4f5a-9a84-344b732159f7
+		summarizeBy: none
+		sourceColumn: DS_ESTADO_CIVIL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_COR_RACA
+		dataType: int64
+		formatString: 0
+		lineageTag: b34f0696-1bd8-4723-9134-0071cb1b8285
+		summarizeBy: sum
+		sourceColumn: CD_COR_RACA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_COR_RACA
+		dataType: string
+		lineageTag: 11a1eab7-524b-4bdb-b1f0-c745f47f1aed
+		summarizeBy: none
+		sourceColumn: DS_COR_RACA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_OCUPACAO
+		dataType: int64
+		formatString: 0
+		lineageTag: f01942d0-967a-4b95-a1a8-9fc1e80d65a3
+		summarizeBy: sum
+		sourceColumn: CD_OCUPACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_OCUPACAO
+		dataType: string
+		lineageTag: 98309ee8-647b-438f-8970-ce42acd3151c
+		summarizeBy: none
+		sourceColumn: DS_OCUPACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SIT_TOT_TURNO
+		dataType: int64
+		formatString: 0
+		lineageTag: a90bdd9d-1163-44aa-8b77-867645fdbe11
+		summarizeBy: sum
+		sourceColumn: CD_SIT_TOT_TURNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SIT_TOT_TURNO
+		dataType: string
+		lineageTag: 7c4067b2-c6a4-46d6-a1fc-1fb8508c2c65
+		summarizeBy: none
+		sourceColumn: DS_SIT_TOT_TURNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_CANDIDATO
+		dataType: string
+		lineageTag: 251129e2-dcdf-4a46-b955-4b86300d7818
+		summarizeBy: none
+		sourceColumn: CH_CANDIDATO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_DISPUTA
+		dataType: string
+		lineageTag: 31f36114-e3b9-4495-bc66-80befc56bdb5
+		summarizeBy: none
+		sourceColumn: CH_DISPUTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patrimônio Declarado' =
+			
+			COALESCE(
+			    CALCULATE(
+			        SUM(bens[VR_BEM_CANDIDATO])
+			    ),
+			    0
+			)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: e20f703e-cbf5-4cca-b1be-f00139cb03ee
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column 'Faixa Patrimonial' =
+			
+			VAR Valor = Candidatos[Patrimônio Declarado]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    Valor = 0, "Sem bens declarados",
+			    Valor <= 100000, "Até R$ 100 mil",
+			    Valor <= 500000, "R$ 100 mil a R$ 500 mil",
+			    Valor <= 1000000, "R$ 500 mil a R$ 1 milhão",
+			    Valor <= 5000000, "R$ 1 milhão a R$ 5 milhões",
+			    "Acima de R$ 5 milhões"
+			)
+		lineageTag: a64fbdc1-9344-4669-abf6-7aedda7130b6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordem Faixa Patrimonial' =
+			
+			SWITCH(
+			    Candidatos[Faixa Patrimonial],
+			    "Sem bens declarados", 1,
+			    "Até R$ 100 mil", 2,
+			    "R$ 100 mil a R$ 500 mil", 3,
+			    "R$ 500 mil a R$ 1 milhão", 4,
+			    "R$ 1 milhão a R$ 5 milhões", 5,
+			    "Acima de R$ 5 milhões", 6
+			)
+		formatString: 0
+		lineageTag: 478924c8-8766-451c-9063-72adb64b8da6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Candidato Ranking' =
+			
+			Candidatos[NM_URNA_CANDIDATO]
+			    & " • "
+			    & Candidatos[SG_PARTIDO]
+			    & "/"
+			    & Candidatos[SG_UF]
+		lineageTag: fe9212ac-15dc-4bbf-8add-a4f2ce1ac372
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Candidatos = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\TSE2026\dados\candidatos\consulta_cand_2026_BRASIL.csv"),[Delimiter=";", Columns=50, Encoding=1252, QuoteStyle=QuoteStyle.Csv]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"DT_GERACAO", type date}, {"HH_GERACAO", type time}, {"ANO_ELEICAO", Int64.Type}, {"CD_TIPO_ELEICAO", Int64.Type}, {"NM_TIPO_ELEICAO", type text}, {"NR_TURNO", Int64.Type}, {"CD_ELEICAO", Int64.Type}, {"DS_ELEICAO", type text}, {"DT_ELEICAO", type date}, {"TP_ABRANGENCIA", type text}, {"SG_UF", type text}, {"SG_UE", type text}, {"NM_UE", type text}, {"CD_CARGO", Int64.Type}, {"DS_CARGO", type text}, {"SQ_CANDIDATO", Int64.Type}, {"NR_CANDIDATO", Int64.Type}, {"NM_CANDIDATO", type text}, {"NM_URNA_CANDIDATO", type text}, {"NM_SOCIAL_CANDIDATO", type text}, {"NR_CPF_CANDIDATO", Int64.Type}, {"DS_EMAIL", type text}, {"CD_SITUACAO_CANDIDATURA", Int64.Type}, {"DS_SITUACAO_CANDIDATURA", type text}, {"TP_AGREMIACAO", type text}, {"NR_PARTIDO", Int64.Type}, {"SG_PARTIDO", type text}, {"NM_PARTIDO", type text}, {"NR_FEDERACAO", Int64.Type}, {"NM_FEDERACAO", type text}, {"SG_FEDERACAO", type text}, {"DS_COMPOSICAO_FEDERACAO", type text}, {"SQ_COLIGACAO", Int64.Type}, {"NM_COLIGACAO", type text}, {"DS_COMPOSICAO_COLIGACAO", type text}, {"SG_UF_NASCIMENTO", type text}, {"DT_NASCIMENTO", type date}, {"NR_TITULO_ELEITORAL_CANDIDATO", Int64.Type}, {"CD_GENERO", Int64.Type}, {"DS_GENERO", type text}, {"CD_GRAU_INSTRUCAO", Int64.Type}, {"DS_GRAU_INSTRUCAO", type text}, {"CD_ESTADO_CIVIL", Int64.Type}, {"DS_ESTADO_CIVIL", type text}, {"CD_COR_RACA", Int64.Type}, {"DS_COR_RACA", type text}, {"CD_OCUPACAO", Int64.Type}, {"DS_OCUPACAO", type text}, {"CD_SIT_TOT_TURNO", Int64.Type}, {"DS_SIT_TOT_TURNO", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"NR_CPF_CANDIDATO", "DS_EMAIL", "NR_TITULO_ELEITORAL_CANDIDATO"}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Colunas Removidas", "CH_CANDIDATO", each Text.From([CD_ELEICAO]) & "|" & Text.From([SQ_CANDIDATO])),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"CH_CANDIDATO", type text}}),
+				    #"Personalização Adicionada1" = Table.AddColumn(#"Tipo Alterado1", "CH_DISPUTA", each Text.From([CD_ELEICAO]) & "|" &
+				Text.From([SG_UE]) & "|" &
+				Text.From([CD_CARGO])),
+				    #"Tipo Alterado2" = Table.TransformColumnTypes(#"Personalização Adicionada1",{{"CH_DISPUTA", type text}})
+				in
+				    #"Tipo Alterado2"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

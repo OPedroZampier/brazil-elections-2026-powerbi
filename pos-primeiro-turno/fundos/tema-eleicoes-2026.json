@@ -1,0 +1,14 @@
+{
+  "name": "Eleições 2026 — primeiro turno",
+  "dataColors": [
+    "#22C5A4",
+    "#548BC0",
+    "#E3BA55",
+    "#86D6D2",
+    "#738BA3",
+    "#DB746B"
+  ],
+  "background": "#031529",
+  "foreground": "#F4F7FC",
+  "tableAccent": "#22C5A4"
+}

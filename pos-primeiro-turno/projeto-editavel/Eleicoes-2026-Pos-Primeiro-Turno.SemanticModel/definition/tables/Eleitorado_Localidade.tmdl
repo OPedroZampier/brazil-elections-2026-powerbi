@@ -1,0 +1,133 @@
+table Eleitorado_Localidade
+	lineageTag: 148b8cbf-ee51-4370-bc01-dccac51633f1
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 428d7bc4-84a3-4b45-a9aa-50e53037e56b
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: 08ea20fc-aa29-42fc-a973-bad2fcb9d575
+			defaultHierarchy: LocalDateTable_87e40555-b895-409b-92f2-f9ff3eefadde.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 7b800ce1-bd56-4d3a-8fb7-0e5734eae536
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column AA_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 85c58862-1a14-4d10-8b2f-059b9c0efb2a
+		summarizeBy: sum
+		sourceColumn: AA_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: b744ec3c-9111-48a7-b0a4-342183b068d3
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_MUNICIPIO
+		dataType: string
+		lineageTag: 1eddc674-25a0-4341-a12d-bc5285c9e3e9
+		summarizeBy: none
+		sourceColumn: CD_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_MUNICIPIO
+		dataType: string
+		lineageTag: 258c4fe6-138a-4ef8-98d9-290d3ddebb2e
+		summarizeBy: none
+		sourceColumn: NM_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_ZONA
+		dataType: int64
+		formatString: 0
+		lineageTag: a86a7a48-ec33-45bf-bf1f-833df8a8cacc
+		summarizeBy: sum
+		sourceColumn: NR_ZONA
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_ELEITORES
+		dataType: int64
+		formatString: 0
+		lineageTag: fbdeca49-092d-4e24-869c-c716ba263665
+		summarizeBy: sum
+		sourceColumn: QT_ELEITORES
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_ELEITORES_BIOMETRIA
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b0bbf66-ed7c-4a44-a000-497e82b379ba
+		summarizeBy: sum
+		sourceColumn: QT_ELEITORES_BIOMETRIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_ELEITORES_DEFICIENCIA
+		dataType: int64
+		formatString: 0
+		lineageTag: 18e4688a-7322-4f0e-a575-ea96befc442e
+		summarizeBy: sum
+		sourceColumn: QT_ELEITORES_DEFICIENCIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_ELEITORES_NOME_SOCIAL
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e926235-a171-41a0-bab1-7b6c30d2bf04
+		summarizeBy: sum
+		sourceColumn: QT_ELEITORES_NOME_SOCIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_MUNICIPIO
+		dataType: string
+		lineageTag: b944682a-9ac0-46b4-a29d-3057cfc1b9b4
+		summarizeBy: none
+		sourceColumn: CH_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Eleitorado_Localidade = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\TSE2026\dados\eleitorado_otimizado\eleitorado_localidade_2026.csv"),[Delimiter=";", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"DT_GERACAO", type date}, {"HH_GERACAO", type time}, {"AA_ELEICAO", Int64.Type}, {"SG_UF", type text}, {"CD_MUNICIPIO", type text}, {"NM_MUNICIPIO", type text}, {"NR_ZONA", Int64.Type}, {"QT_ELEITORES", Int64.Type}, {"QT_ELEITORES_BIOMETRIA", Int64.Type}, {"QT_ELEITORES_DEFICIENCIA", Int64.Type}, {"QT_ELEITORES_NOME_SOCIAL", Int64.Type}}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Tipo Alterado", "CH_MUNICIPIO", each Text.From([SG_UF]) & "|" &
+				Text.From([CD_MUNICIPIO])),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"CH_MUNICIPIO", type text}})
+				in
+				    #"Tipo Alterado1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

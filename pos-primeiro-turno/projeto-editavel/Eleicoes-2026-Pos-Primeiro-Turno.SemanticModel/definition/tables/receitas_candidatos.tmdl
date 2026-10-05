@@ -1,0 +1,702 @@
+table receitas_candidatos
+	lineageTag: 6f0a978e-5fd5-4a5e-9507-632d35956859
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b3a5b9d8-f2da-4568-976d-65c07a8cdf76
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: a431c7a0-234f-4678-bc68-eef38590bbc9
+			defaultHierarchy: LocalDateTable_af1d3427-82cc-4835-821a-3ec920eb8862.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 08ae1054-6a92-44e6-88b6-8ba8dc4c1861
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column AA_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: c946b4f7-6974-4bc9-9826-e7d99956a71d
+		summarizeBy: sum
+		sourceColumn: AA_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 056be003-894a-4928-b747-da3ca463da48
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: 0340d715-2721-46ec-92c6-24237af260a9
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 48eb92b1-ceaa-46e9-aa80-db1c17402d9e
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: 1ceb8e26-8bdf-4473-b978-f91dae6cddc1
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ELEICAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 756fb5d7-e2ed-4171-8928-24634355c7bf
+		summarizeBy: none
+		sourceColumn: DT_ELEICAO
+
+		variation Variation
+			isDefault
+			relationship: 4d343d4a-c761-4b77-89ec-75edbf0b46a9
+			defaultHierarchy: LocalDateTable_5a8394bd-f520-45bb-a7e6-7928dccf2de4.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ST_TURNO
+		dataType: int64
+		formatString: 0
+		lineageTag: 177d2449-2555-432f-b701-8af5de125168
+		summarizeBy: sum
+		sourceColumn: ST_TURNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_PRESTACAO_CONTAS
+		dataType: string
+		lineageTag: 5cf2b299-b181-434a-a826-6598956eb406
+		summarizeBy: none
+		sourceColumn: TP_PRESTACAO_CONTAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_PRESTACAO_CONTAS
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 35b230c8-92f6-4fb3-acec-5d627f81c993
+		summarizeBy: none
+		sourceColumn: DT_PRESTACAO_CONTAS
+
+		variation Variation
+			isDefault
+			relationship: dd459324-0aa4-4e55-b65b-288ae511d665
+			defaultHierarchy: LocalDateTable_81308bcc-0ec5-4f74-a87d-9af7640416e9.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SQ_PRESTADOR_CONTAS
+		dataType: int64
+		formatString: 0
+		lineageTag: a7111f06-ca7b-4f76-bfff-88d409e1a165
+		summarizeBy: sum
+		sourceColumn: SQ_PRESTADOR_CONTAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: 9c94c38b-e95b-4ec6-9ced-4a7495d7c74c
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UE
+		dataType: string
+		lineageTag: 0d28688c-bc4c-4757-bd6e-73659ee180ce
+		summarizeBy: none
+		sourceColumn: SG_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_UE
+		dataType: string
+		lineageTag: 7a3189fb-a179-4d9c-94a6-578873630027
+		summarizeBy: none
+		sourceColumn: NM_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CNPJ_PRESTADOR_CONTA
+		dataType: string
+		lineageTag: 58b8423f-0872-4d88-8d05-bdfeaaa0c2c3
+		summarizeBy: none
+		sourceColumn: NR_CNPJ_PRESTADOR_CONTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CARGO
+		dataType: int64
+		formatString: 0
+		lineageTag: c2fd03e3-0cc4-4298-92ae-5ca73755d086
+		summarizeBy: sum
+		sourceColumn: CD_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CARGO
+		dataType: string
+		lineageTag: 39f0f47f-dccf-4097-9a7a-1b524570658c
+		summarizeBy: none
+		sourceColumn: DS_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: f286bccd-e25e-4e20-84a0-35c682b419d9
+		summarizeBy: sum
+		sourceColumn: SQ_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f87981f-4677-4dd8-97f3-5e173d8e316e
+		summarizeBy: sum
+		sourceColumn: NR_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_CANDIDATO
+		dataType: string
+		lineageTag: 7556aa3c-b288-4181-a6b2-0ac42e53d762
+		summarizeBy: none
+		sourceColumn: NM_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_PARTIDO
+		dataType: int64
+		formatString: 0
+		lineageTag: 56fca1ff-14db-4480-94f4-080baf8430e5
+		summarizeBy: sum
+		sourceColumn: NR_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_PARTIDO
+		dataType: string
+		lineageTag: 3fce763f-c5e6-4e1f-b264-dc101f400bcc
+		summarizeBy: none
+		sourceColumn: SG_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_PARTIDO
+		dataType: string
+		lineageTag: 8cb381e8-ac06-4ebd-aee2-32750ef9834d
+		summarizeBy: none
+		sourceColumn: NM_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_FONTE_RECEITA
+		dataType: int64
+		formatString: 0
+		lineageTag: a311bb93-6c64-458b-bca9-2eb0acbc4e1b
+		summarizeBy: sum
+		sourceColumn: CD_FONTE_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_FONTE_RECEITA
+		dataType: string
+		lineageTag: d25ba2a1-8910-472f-94e9-fba328a5c897
+		summarizeBy: none
+		sourceColumn: DS_FONTE_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ORIGEM_RECEITA
+		dataType: int64
+		formatString: 0
+		lineageTag: 67c8258b-7f59-49ee-8ba3-6baf12b1c2a3
+		summarizeBy: sum
+		sourceColumn: CD_ORIGEM_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ORIGEM_RECEITA
+		dataType: string
+		lineageTag: 6cf3be5f-4464-4e10-ada8-bbbac796b1d2
+		summarizeBy: none
+		sourceColumn: DS_ORIGEM_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_NATUREZA_RECEITA
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a39dd0f-82f4-4d8d-8496-38ee5b23793d
+		summarizeBy: sum
+		sourceColumn: CD_NATUREZA_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_NATUREZA_RECEITA
+		dataType: string
+		lineageTag: 9052af51-3417-4c91-b74b-2f8dbc12787d
+		summarizeBy: none
+		sourceColumn: DS_NATUREZA_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ESPECIE_RECEITA
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c690348-0495-446c-b410-960cb13bd167
+		summarizeBy: sum
+		sourceColumn: CD_ESPECIE_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ESPECIE_RECEITA
+		dataType: string
+		lineageTag: 4ad5c9c8-eec5-4e14-9ab7-066c34dd9577
+		summarizeBy: none
+		sourceColumn: DS_ESPECIE_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CNAE_DOADOR
+		dataType: string
+		lineageTag: 569c51ee-5f2d-4489-8261-1d274a25e07a
+		summarizeBy: none
+		sourceColumn: CD_CNAE_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CNAE_DOADOR
+		dataType: string
+		lineageTag: 08451dc5-fa1f-48d8-862d-f05614446810
+		summarizeBy: none
+		sourceColumn: DS_CNAE_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_DOADOR
+		dataType: string
+		lineageTag: 7990fe22-fe49-4da6-bd3b-5b55ab6fc572
+		summarizeBy: none
+		sourceColumn: NM_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_DOADOR_RFB
+		dataType: string
+		lineageTag: 81620994-eb28-44cc-8dd2-b4626e7adb2a
+		summarizeBy: none
+		sourceColumn: NM_DOADOR_RFB
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ESFERA_PARTIDARIA_DOADOR
+		dataType: string
+		lineageTag: 952e8d4c-25b5-4073-b881-fc663802e1d6
+		summarizeBy: none
+		sourceColumn: CD_ESFERA_PARTIDARIA_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ESFERA_PARTIDARIA_DOADOR
+		dataType: string
+		lineageTag: cec37a20-baff-4bb4-b89b-5c7ce69dd376
+		summarizeBy: none
+		sourceColumn: DS_ESFERA_PARTIDARIA_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF_DOADOR
+		dataType: string
+		lineageTag: d1e85ca4-eb28-4e40-a8e4-d22169779641
+		summarizeBy: none
+		sourceColumn: SG_UF_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_MUNICIPIO_DOADOR
+		dataType: string
+		lineageTag: 143cee87-8392-4861-917a-9f886fa0e188
+		summarizeBy: none
+		sourceColumn: CD_MUNICIPIO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_MUNICIPIO_DOADOR
+		dataType: string
+		lineageTag: bfcb3e41-3cf0-45c6-be33-69516600b971
+		summarizeBy: none
+		sourceColumn: NM_MUNICIPIO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO_DOADOR
+		dataType: string
+		lineageTag: 32c691a8-0f94-48cb-affb-def516e801fe
+		summarizeBy: none
+		sourceColumn: SQ_CANDIDATO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CANDIDATO_DOADOR
+		dataType: string
+		lineageTag: 490ba145-598f-43f1-be9f-b7bad6e1996f
+		summarizeBy: none
+		sourceColumn: NR_CANDIDATO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CARGO_CANDIDATO_DOADOR
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d79bd68-4afa-4bd5-8ae6-2f9c101a6ed5
+		summarizeBy: sum
+		sourceColumn: CD_CARGO_CANDIDATO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CARGO_CANDIDATO_DOADOR
+		dataType: string
+		lineageTag: c64ca049-f78c-456e-bc3f-e2464b2c7d64
+		summarizeBy: none
+		sourceColumn: DS_CARGO_CANDIDATO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_PARTIDO_DOADOR
+		dataType: int64
+		formatString: 0
+		lineageTag: ec6b14b6-a382-401c-8d4b-f209b181cf0f
+		summarizeBy: sum
+		sourceColumn: NR_PARTIDO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_PARTIDO_DOADOR
+		dataType: string
+		lineageTag: 66c6d992-baef-4e36-b369-b01db9050ffa
+		summarizeBy: none
+		sourceColumn: SG_PARTIDO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_PARTIDO_DOADOR
+		dataType: string
+		lineageTag: 46360094-de78-4e77-b0b6-578a55afe9eb
+		summarizeBy: none
+		sourceColumn: NM_PARTIDO_DOADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_RECIBO_DOACAO
+		dataType: string
+		lineageTag: c4473564-c4da-4a64-b341-a8badffd75f5
+		summarizeBy: none
+		sourceColumn: NR_RECIBO_DOACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_DOCUMENTO_DOACAO
+		dataType: string
+		lineageTag: 05643fcd-5862-4c44-ba30-98b78ffcef53
+		summarizeBy: none
+		sourceColumn: NR_DOCUMENTO_DOACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_RECEITA
+		dataType: int64
+		formatString: 0
+		lineageTag: 8598819f-5bb6-492d-af9a-5b322b2d651c
+		summarizeBy: sum
+		sourceColumn: SQ_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_RECEITA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1853bdf3-e60c-4f62-a060-8d8d64847cf6
+		summarizeBy: none
+		sourceColumn: DT_RECEITA
+
+		variation Variation
+			isDefault
+			relationship: fd175d3c-089a-4ae9-9bd3-5bb15bd306c0
+			defaultHierarchy: LocalDateTable_a9464c58-d375-4e76-896d-2d7328e0a814.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DS_RECEITA
+		dataType: string
+		lineageTag: 146345ef-a303-42ff-b1ff-6604cbcf0f53
+		summarizeBy: none
+		sourceColumn: DS_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+	column VR_RECEITA
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 26f76035-0004-400f-854a-d7eb8bdd1e80
+		summarizeBy: sum
+		sourceColumn: VR_RECEITA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column DS_NATUREZA_RECURSO_ESTIMAVEL
+		dataType: string
+		lineageTag: 2fe45603-f1d9-4634-b1f1-4be114e2b6c6
+		summarizeBy: none
+		sourceColumn: DS_NATUREZA_RECURSO_ESTIMAVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_GENERO
+		dataType: string
+		lineageTag: ad6015a8-1a45-4f4d-abd4-114352fa93a6
+		summarizeBy: none
+		sourceColumn: DS_GENERO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_COR_RACA
+		dataType: string
+		lineageTag: 49264ab1-18ca-4a25-bfb0-0d74498b68ce
+		summarizeBy: none
+		sourceColumn: DS_COR_RACA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_CANDIDATO
+		dataType: string
+		lineageTag: 00427837-dde1-41d2-85f4-c137b75acf6f
+		summarizeBy: none
+		sourceColumn: CH_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_PRESTADOR
+		dataType: string
+		lineageTag: 054a310d-24eb-4883-a15b-7670fc35d1e5
+		summarizeBy: none
+		sourceColumn: CH_PRESTADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition receitas_candidatos = m
+		mode: import
+		source =
+				let
+				    Fonte =
+				        Csv.Document(
+				            File.Contents(
+				                "D:\TSE2026\dados\contas_eleitorais\receitas_candidatos_2026_BRASIL.csv"
+				            ),
+				            [
+				                Delimiter = ";",
+				                Columns = 60,
+				                Encoding = 1252,
+				                QuoteStyle = QuoteStyle.Csv
+				            ]
+				        ),
+				
+				    #"Cabeçalhos Promovidos" =
+				        Table.PromoteHeaders(
+				            Fonte,
+				            [PromoteAllScalars = true]
+				        ),
+				
+				    // Trata os códigos usados pelo TSE para ausência de informação.
+				    #"Marcadores Tratados" =
+				        Table.TransformColumns(
+				            #"Cabeçalhos Promovidos",
+				            List.Transform(
+				                Table.ColumnNames(#"Cabeçalhos Promovidos"),
+				                (Coluna) =>
+				                    {
+				                        Coluna,
+				                        each
+				                            let
+				                                Valor =
+				                                    if _ is text
+				                                    then Text.Trim(_)
+				                                    else _
+				                            in
+				                                if List.Contains(
+				                                    {
+				                                        "#NULO",
+				                                        "#NULO#",
+				                                        "#NE",
+				                                        "#NE#",
+				                                        "NÃO DIVULGÁVEL",
+				                                        "-1",
+				                                        "-3",
+				                                        "-4",
+				                                        -1,
+				                                        -3,
+				                                        -4
+				                                    },
+				                                    Valor
+				                                )
+				                                then null
+				                                else _,
+				                        type any
+				                    }
+				            )
+				        ),
+				            #"Colunas Sensíveis Removidas" =
+				        Table.RemoveColumns(
+				            #"Marcadores Tratados",
+				            {
+				                "NR_CPF_CANDIDATO",
+				                "NR_CPF_VICE_CANDIDATO",
+				                "NR_CPF_CNPJ_DOADOR"
+				            }
+				        ),
+				
+				
+				    #"Tipos Alterados" =
+				        Table.TransformColumnTypes(
+				            #"Colunas Sensíveis Removidas",
+				            {
+				                {"DT_GERACAO", type date},
+				                {"HH_GERACAO", type time},
+				                {"AA_ELEICAO", Int64.Type},
+				                {"CD_TIPO_ELEICAO", Int64.Type},
+				                {"NM_TIPO_ELEICAO", type text},
+				                {"CD_ELEICAO", Int64.Type},
+				                {"DS_ELEICAO", type text},
+				                {"DT_ELEICAO", type date},
+				                {"ST_TURNO", Int64.Type},
+				                {"TP_PRESTACAO_CONTAS", type text},
+				                {"DT_PRESTACAO_CONTAS", type date},
+				                {"SQ_PRESTADOR_CONTAS", Int64.Type},
+				                {"SG_UF", type text},
+				                {"SG_UE", type text},
+				                {"NM_UE", type text},
+				
+				                // CNPJ deve permanecer texto para não perder zeros.
+				                {"NR_CNPJ_PRESTADOR_CONTA", type text},
+				
+				                {"CD_CARGO", Int64.Type},
+				                {"DS_CARGO", type text},
+				                {"SQ_CANDIDATO", Int64.Type},
+				                {"NR_CANDIDATO", Int64.Type},
+				                {"NM_CANDIDATO", type text},
+				                {"NR_PARTIDO", Int64.Type},
+				                {"SG_PARTIDO", type text},
+				                {"NM_PARTIDO", type text},
+				
+				                {"CD_FONTE_RECEITA", Int64.Type},
+				                {"DS_FONTE_RECEITA", type text},
+				                {"CD_ORIGEM_RECEITA", Int64.Type},
+				                {"DS_ORIGEM_RECEITA", type text},
+				                {"CD_NATUREZA_RECEITA", Int64.Type},
+				                {"DS_NATUREZA_RECEITA", type text},
+				                {"CD_ESPECIE_RECEITA", Int64.Type},
+				                {"DS_ESPECIE_RECEITA", type text},
+				
+				                {"CD_CNAE_DOADOR", type text},
+				                {"DS_CNAE_DOADOR", type text},
+				                {"NM_DOADOR", type text},
+				                {"NM_DOADOR_RFB", type text},
+				                {"CD_ESFERA_PARTIDARIA_DOADOR", type text},
+				                {"DS_ESFERA_PARTIDARIA_DOADOR", type text},
+				                {"SG_UF_DOADOR", type text},
+				                {"CD_MUNICIPIO_DOADOR", type text},
+				                {"NM_MUNICIPIO_DOADOR", type text},
+				
+				                {"SQ_CANDIDATO_DOADOR", type text},
+				                {"NR_CANDIDATO_DOADOR", type text},
+				                {"CD_CARGO_CANDIDATO_DOADOR", Int64.Type},
+				                {"DS_CARGO_CANDIDATO_DOADOR", type text},
+				                {"NR_PARTIDO_DOADOR", Int64.Type},
+				                {"SG_PARTIDO_DOADOR", type text},
+				                {"NM_PARTIDO_DOADOR", type text},
+				
+				                {"NR_RECIBO_DOACAO", type text},
+				                {"NR_DOCUMENTO_DOACAO", type text},
+				                {"SQ_RECEITA", Int64.Type},
+				                {"DT_RECEITA", type date},
+				                {"DS_RECEITA", type text},
+				                {"VR_RECEITA", Currency.Type},
+				                {"DS_NATUREZA_RECURSO_ESTIMAVEL", type text},
+				                {"DS_GENERO", type text},
+				                {"DS_COR_RACA", type text}
+				            },
+				            "pt-BR"
+				        ),
+				
+				    #"CH_CANDIDATO Adicionada" =
+				        Table.AddColumn(
+				            #"Tipos Alterados",
+				            "CH_CANDIDATO",
+				            each
+				                Text.From([CD_ELEICAO])
+				                & "|"
+				                & Text.From([SQ_CANDIDATO]),
+				            type text
+				        ),
+				
+				    #"CH_PRESTADOR Adicionada" =
+				        Table.AddColumn(
+				            #"CH_CANDIDATO Adicionada",
+				            "CH_PRESTADOR",
+				            each
+				                Text.From([CD_ELEICAO])
+				                & "|"
+				                & Text.From([SQ_PRESTADOR_CONTAS]),
+				            type text
+				        )
+				
+				in
+				    #"CH_PRESTADOR Adicionada"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

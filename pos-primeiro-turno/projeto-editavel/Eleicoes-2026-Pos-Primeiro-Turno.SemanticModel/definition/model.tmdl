@@ -1,0 +1,85 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Candidatos","Candidatos_Complementar","bens","redes_sociais","vagas","Coligacoes","Eleitorado_Localidade","eleitorado_municipio","eleitorado_cruzado","Dim_Municipio","Receitas_Partidarias","Despesas_Partidarias","receitas_candidatos","despesas_contratadas","Despesas_Pagas_Eleitorais"]
+
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
+
+ref table Candidatos
+ref table DateTableTemplate_87de368d-1c8b-41c9-b2ba-d3543d488cc8
+ref table LocalDateTable_0ac4aba9-9053-4ebb-ae58-d3b156b5703a
+ref table LocalDateTable_9d14eb68-9a4f-4cdc-8b50-cb8c6430e1d3
+ref table LocalDateTable_58db9d35-7b63-4cb6-bbb2-67e5f480049a
+ref table Candidatos_Complementar
+ref table LocalDateTable_4834862a-22b8-4292-87d9-f3a1c733752b
+ref table LocalDateTable_866c9084-34de-41dd-97b3-53f56f284a9f
+ref table _Medidas
+ref table bens
+ref table LocalDateTable_0d809fe7-34cd-440e-a3f4-087d99cbbcea
+ref table LocalDateTable_8197cd08-38f9-487c-8bdd-4ae9e16bad49
+ref table LocalDateTable_b0f21d63-5036-4dea-9630-4c3a72d95795
+ref table redes_sociais
+ref table LocalDateTable_db1f6ca3-0194-4544-bb10-031420c96931
+ref table vagas
+ref table LocalDateTable_5c836dac-abee-4ff8-89af-6954ddfab075
+ref table LocalDateTable_1ed4455c-1106-4e04-bd9a-caa84c0e80dc
+ref table LocalDateTable_78ed1ffa-8c6b-47ee-93a4-7382eb459a00
+ref table Coligacoes
+ref table LocalDateTable_3311570e-960d-4401-9055-470901a9c20e
+ref table LocalDateTable_0b63b240-7b72-4ab2-b6b8-17e8a0575228
+ref table Eleitorado_Localidade
+ref table LocalDateTable_87e40555-b895-409b-92f2-f9ff3eefadde
+ref table eleitorado_municipio
+ref table LocalDateTable_8aeec30e-a40b-46dd-b16a-7bd53c488204
+ref table eleitorado_cruzado
+ref table LocalDateTable_3e772eb3-5135-4865-a556-e068b8abf7a7
+ref table Dim_Municipio
+ref table Dim_UF
+ref table Receitas_Partidarias
+ref table LocalDateTable_79c64b32-e53b-4e7a-a780-c94c9a7c621f
+ref table LocalDateTable_13711596-1dac-47ee-9127-02fe150788fb
+ref table Despesas_Partidarias
+ref table LocalDateTable_f38e21c7-6bbd-4cf2-bf1a-ee337857e362
+ref table LocalDateTable_0b27216b-406c-4b9a-8281-d39ef7489af0
+ref table Dim_Partido
+ref table 'Perfil Eleitorado'
+ref table 'Composição das Candidaturas'
+ref table 'Analisar Patrimônio por'
+ref table 'Detalhar Patrimônio por'
+ref table 'Detalhar Patrimônio por 2'
+ref table receitas_candidatos
+ref table LocalDateTable_af1d3427-82cc-4835-821a-3ec920eb8862
+ref table LocalDateTable_5a8394bd-f520-45bb-a7e6-7928dccf2de4
+ref table LocalDateTable_81308bcc-0ec5-4f74-a87d-9af7640416e9
+ref table LocalDateTable_a9464c58-d375-4e76-896d-2d7328e0a814
+ref table despesas_contratadas
+ref table LocalDateTable_e3b1082f-881a-40f5-8f8f-17f2c572646d
+ref table LocalDateTable_61b0d207-4e0e-4037-b1fb-84b698171770
+ref table LocalDateTable_b20f2f40-b480-421f-8f51-a4fc33b05458
+ref table LocalDateTable_29133084-2749-447d-9808-27c3c036615f
+ref table Despesas_Pagas_Eleitorais
+ref table LocalDateTable_87f6980f-145b-4486-a1ea-3c093d8d35ea
+ref table LocalDateTable_6b9c9910-c506-4e82-bb9a-93ddde70e325
+ref table LocalDateTable_eaf208cf-055a-4971-8d08-4c3d6194f08f
+ref table LocalDateTable_d47409f7-df29-473d-b5e7-61683045e3e5
+ref table Dim_Esfera
+ref table 'Ranking Financeiro Pessoas'
+ref table 'Fornecedores e Doadores'
+ref table PT_Cadastro
+ref table PT_Controle
+ref table PT_Votos
+ref table PT_Partidos
+ref table PT_QE
+ref table PT_UF
+ref table PT_Cargo
+
+ref cultureInfo pt-BR
+

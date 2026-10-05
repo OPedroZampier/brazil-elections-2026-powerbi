@@ -1,0 +1,272 @@
+table bens
+	lineageTag: a69f82c1-ace6-45d6-bea2-909e61d45da5
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 27f6a958-3174-4cfa-96e5-3bfab6ac503d
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: 7c4276d2-892f-4967-b5f9-0b12406a72bc
+			defaultHierarchy: LocalDateTable_0d809fe7-34cd-440e-a3f4-087d99cbbcea.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: c55d6573-a0d0-4eed-93dc-609c36f77a73
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column ANO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e2296b7-e75d-4cef-b68b-e166886ccc74
+		summarizeBy: sum
+		sourceColumn: ANO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 32b988f6-cf3e-4c4b-9a2a-2371486c7e85
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: 4d82a583-e2ac-425b-9065-6b043560b0c7
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 432d9959-f690-4889-8081-28ad0d91f9c3
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: c085706f-b2e1-445b-bbff-3bd97d31cf0d
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ELEICAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 84f0f79e-4e43-416a-80be-284434805a76
+		summarizeBy: none
+		sourceColumn: DT_ELEICAO
+
+		variation Variation
+			isDefault
+			relationship: b7881bdc-4841-4a24-83d7-b8103539c22b
+			defaultHierarchy: LocalDateTable_8197cd08-38f9-487c-8bdd-4ae9e16bad49.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SG_UF
+		dataType: string
+		lineageTag: 11074933-aabc-4da4-a849-946bf427481c
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UE
+		dataType: string
+		lineageTag: 6b84d16d-2bad-41bf-97e4-55c21a70fab7
+		summarizeBy: none
+		sourceColumn: SG_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_UE
+		dataType: string
+		lineageTag: 19fa7792-5476-4472-b83c-e6c2360120e6
+		summarizeBy: none
+		sourceColumn: NM_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: c38afd08-aef6-4dcc-a037-75d274d108d4
+		summarizeBy: sum
+		sourceColumn: SQ_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_ORDEM_BEM_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cdbaa57-2c0d-44f7-91b1-a48ca466799e
+		summarizeBy: sum
+		sourceColumn: NR_ORDEM_BEM_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_BEM_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: f0877818-ba25-4ddc-99f0-0dd8339f2ed8
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_BEM_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_TIPO_BEM_CANDIDATO
+		dataType: string
+		lineageTag: 33c6c74e-3201-41d7-a250-365124c32b0d
+		summarizeBy: none
+		sourceColumn: DS_TIPO_BEM_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_BEM_CANDIDATO
+		dataType: string
+		lineageTag: dd83ac58-2eb3-48d1-ab33-ccbae7dd3b69
+		summarizeBy: none
+		sourceColumn: DS_BEM_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VR_BEM_CANDIDATO
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 1a303584-729b-4196-b7cb-67dd0748ef61
+		summarizeBy: sum
+		sourceColumn: VR_BEM_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column DT_ULT_ATUAL_BEM_CANDIDATO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4d977c8b-bb4e-428d-af34-23da757cca76
+		summarizeBy: none
+		sourceColumn: DT_ULT_ATUAL_BEM_CANDIDATO
+
+		variation Variation
+			isDefault
+			relationship: ba6c0c37-de78-491f-a303-94b698b47e40
+			defaultHierarchy: LocalDateTable_b0f21d63-5036-4dea-9630-4c3a72d95795.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_ULT_ATUAL_BEM_CANDIDATO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: d0f3d3f2-08a2-4a62-9622-73a9f9204902
+		summarizeBy: none
+		sourceColumn: HH_ULT_ATUAL_BEM_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column CH_CANDIDATO
+		dataType: string
+		lineageTag: cee04ad7-9eb3-4383-91de-c8f4e6abe74b
+		summarizeBy: none
+		sourceColumn: CH_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bens = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(
+				        File.Contents("D:\TSE2026\dados\bens\bem_candidato_2026_BRASIL.csv"),
+				        [
+				            Delimiter = ";",
+				            Columns = 19,
+				            Encoding = 1252,
+				            QuoteStyle = QuoteStyle.Csv
+				        ]
+				    ),
+				
+				    #"Cabeçalhos Promovidos" =
+				        Table.PromoteHeaders(
+				            Fonte,
+				            [PromoteAllScalars = true]
+				        ),
+				
+				    #"Valor Inválido Substituído" =
+				        Table.ReplaceValue(
+				            #"Cabeçalhos Promovidos",
+				            "##################",
+				            null,
+				            Replacer.ReplaceValue,
+				            {"VR_BEM_CANDIDATO"}
+				        ),
+				
+				    #"Tipo Alterado" =
+				        Table.TransformColumnTypes(
+				            #"Valor Inválido Substituído",
+				            {
+				                {"DT_GERACAO", type date},
+				                {"HH_GERACAO", type time},
+				                {"ANO_ELEICAO", Int64.Type},
+				                {"CD_TIPO_ELEICAO", Int64.Type},
+				                {"NM_TIPO_ELEICAO", type text},
+				                {"CD_ELEICAO", Int64.Type},
+				                {"DS_ELEICAO", type text},
+				                {"DT_ELEICAO", type date},
+				                {"SG_UF", type text},
+				                {"SG_UE", type text},
+				                {"NM_UE", type text},
+				                {"SQ_CANDIDATO", Int64.Type},
+				                {"NR_ORDEM_BEM_CANDIDATO", Int64.Type},
+				                {"CD_TIPO_BEM_CANDIDATO", Int64.Type},
+				                {"DS_TIPO_BEM_CANDIDATO", type text},
+				                {"DS_BEM_CANDIDATO", type text},
+				                {"VR_BEM_CANDIDATO", Currency.Type},
+				                {"DT_ULT_ATUAL_BEM_CANDIDATO", type date},
+				                {"HH_ULT_ATUAL_BEM_CANDIDATO", type time}
+				            },
+				            "pt-BR"
+				        ),
+				
+				    #"Personalização Adicionada" =
+				        Table.AddColumn(
+				            #"Tipo Alterado",
+				            "CH_CANDIDATO",
+				            each Text.From([CD_ELEICAO]) & "|" & Text.From([SQ_CANDIDATO]),
+				            type text
+				        )
+				in
+				    #"Personalização Adicionada"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

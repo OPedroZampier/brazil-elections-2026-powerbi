@@ -1,0 +1,374 @@
+table Despesas_Partidarias
+	lineageTag: 3fe2517d-319a-471e-ac02-aaa03b5942f6
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2fe9e764-b185-4fe5-9744-674d21846efc
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: 7b40d535-9bce-4053-b93f-e3f625fd8edd
+			defaultHierarchy: LocalDateTable_f38e21c7-6bbd-4cf2-bf1a-ee337857e362.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 3e02c7d2-e0b9-4d48-936b-c5e53456b97e
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column AA_EXERCICIO
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c6d3053-eed5-48c8-848a-2eefba19bbf5
+		summarizeBy: sum
+		sourceColumn: AA_EXERCICIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_DESPESA
+		dataType: string
+		lineageTag: 4838fb81-1993-4db2-8012-1b749163f6ba
+		summarizeBy: none
+		sourceColumn: TP_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TP_ESFERA_PARTIDARIA
+		dataType: int64
+		formatString: 0
+		lineageTag: 011467ab-4c51-4230-9595-f5ebbbbb9a7b
+		summarizeBy: sum
+		sourceColumn: CD_TP_ESFERA_PARTIDARIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_TP_ESFERA_PARTIDARIA
+		dataType: string
+		lineageTag: 29f1aa08-d6ae-4cb0-bf68-980497726e9f
+		summarizeBy: none
+		sourceColumn: DS_TP_ESFERA_PARTIDARIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: 68ab1406-7800-492f-92b9-3f6bfa1694d4
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_MUNICIPIO
+		dataType: string
+		lineageTag: 363929b2-5957-44fa-bec6-6af950a23bac
+		summarizeBy: none
+		sourceColumn: CD_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_MUNICIPIO
+		dataType: string
+		lineageTag: e8872496-761e-45e3-9de2-058dc6f1ffc9
+		summarizeBy: none
+		sourceColumn: NM_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_ZONA
+		dataType: string
+		lineageTag: d43ad9cf-d5d8-4340-94d5-67c5b49123f9
+		summarizeBy: none
+		sourceColumn: NR_ZONA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CNPJ_PRESTADOR_CONTA
+		dataType: string
+		lineageTag: 9a07c357-fbda-4b9e-aca3-adf5e9af7021
+		summarizeBy: none
+		sourceColumn: NR_CNPJ_PRESTADOR_CONTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_PARTIDO
+		dataType: string
+		lineageTag: 68fdf01a-2860-418c-b730-f2552540a01f
+		summarizeBy: none
+		sourceColumn: SG_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_PARTIDO
+		dataType: string
+		lineageTag: 9f23bf45-4537-4125-86be-2eff7565c7e2
+		summarizeBy: none
+		sourceColumn: NM_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TP_DOCUMENTO
+		dataType: string
+		lineageTag: 5fa057a8-49fa-4461-94fb-6e97931dd712
+		summarizeBy: none
+		sourceColumn: CD_TP_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_TP_DOCUMENTO
+		dataType: string
+		lineageTag: 030b913d-b9b7-494e-955a-3d20275cb31e
+		summarizeBy: none
+		sourceColumn: DS_TP_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_DOCUMENTO
+		dataType: string
+		lineageTag: f987a1ff-5d8a-407f-92bd-d85afafe5323
+		summarizeBy: none
+		sourceColumn: NR_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column AA_AIDF
+		dataType: string
+		lineageTag: 90620785-37a0-481d-aecb-26562ed8e17a
+		summarizeBy: none
+		sourceColumn: AA_AIDF
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_AIDF
+		dataType: string
+		lineageTag: 79a0d3ad-05fe-49f1-a619-b903daf3ccc3
+		summarizeBy: none
+		sourceColumn: NR_AIDF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TP_FORNECEDOR
+		dataType: string
+		lineageTag: d254d4cf-a5e9-4a44-96a9-4922a8f7fe3d
+		summarizeBy: none
+		sourceColumn: CD_TP_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_TP_FORNECEDOR
+		dataType: string
+		lineageTag: 0e25450e-612c-4055-8fc6-5051a6a3cab1
+		summarizeBy: none
+		sourceColumn: DS_TP_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CPF_CNPJ_FORNECEDOR
+		dataType: string
+		lineageTag: 90f314c7-d1fe-4723-b966-8bcbdefc423b
+		summarizeBy: none
+		sourceColumn: NR_CPF_CNPJ_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_FORNECEDOR
+		dataType: string
+		lineageTag: 8dfad2e8-9163-44d5-817b-1669bcdbf443
+		summarizeBy: none
+		sourceColumn: NM_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_GASTO
+		dataType: string
+		lineageTag: 30230a45-b113-4b28-9c07-e3627e83c839
+		summarizeBy: none
+		sourceColumn: DS_GASTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_PAGAMENTO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 95be25fd-dafe-4a60-8021-486c9e9e5a54
+		summarizeBy: none
+		sourceColumn: DT_PAGAMENTO
+
+		variation Variation
+			isDefault
+			relationship: 61432800-f368-406d-bb4a-7f355635018a
+			defaultHierarchy: LocalDateTable_0b27216b-406c-4b9a-8281-d39ef7489af0.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column VR_GASTO
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 5638a11c-4ba3-4b36-920e-72877702aa3f
+		summarizeBy: sum
+		sourceColumn: VR_GASTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column VR_PAGAMENTO
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 6f88e11a-4f34-48a0-aa63-6c7dc1d0cfa5
+		summarizeBy: sum
+		sourceColumn: VR_PAGAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column VR_DOCUMENTO
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 5d620a8f-b268-415e-9332-ab35b3d4313d
+		summarizeBy: sum
+		sourceColumn: VR_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column CD_FONTE_DESPESA
+		dataType: int64
+		formatString: 0
+		lineageTag: 157ab3d5-c0fd-4963-9b69-e6d5825fd844
+		summarizeBy: sum
+		sourceColumn: CD_FONTE_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_FONTE_DESPESA
+		dataType: string
+		lineageTag: 54003d2c-4075-45ba-a911-dcf97f911069
+		summarizeBy: none
+		sourceColumn: DS_FONTE_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_DESPESA
+		dataType: string
+		lineageTag: 233fd1cf-7d1d-47e6-a3ed-4049372020d9
+		summarizeBy: none
+		sourceColumn: SQ_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Despesas_Partidarias = m
+		mode: import
+		source =
+				let
+				    Fonte =
+				        Csv.Document(
+				            File.Contents(
+				                "D:\TSE2026\dados\contas_partidarias\despesa_anual_2026_BRASIL.csv"
+				            ),
+				            [
+				                Delimiter = ";",
+				                Columns = 30,
+				                Encoding = 1252,
+				                QuoteStyle = QuoteStyle.Csv
+				            ]
+				        ),
+				
+				    #"Cabeçalhos Promovidos" =
+				        Table.PromoteHeaders(
+				            Fonte,
+				            [PromoteAllScalars = true]
+				        ),
+				
+				    #"Nulos Tratados" =
+				        Table.ReplaceValue(
+				            #"Cabeçalhos Promovidos",
+				            "#NULO#",
+				            null,
+				            Replacer.ReplaceValue,
+				            Table.ColumnNames(#"Cabeçalhos Promovidos")
+				        ),
+				
+				    #"NE Tratados" =
+				        Table.ReplaceValue(
+				            #"Nulos Tratados",
+				            "#NE#",
+				            null,
+				            Replacer.ReplaceValue,
+				            Table.ColumnNames(#"Nulos Tratados")
+				        ),
+				
+				    #"Tipo Alterado" =
+				        Table.TransformColumnTypes(
+				            #"NE Tratados",
+				            {
+				                {"DT_GERACAO", type date},
+				                {"HH_GERACAO", type time},
+				                {"AA_EXERCICIO", Int64.Type},
+				                {"TP_DESPESA", type text},
+				                {"CD_TP_ESFERA_PARTIDARIA", Int64.Type},
+				                {"DS_TP_ESFERA_PARTIDARIA", type text},
+				                {"SG_UF", type text},
+				                {"CD_MUNICIPIO", type text},
+				                {"NM_MUNICIPIO", type text},
+				                {"NR_ZONA", type text},
+				                {"NR_CNPJ_PRESTADOR_CONTA", type text},
+				                {"SG_PARTIDO", type text},
+				                {"NM_PARTIDO", type text},
+				                {"CD_TP_DOCUMENTO", type text},
+				                {"DS_TP_DOCUMENTO", type text},
+				                {"NR_DOCUMENTO", type text},
+				                {"AA_AIDF", type text},
+				                {"NR_AIDF", type text},
+				                {"CD_TP_FORNECEDOR", type text},
+				                {"DS_TP_FORNECEDOR", type text},
+				                {"NR_CPF_CNPJ_FORNECEDOR", type text},
+				                {"NM_FORNECEDOR", type text},
+				                {"DS_GASTO", type text},
+				                {"DT_PAGAMENTO", type date},
+				                {"VR_GASTO", Currency.Type},
+				                {"VR_PAGAMENTO", Currency.Type},
+				                {"VR_DOCUMENTO", Currency.Type},
+				                {"CD_FONTE_DESPESA", Int64.Type},
+				                {"DS_FONTE_DESPESA", type text},
+				                {"SQ_DESPESA", type text}
+				            },
+				            "pt-BR"
+				        ),
+				
+				    #"Fornecedor Simplificado" =
+				        Table.TransformColumns(
+				            #"Tipo Alterado",
+				            {
+				                {
+				                    "DS_TP_FORNECEDOR",
+				                    each
+				                        if _ = "PESSOA JURÍDICA" then "JURÍDICA"
+				                        else if _ = "PESSOA FÍSICA" then "FÍSICA"
+				                        else _,
+				                    type text
+				                }
+				            }
+				        )
+				in
+				    #"Fornecedor Simplificado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

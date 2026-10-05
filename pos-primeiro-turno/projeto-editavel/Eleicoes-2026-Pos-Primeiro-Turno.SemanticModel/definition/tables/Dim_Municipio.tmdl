@@ -1,0 +1,50 @@
+table Dim_Municipio
+	lineageTag: 1aaf4ac7-16fd-4be9-acfd-14d659d3cb48
+
+	column CH_MUNICIPIO
+		dataType: string
+		lineageTag: e1cfa6c5-b882-45c5-9808-a254b0429a04
+		summarizeBy: none
+		sourceColumn: CH_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: 2acba1da-399c-42d7-93c5-d4db0409ce28
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_MUNICIPIO
+		dataType: string
+		lineageTag: 1d533d35-c05e-4f6a-bca0-992e1c70bf02
+		summarizeBy: none
+		sourceColumn: CD_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_MUNICIPIO
+		dataType: string
+		lineageTag: 56c7f785-9e44-4784-a053-c6a29d9dab9f
+		summarizeBy: none
+		sourceColumn: NM_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Municipio = m
+		mode: import
+		source =
+				let
+				    Fonte = Eleitorado_Localidade,
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"DT_GERACAO", "CH_MUNICIPIO", "SG_UF", "CD_MUNICIPIO", "NM_MUNICIPIO"}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Outras Colunas Removidas",{"DT_GERACAO"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Colunas Removidas", {"CH_MUNICIPIO"})
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

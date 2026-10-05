@@ -1,0 +1,51 @@
+table 'Ranking Financeiro Pessoas'
+	lineageTag: 6a5b98e4-2910-491d-8b43-64a41766037d
+
+	column Nome
+		lineageTag: 9315c6f5-5ced-42b7-9c03-fbe6794f4395
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Nome]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		lineageTag: 96f62c29-109c-4354-b2d0-8bd138e4e52d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tipo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 73f2a378-d001-48e9-87d6-8ac5e569d715
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Valor]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition 'Ranking Financeiro Pessoas' = calculated
+		mode: import
+		source =
+				
+				UNION(
+				    SELECTCOLUMNS(
+				        receitas_candidatos,
+				        "Nome", receitas_candidatos[NM_DOADOR],
+				        "Tipo", "Doador",
+				        "Valor", receitas_candidatos[VR_RECEITA]
+				    ),
+				    SELECTCOLUMNS(
+				        despesas_contratadas,
+				        "Nome", despesas_contratadas[NM_FORNECEDOR],
+				        "Tipo", "Fornecedor",
+				        "Valor", despesas_contratadas[VR_DESPESA_CONTRATADA]
+				    )
+				)
+
+	annotation PBI_Id = 78e787f48ca041d88c8f027bfc5ad845
+

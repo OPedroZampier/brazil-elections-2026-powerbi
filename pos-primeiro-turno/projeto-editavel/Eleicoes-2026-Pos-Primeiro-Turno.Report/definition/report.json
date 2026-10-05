@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU07",
+      "reportVersionAtImport": {
+        "visual": "2.11.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "BoxandWhiskerByMAQ1823AD39DT234AB532063E128AX"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "brazil.states.topo",
+          "path": "Shapemaps/brazil.states.topo.json",
+          "type": "ShapeMap"
+        },
+        {
+          "name": "CY26SU07",
+          "path": "BaseThemes/CY26SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "24125420729752939553736.png",
+          "path": "24125420729752939553736.png",
+          "type": "Image"
+        },
+        {
+          "name": "Captura_de_tela_2026-08-18_1933673077397425055.png",
+          "path": "Captura_de_tela_2026-08-18_1933673077397425055.png",
+          "type": "Image"
+        },
+        {
+          "name": "Captura_de_tela_2026-08-19_2147530635261997539.png",
+          "path": "Captura_de_tela_2026-08-19_2147530635261997539.png",
+          "type": "Image"
+        },
+        {
+          "name": "template-dashboard-eleicoes-207127674227859923.png",
+          "path": "template-dashboard-eleicoes-207127674227859923.png",
+          "type": "Image"
+        },
+        {
+          "name": "v36177907506190752.png",
+          "path": "v36177907506190752.png",
+          "type": "Image"
+        },
+        {
+          "name": "v4503508505641346027.png",
+          "path": "v4503508505641346027.png",
+          "type": "Image"
+        },
+        {
+          "name": "07-eleitos-qp-segundo-turno.png",
+          "path": "07-eleitos-qp-segundo-turno.png",
+          "type": "Image"
+        },
+        {
+          "name": "08-votacao-primeiro-turno.png",
+          "path": "08-votacao-primeiro-turno.png",
+          "type": "Image"
+        },
+        {
+          "name": "09-participacao-eleitoral.png",
+          "path": "09-participacao-eleitoral.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

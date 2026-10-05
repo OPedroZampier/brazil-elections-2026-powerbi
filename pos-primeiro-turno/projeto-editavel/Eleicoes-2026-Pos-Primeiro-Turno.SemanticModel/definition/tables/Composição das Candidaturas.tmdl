@@ -1,0 +1,49 @@
+table 'Composição das Candidaturas'
+	lineageTag: 9c2ff41f-a082-45d6-9009-f94c2f38ba2d
+
+	column 'Composição das Candidaturas'
+		lineageTag: f7bf87e1-f303-4b31-9594-8df878a0ce19
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Composição das Candidaturas Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Composição das Candidaturas Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Composição das Candidaturas Campos'
+		isHidden
+		lineageTag: 4fcc270e-89c0-4aae-8550-6546d449090d
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Composição das Candidaturas Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Composição das Candidaturas Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: c5fcbf4e-44d2-42db-877e-0dac777dcb66
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Composição das Candidaturas' = calculated
+		mode: import
+		source =
+				{
+				    ("Gênero", NAMEOF('Candidatos'[DS_GENERO]), 0),
+				    ("Raça", NAMEOF('Candidatos'[DS_COR_RACA]), 1),
+				    ("Escolaridade", NAMEOF('Candidatos'[DS_GRAU_INSTRUCAO]), 2)
+				}
+
+	annotation PBI_Id = 5f4a0e49c44a4dc0b603610303939c48
+

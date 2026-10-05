@@ -1,0 +1,60 @@
+// Medidas da página 7. Tabela importada como CandidaturasPerfilResultado.
+// Usar o cadastro, não VotosCandidatos: votação presidencial repete candidatos por UF.
+
+Eleitos por QP =
+CALCULATE(
+    DISTINCTCOUNT(CandidaturasPerfilResultado[sq_candidato]),
+    CandidaturasPerfilResultado[resultado] = "ELEITO POR QP",
+    KEEPFILTERS(CandidaturasPerfilResultado[codigo_cargo] IN {6, 7, 8})
+)
+
+Eleitos por média =
+CALCULATE(
+    DISTINCTCOUNT(CandidaturasPerfilResultado[sq_candidato]),
+    CandidaturasPerfilResultado[resultado] = "ELEITO POR MÉDIA",
+    KEEPFILTERS(CandidaturasPerfilResultado[codigo_cargo] IN {6, 7, 8})
+)
+
+% Proporcionais por QP =
+DIVIDE([Eleitos por QP], [Eleitos por QP] + [Eleitos por média])
+
+Candidatos no segundo turno =
+CALCULATE(
+    DISTINCTCOUNT(CandidaturasPerfilResultado[sq_candidato]),
+    CandidaturasPerfilResultado[segundo_turno] = 1
+)
+
+// Medidas da página 9, fixadas em Presidente.
+// Um filtro UF vem da própria ResultadosAbrangencia[uf]. Sem filtro UF: somente BR.
+// Não usar BR + UFs na mesma soma. Para filtro compartilhado de dimensão UF,
+// adaptar HASONEVALUE/SELECTEDVALUE para a dimensão antes de instalar as medidas.
+
+Comparecimento presidencial =
+VAR UFSelecionada = IF(HASONEVALUE(ResultadosAbrangencia[uf]), SELECTEDVALUE(ResultadosAbrangencia[uf]), "BR")
+RETURN CALCULATE(SUM(ResultadosAbrangencia[comparecimento]), ResultadosAbrangencia[codigo_cargo] = 1, ResultadosAbrangencia[uf] = UFSelecionada)
+
+Abstenções presidenciais =
+VAR UFSelecionada = IF(HASONEVALUE(ResultadosAbrangencia[uf]), SELECTEDVALUE(ResultadosAbrangencia[uf]), "BR")
+RETURN CALCULATE(SUM(ResultadosAbrangencia[abstencoes]), ResultadosAbrangencia[codigo_cargo] = 1, ResultadosAbrangencia[uf] = UFSelecionada)
+
+% Abstenção presidencial =
+DIVIDE([Abstenções presidenciais], [Comparecimento presidencial] + [Abstenções presidenciais])
+
+Total de votos presidencial =
+VAR UFSelecionada = IF(HASONEVALUE(ResultadosAbrangencia[uf]), SELECTEDVALUE(ResultadosAbrangencia[uf]), "BR")
+RETURN CALCULATE(SUM(ResultadosAbrangencia[votos_total]), ResultadosAbrangencia[codigo_cargo] = 1, ResultadosAbrangencia[uf] = UFSelecionada)
+
+Brancos presidencial =
+VAR UFSelecionada = IF(HASONEVALUE(ResultadosAbrangencia[uf]), SELECTEDVALUE(ResultadosAbrangencia[uf]), "BR")
+RETURN CALCULATE(SUM(ResultadosAbrangencia[votos_brancos]), ResultadosAbrangencia[codigo_cargo] = 1, ResultadosAbrangencia[uf] = UFSelecionada)
+
+Nulos presidencial =
+VAR UFSelecionada = IF(HASONEVALUE(ResultadosAbrangencia[uf]), SELECTEDVALUE(ResultadosAbrangencia[uf]), "BR")
+RETURN CALCULATE(SUM(ResultadosAbrangencia[votos_nulos_total]), ResultadosAbrangencia[codigo_cargo] = 1, ResultadosAbrangencia[uf] = UFSelecionada)
+
+% Brancos presidencial = DIVIDE([Brancos presidencial], [Total de votos presidencial])
+% Nulos presidencial = DIVIDE([Nulos presidencial], [Total de votos presidencial])
+
+// Página 8: seleção única de cargo. Não instalar SUM simples em abrangências mistas.
+// As medidas de votação por candidato e suas interações serão definidas no modelo
+// após inspecionar as dimensões existentes. Este arquivo não é um modelo já instalado.

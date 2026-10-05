@@ -1,0 +1,105 @@
+table 'Analisar Patrimônio por'
+	lineageTag: 4dc2c558-9e94-46cc-b510-b25454d48441
+
+	measure 'Eleitores Perfil Municipal Dinamico' = ```
+			
+			VAR Escolha = MAX('Perfil Eleitorado'[Indice Perfil])
+			VAR DimEscolhida = IF(Escolha = 1, "ESCOLARIDADE", "FAIXA_ETARIA")
+			RETURN
+			CALCULATE(  
+			    SUM(eleitorado_municipio[QT_ELEITORES]),
+			    eleitorado_municipio[DIMENSAO] = DimEscolhida
+			)
+			```
+		formatString: 0
+		lineageTag: 54d2652e-3fda-436f-87a9-e4751e8cce10
+
+	measure 'Total Eleitores Municipal' = CALCULATE([Eleitores por Perfil], eleitorado_municipio[DIMENSAO] = "GENERO")
+		formatString: 0
+		lineageTag: 316125ac-412c-4797-8a64-fdb5483605bb
+
+	measure 'Cobertura Biometrica Municipal Cartao' = VAR Bio = CALCULATE(SUM(eleitorado_municipio[QT_ELEITORES_BIOMETRIA]), eleitorado_municipio[DIMENSAO] = "GENERO") RETURN FORMAT(Bio, "#,##0") & " | " & FORMAT(DIVIDE(Bio, [Total Eleitores Municipal], 0), "0.0%")
+		lineageTag: 4c06ac0f-8b12-4781-98a3-681db21e9c84
+
+	measure 'Deficiencia Municipal' = CALCULATE(SUM(eleitorado_municipio[QT_ELEITORES_DEFICIENCIA]), eleitorado_municipio[DIMENSAO] = "GENERO")
+		formatString: 0
+		lineageTag: 9015aa32-62ed-4b63-b8db-3a0ea67a43ac
+
+	measure 'Nome Social Municipal' = CALCULATE(SUM(eleitorado_municipio[QT_ELEITORES_NOME_SOCIAL]), eleitorado_municipio[DIMENSAO] = "GENERO")
+		formatString: 0
+		lineageTag: f182fd3d-724d-42dc-ae85-a26f5c3eb1a5
+
+	measure 'Percentual Eleitorado Nacional' = DIVIDE([Total Eleitores], CALCULATE([Total Eleitores], REMOVEFILTERS(Dim_UF)))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 571d0529-fa5e-42b1-9787-a4dbe6cbf48d
+
+	measure 'Quantil Eleitorado UF' = VAR Posicao = RANKX(ALLSELECTED(Dim_UF[UF_Mapa]), [Total Eleitores],, ASC, DENSE) VAR Quantidade = COUNTROWS(ALLSELECTED(Dim_UF[UF_Mapa])) RETURN MIN(5, MAX(1, CEILING(DIVIDE(Posicao * 5, Quantidade), 1)))
+		formatString: 0
+		lineageTag: 8b8f2c24-b8ff-4466-9cc3-573bce86502c
+
+	measure 'Medida 3'
+		lineageTag: 4617ffd1-50e9-4bc7-bdf5-653cf2836af2
+
+	measure 'Candidatos com Receita' = DISTINCTCOUNT(receitas_candidatos[CH_CANDIDATO])
+		formatString: 0
+		lineageTag: 9ec08192-7a8d-46c3-a241-7c85dbe3710e
+
+	measure 'Receita Média por Candidato' = DIVIDE(SUM(receitas_candidatos[VR_RECEITA]), [Candidatos com Receita], 0)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: c5241adc-a445-4d7f-9ab7-8ecf25158a00
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Doadores Únicos' = DISTINCTCOUNT(receitas_candidatos[NM_DOADOR])
+		formatString: 0
+		lineageTag: 81cf34f8-8a21-43de-a444-0207e70c5eb0
+
+	measure 'Fornecedores Únicos' = DISTINCTCOUNT(despesas_contratadas[NM_FORNECEDOR])
+		formatString: 0
+		lineageTag: a74d6cf7-e1dd-4fd1-9bbf-1c554052234a
+
+	column 'Analisar Patrimônio por'
+		lineageTag: 6d1a0530-bc85-420c-a663-66830522929e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Analisar Patrimônio por Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Analisar Patrimônio por Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Analisar Patrimônio por Campos'
+		isHidden
+		lineageTag: 47aaa021-d441-4b10-8a35-7c4af172185c
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Analisar Patrimônio por Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Analisar Patrimônio por Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 98f66190-10e9-4e79-b1d6-5435857ff915
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Analisar Patrimônio por' = calculated
+		mode: import
+		source =
+				{
+				    ("Faixa Patrimonial", NAMEOF('Candidatos'[Faixa Patrimonial]), 0),
+				    ("Partido", NAMEOF('Candidatos'[SG_PARTIDO]), 1)
+				}
+
+	annotation PBI_Id = c6d729c076b34730bce34eff41b79c69
+

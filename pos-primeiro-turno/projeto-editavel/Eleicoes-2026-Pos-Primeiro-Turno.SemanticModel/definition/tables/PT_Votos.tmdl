@@ -1,0 +1,122 @@
+table PT_Votos
+	lineageTag: 32d9ae2c-9190-4892-acdd-fa5f76fa0a10
+
+	measure 'Votos candidato' = IF(HASONEVALUE(PT_Cargo[cargo]), SUM(PT_Votos[votos]), BLANK())
+		formatString: #,0
+		lineageTag: 2f45670c-54c3-4414-9066-310c0357b82d
+
+	measure '% Votos no cargo' = DIVIDE([Votos candidato],[Votos válidos])
+		formatString: 0.00%
+		lineageTag: 6f2a253e-63c2-473f-8f5d-042c450e613b
+
+	measure 'Top 10 nome_urna' = IF(RANKX(ALLSELECTED(PT_Votos[nome_urna]), [Votos candidato],, DESC, DENSE) <= 10, [Votos candidato], BLANK())
+		formatString: #,0
+		lineageTag: d871df7d-9b3f-4d0f-9163-4e1faf314de3
+
+	column chave_resultado
+		dataType: string
+		lineageTag: 32c62c4a-095b-4078-bb8e-deeb44bb668f
+		summarizeBy: none
+		sourceColumn: chave_resultado
+
+	column eleicao
+		dataType: int64
+		lineageTag: 9c74b5e6-6cfc-462f-ab7f-e49488897c15
+		summarizeBy: none
+		sourceColumn: eleicao
+
+	column turno
+		dataType: int64
+		lineageTag: 87a01390-b127-4ed8-948c-8b99a9ea38a4
+		summarizeBy: none
+		sourceColumn: turno
+
+	column abrangencia
+		dataType: string
+		lineageTag: 0ba89ecb-9ff3-49b3-9576-05fb5759f6a2
+		summarizeBy: none
+		sourceColumn: abrangencia
+
+	column uf
+		dataType: string
+		lineageTag: cfff07b8-4599-40b8-943d-94be2856e54a
+		summarizeBy: none
+		sourceColumn: uf
+
+	column codigo_cargo
+		dataType: int64
+		lineageTag: 339d5cd4-f4f7-4e5e-9a23-9d51f09ec06b
+		summarizeBy: none
+		sourceColumn: codigo_cargo
+
+	column cargo
+		dataType: string
+		lineageTag: 885c6a2b-ee7d-4fb3-89ad-b8da88cf1bda
+		summarizeBy: none
+		sourceColumn: cargo
+
+	column sq_candidato
+		dataType: string
+		lineageTag: bb8609a9-698d-4cfc-afa7-c501fe12e788
+		summarizeBy: none
+		sourceColumn: sq_candidato
+
+	column numero_candidato
+		dataType: string
+		lineageTag: 4de03f0b-9fce-40ae-a7d7-77517ef6973a
+		summarizeBy: none
+		sourceColumn: numero_candidato
+
+	column nome
+		dataType: string
+		lineageTag: 2c5cd284-9a13-4164-af21-886ee779e780
+		summarizeBy: none
+		sourceColumn: nome
+
+	column nome_urna
+		dataType: string
+		lineageTag: ceb5daa1-b51b-4f94-b698-4d50163ace5f
+		summarizeBy: none
+		sourceColumn: nome_urna
+
+	column partido
+		dataType: string
+		lineageTag: 10a5aa94-5530-4c0e-8764-236c1314f0df
+		summarizeBy: none
+		sourceColumn: partido
+
+	column resultado
+		dataType: string
+		lineageTag: 41f9c89f-f571-4502-974a-4e7518323fbb
+		summarizeBy: none
+		sourceColumn: resultado
+
+	column destino_votos
+		dataType: string
+		lineageTag: b24d8550-0189-4f0a-90af-6a99d185589f
+		summarizeBy: none
+		sourceColumn: destino_votos
+
+	column votos
+		dataType: int64
+		lineageTag: 970a2b10-eaf1-4bb0-ab50-ac74a8e534f5
+		summarizeBy: none
+		sourceColumn: votos
+
+	column percentual_oficial
+		dataType: double
+		lineageTag: 3e78cf13-6c11-4cbb-913b-a6acd3d714c0
+		summarizeBy: none
+		sourceColumn: percentual_oficial
+
+	partition PT_Votos = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\eleicoes-2026-powerbi\pos-primeiro-turno\dados\votos_candidatos.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"chave_resultado", type text}, {"eleicao", Int64.Type}, {"turno", Int64.Type}, {"abrangencia", type text}, {"uf", type text}, {"codigo_cargo", Int64.Type}, {"cargo", type text}, {"sq_candidato", type text}, {"numero_candidato", type text}, {"nome", type text}, {"nome_urna", type text}, {"partido", type text}, {"resultado", type text}, {"destino_votos", type text}, {"votos", Int64.Type}, {"percentual_oficial", type number}}, "en-US"),
+				    Final = Table.SelectRows(Tipos, each [uf] <> "BR")
+				in
+				    Final
+

@@ -1,0 +1,452 @@
+table Despesas_Pagas_Eleitorais
+	lineageTag: c1eed9e2-2470-40e6-91cf-6d55f29d8e5f
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 21d00d0e-9612-40ff-9c51-12ed327fd7ef
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: 83c7e5f5-cc4b-4e96-b8ee-8275e911abed
+			defaultHierarchy: LocalDateTable_87f6980f-145b-4486-a1ea-3c093d8d35ea.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 7e015ae4-ad37-40c9-a609-eb800efae1ab
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column AA_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 159605ae-93ca-43fa-a4df-f89a24382cc2
+		summarizeBy: sum
+		sourceColumn: AA_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e6d3ad5-c562-4d91-ada0-f12ae80654c9
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: 1235e52c-bc7a-4990-8172-efdd53b14b3f
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f9e3e35-4fe0-41dc-98a5-79a6afd7669d
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: bc0e379b-49f3-4802-897c-8ed427f26114
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ELEICAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: be3e56ec-48dd-4778-b262-de2199f771e5
+		summarizeBy: none
+		sourceColumn: DT_ELEICAO
+
+		variation Variation
+			isDefault
+			relationship: 7aac42da-28e2-46bd-93d5-6b5e4f041ba7
+			defaultHierarchy: LocalDateTable_6b9c9910-c506-4e82-bb9a-93ddde70e325.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ST_TURNO
+		dataType: int64
+		formatString: 0
+		lineageTag: ad994c0a-f827-4ab4-be7b-29f0f9088621
+		summarizeBy: sum
+		sourceColumn: ST_TURNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_PRESTACAO_CONTAS
+		dataType: string
+		lineageTag: ad727382-e76c-40a3-b4c4-05984fb042f4
+		summarizeBy: none
+		sourceColumn: TP_PRESTACAO_CONTAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_PRESTACAO_CONTAS
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7ea10fea-4b32-450c-8562-0c812fc6dabd
+		summarizeBy: none
+		sourceColumn: DT_PRESTACAO_CONTAS
+
+		variation Variation
+			isDefault
+			relationship: 46830a5c-86ce-4b11-92c3-30d154fc16b0
+			defaultHierarchy: LocalDateTable_eaf208cf-055a-4971-8d08-4c3d6194f08f.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SQ_PRESTADOR_CONTAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 9806c91d-f4d6-41fd-9b24-5a0fe4971308
+		summarizeBy: sum
+		sourceColumn: SQ_PRESTADOR_CONTAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: 185b1fe0-6cc1-4c25-83df-22338d6047e3
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_TIPO_DOCUMENTO
+		dataType: string
+		lineageTag: aac6c1d5-ac20-4aeb-a0ad-132b31b94010
+		summarizeBy: none
+		sourceColumn: DS_TIPO_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_DOCUMENTO
+		dataType: string
+		lineageTag: 1b1f524a-65e8-42b4-8284-daf4cd9d7cb0
+		summarizeBy: none
+		sourceColumn: NR_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_FONTE_DESPESA
+		dataType: int64
+		formatString: 0
+		lineageTag: cc4bddd5-87d2-4fdf-977a-bc10ff88b038
+		summarizeBy: sum
+		sourceColumn: CD_FONTE_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_FONTE_DESPESA
+		dataType: string
+		lineageTag: 93cfcc84-1bf5-40f0-9bb5-f0361a67bbc7
+		summarizeBy: none
+		sourceColumn: DS_FONTE_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ORIGEM_DESPESA
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f6d0544-d47a-434f-b5c6-f95e87c0c8cc
+		summarizeBy: sum
+		sourceColumn: CD_ORIGEM_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ORIGEM_DESPESA
+		dataType: string
+		lineageTag: 47a3cc82-cd8a-4861-8016-cc5e6c66e9c7
+		summarizeBy: none
+		sourceColumn: DS_ORIGEM_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_NATUREZA_DESPESA
+		dataType: int64
+		formatString: 0
+		lineageTag: 59d47c47-1979-4994-a751-02db363f1ca3
+		summarizeBy: sum
+		sourceColumn: CD_NATUREZA_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_NATUREZA_DESPESA
+		dataType: string
+		lineageTag: 3c526962-27ec-4d17-aeb2-9f3b2a4b0dc3
+		summarizeBy: none
+		sourceColumn: DS_NATUREZA_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ESPECIE_RECURSO
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d3bc15f-90ec-492a-853c-e1b4ef86cb09
+		summarizeBy: sum
+		sourceColumn: CD_ESPECIE_RECURSO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ESPECIE_RECURSO
+		dataType: string
+		lineageTag: 5c763a2c-8933-416e-a97b-930aee4c697f
+		summarizeBy: none
+		sourceColumn: DS_ESPECIE_RECURSO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_DESPESA
+		dataType: string
+		lineageTag: 29eeff2e-0895-4393-9301-2cbbb4694652
+		summarizeBy: none
+		sourceColumn: SQ_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_PARCELAMENTO_DESPESA
+		dataType: string
+		lineageTag: 22c1e48b-96d4-4771-884d-4dc83d0c3eac
+		summarizeBy: none
+		sourceColumn: SQ_PARCELAMENTO_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_PAGTO_DESPESA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 23917fca-4e9f-438a-86aa-a96876edbaf8
+		summarizeBy: none
+		sourceColumn: DT_PAGTO_DESPESA
+
+		variation Variation
+			isDefault
+			relationship: 83c0fd4b-0326-4f97-8f91-a63508b58d29
+			defaultHierarchy: LocalDateTable_d47409f7-df29-473d-b5e7-61683045e3e5.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DS_DESPESA
+		dataType: string
+		lineageTag: fc43c463-0e28-4ecb-b5f2-93d3794edc2e
+		summarizeBy: none
+		sourceColumn: DS_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column VR_PAGTO_DESPESA
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: fe37fa2e-55a2-46e8-8a24-a518538eaa44
+		summarizeBy: sum
+		sourceColumn: VR_PAGTO_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column CH_PRESTADOR
+		dataType: string
+		lineageTag: b8bf9342-04d5-48ce-af3d-8bb10b02f3a6
+		summarizeBy: none
+		sourceColumn: CH_PRESTADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_CANDIDATO
+		dataType: string
+		lineageTag: 65778dc9-acf7-4f2e-9d47-1b7bea32a0c5
+		summarizeBy: none
+		sourceColumn: CH_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Despesas_Pagas_Eleitorais = m
+		mode: import
+		source =
+				let
+				    Fonte =
+				        Csv.Document(
+				            File.Contents(
+				                "D:\TSE2026\dados\contas_eleitorais\despesas_pagas_candidatos_2026_BRASIL.csv"
+				            ),
+				            [
+				                Delimiter = ";",
+				                Columns = 28,
+				                Encoding = 1252,
+				                QuoteStyle = QuoteStyle.Csv
+				            ]
+				        ),
+				
+				    #"Cabeçalhos Promovidos" =
+				        Table.PromoteHeaders(
+				            Fonte,
+				            [PromoteAllScalars = true]
+				        ),
+				
+				    #"Marcadores Tratados" =
+				        Table.TransformColumns(
+				            #"Cabeçalhos Promovidos",
+				            List.Transform(
+				                Table.ColumnNames(#"Cabeçalhos Promovidos"),
+				                (Coluna) =>
+				                    {
+				                        Coluna,
+				                        each
+				                            let
+				                                Valor =
+				                                    if _ is text
+				                                    then Text.Trim(_)
+				                                    else _
+				                            in
+				                                if List.Contains(
+				                                    {
+				                                        "#NULO",
+				                                        "#NULO#",
+				                                        "#NE",
+				                                        "#NE#",
+				                                        "NÃO DIVULGÁVEL",
+				                                        "-1",
+				                                        "-3",
+				                                        "-4",
+				                                        -1,
+				                                        -3,
+				                                        -4
+				                                    },
+				                                    Valor
+				                                )
+				                                then null
+				                                else _,
+				                        type any
+				                    }
+				            )
+				        ),
+				
+				    #"Tipos Alterados" =
+				        Table.TransformColumnTypes(
+				            #"Marcadores Tratados",
+				            {
+				                {"DT_GERACAO", type date},
+				                {"HH_GERACAO", type time},
+				                {"AA_ELEICAO", Int64.Type},
+				                {"CD_TIPO_ELEICAO", Int64.Type},
+				                {"NM_TIPO_ELEICAO", type text},
+				                {"CD_ELEICAO", Int64.Type},
+				                {"DS_ELEICAO", type text},
+				                {"DT_ELEICAO", type date},
+				                {"ST_TURNO", Int64.Type},
+				                {"TP_PRESTACAO_CONTAS", type text},
+				                {"DT_PRESTACAO_CONTAS", type date},
+				                {"SQ_PRESTADOR_CONTAS", Int64.Type},
+				                {"SG_UF", type text},
+				
+				                {"DS_TIPO_DOCUMENTO", type text},
+				                {"NR_DOCUMENTO", type text},
+				
+				                {"CD_FONTE_DESPESA", Int64.Type},
+				                {"DS_FONTE_DESPESA", type text},
+				                {"CD_ORIGEM_DESPESA", Int64.Type},
+				                {"DS_ORIGEM_DESPESA", type text},
+				                {"CD_NATUREZA_DESPESA", Int64.Type},
+				                {"DS_NATUREZA_DESPESA", type text},
+				                {"CD_ESPECIE_RECURSO", Int64.Type},
+				                {"DS_ESPECIE_RECURSO", type text},
+				
+				                {"SQ_DESPESA", type text},
+				                {"SQ_PARCELAMENTO_DESPESA", type text},
+				                {"DT_PAGTO_DESPESA", type date},
+				                {"DS_DESPESA", type text},
+				                {"VR_PAGTO_DESPESA", Currency.Type}
+				            },
+				            "pt-BR"
+				        ),
+				
+				    #"CH_PRESTADOR Adicionada" =
+				        Table.AddColumn(
+				            #"Tipos Alterados",
+				            "CH_PRESTADOR",
+				            each
+				                if [CD_ELEICAO] = null
+				                    or [SQ_PRESTADOR_CONTAS] = null
+				                then null
+				                else
+				                    Text.From([CD_ELEICAO])
+				                    & "|"
+				                    & Text.From([SQ_PRESTADOR_CONTAS]),
+				            type text
+				        ),
+				
+				    // Consulta a tabela anterior para descobrir
+				    // qual candidato pertence a cada prestador.
+				    MapaPrestadorCandidato =
+				        Table.Distinct(
+				            Table.SelectColumns(
+				                despesas_contratadas,
+				                {
+				                    "CH_PRESTADOR",
+				                    "CH_CANDIDATO"
+				                }
+				            )
+				        ),
+				
+				    #"Mesclagem com Mapa" =
+				        Table.NestedJoin(
+				            #"CH_PRESTADOR Adicionada",
+				            {"CH_PRESTADOR"},
+				            MapaPrestadorCandidato,
+				            {"CH_PRESTADOR"},
+				            "Mapa_Candidato",
+				            JoinKind.LeftOuter
+				        ),
+				
+				    #"CH_CANDIDATO Expandida" =
+				        Table.ExpandTableColumn(
+				            #"Mesclagem com Mapa",
+				            "Mapa_Candidato",
+				            {"CH_CANDIDATO"},
+				            {"CH_CANDIDATO"}
+				        ),
+				
+				    #"Tipos das Chaves Ajustados" =
+				        Table.TransformColumnTypes(
+				            #"CH_CANDIDATO Expandida",
+				            {
+				                {"CH_PRESTADOR", type text},
+				                {"CH_CANDIDATO", type text}
+				            }
+				        )
+				
+				in
+				    #"Tipos das Chaves Ajustados"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,181 @@
+table vagas
+	lineageTag: dbae90ec-a366-4542-ae92-62af117a1e9c
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8f35fcb9-0023-4e57-b060-3151e35a6239
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: 9864f852-b359-40eb-9b14-0bdb99eda0cf
+			defaultHierarchy: LocalDateTable_5c836dac-abee-4ff8-89af-6954ddfab075.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: ab6072a8-fb5a-41c4-b6c7-2b4b14ee0a5b
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column ANO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: f71b57f8-7947-44ed-a8c4-8172ecaa21df
+		summarizeBy: sum
+		sourceColumn: ANO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e55d0e5-4fce-449a-894e-d43444500a61
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: 6637c263-4750-4a18-a8b9-d43a984a6121
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: b6521a15-f89b-40a3-bfee-316424217209
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: c2111f7a-b522-4ae5-8360-ee11b4f228a1
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ELEICAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2ce56bb5-0667-47d5-bd8d-b1833ecf8d4c
+		summarizeBy: none
+		sourceColumn: DT_ELEICAO
+
+		variation Variation
+			isDefault
+			relationship: 06035950-08ff-43f7-abbd-a679b785792d
+			defaultHierarchy: LocalDateTable_1ed4455c-1106-4e04-bd9a-caa84c0e80dc.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DT_POSSE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cf08a4f1-b9e9-45a1-8ba0-2716cb9a3677
+		summarizeBy: none
+		sourceColumn: DT_POSSE
+
+		variation Variation
+			isDefault
+			relationship: 5ed58ca7-dd88-4e66-b632-bf2b3df5680f
+			defaultHierarchy: LocalDateTable_78ed1ffa-8c6b-47ee-93a4-7382eb459a00.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SG_UF
+		dataType: string
+		lineageTag: f74b6ab7-2075-4dac-b787-3082c680bb3b
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UE
+		dataType: string
+		lineageTag: 9836507f-95b2-46af-8f6c-e553eba01c84
+		summarizeBy: none
+		sourceColumn: SG_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_UE
+		dataType: string
+		lineageTag: 18a6b3f8-bed3-47d8-8711-570c602addde
+		summarizeBy: none
+		sourceColumn: NM_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CARGO
+		dataType: int64
+		formatString: 0
+		lineageTag: 40b40a85-19ab-469a-92fe-61de36343e29
+		summarizeBy: sum
+		sourceColumn: CD_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CARGO
+		dataType: string
+		lineageTag: 27f76536-b0b7-494b-a7a0-e9e84479b8e2
+		summarizeBy: none
+		sourceColumn: DS_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_VAGA
+		dataType: int64
+		formatString: 0
+		lineageTag: e69dbaec-f9a6-42ef-9b39-8abdec97ef02
+		summarizeBy: sum
+		sourceColumn: QT_VAGA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_DISPUTA
+		dataType: string
+		lineageTag: 2490d4c9-d3d0-4cd9-b91c-ce86c5c9a36e
+		summarizeBy: none
+		sourceColumn: CH_DISPUTA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vagas = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\TSE2026\dados\vagas\consulta_vagas_2026_BRASIL.csv"),[Delimiter=";", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.Csv]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"DT_GERACAO", type date}, {"HH_GERACAO", type time}, {"ANO_ELEICAO", Int64.Type}, {"CD_TIPO_ELEICAO", Int64.Type}, {"NM_TIPO_ELEICAO", type text}, {"CD_ELEICAO", Int64.Type}, {"DS_ELEICAO", type text}, {"DT_ELEICAO", type date}, {"DT_POSSE", type date}, {"SG_UF", type text}, {"SG_UE", type text}, {"NM_UE", type text}, {"CD_CARGO", Int64.Type}, {"DS_CARGO", type text}, {"QT_VAGA", Int64.Type}}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Tipo Alterado", "CH_DISPUTA", each Text.From([CD_ELEICAO]) & "|" &
+				Text.From([SG_UE]) & "|" &
+				Text.From([CD_CARGO])),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"CH_DISPUTA", type text}})
+				in
+				    #"Tipo Alterado1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

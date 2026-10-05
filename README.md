@@ -8,6 +8,10 @@ This interactive project transforms official open data from Brazil's Superior El
 
 ## Power BI file
 
+[Download the updated nine-page report](pos-primeiro-turno/Eleicoes-2026-Pos-Primeiro-Turno.pbix): the original six pages plus elected candidates, party-quota seats (QP), first-round voting and turnout. The new pages use a snapshot extracted on October 5, 2026; the original pages retain their previous data.
+
+The snapshot contains 1,287 proportional candidates classified as elected by QP and 285 by average. QP means *quociente partidário* (party quota), not QE (*quociente eleitoral*, electoral quota). This classification alone does not identify which candidate “pulled” another into office. See the [update guide](pos-primeiro-turno/LEIA-ME-FINAL.md) for scope, validation and refresh paths. The update includes PBIP sources and curated CSV tables; local Power BI caches are excluded.
+
 [Download or open the Power BI project (`2026tse_dados.pbix`)](2026tse_dados.pbix). Power BI Desktop is required to edit the report.
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)

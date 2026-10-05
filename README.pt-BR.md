@@ -8,6 +8,10 @@ Este projeto interativo transforma dados abertos oficiais do Tribunal Superior E
 
 ## Arquivo do Power BI
 
+[Baixe o relatório atualizado com nove páginas](pos-primeiro-turno/Eleicoes-2026-Pos-Primeiro-Turno.pbix): as seis páginas originais mais eleitos, QP, votação do primeiro turno e participação eleitoral. As páginas novas usam uma extração de 5 de outubro de 2026; as anteriores mantêm os dados que já estavam no arquivo.
+
+O retrato registra 1.287 eleitos proporcionais por QP e 285 por média. QP é quociente partidário, diferente de QE (quociente eleitoral). Essa classificação não identifica, sozinha, quem foi “puxado” por um candidato específico. Consulte o [guia da atualização](pos-primeiro-turno/LEIA-ME-FINAL.md) para escopo, validações e caminhos de atualização. A pasta inclui fontes PBIP e tabelas CSV tratadas; os caches locais do Power BI não são versionados.
+
 [Baixe ou abra o projeto do Power BI (`2026tse_dados.pbix`)](2026tse_dados.pbix). É necessário ter o Power BI Desktop para editar o relatório.
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)

@@ -1,0 +1,693 @@
+table _Medidas
+	lineageTag: f9839517-799d-4cff-abb8-0b10244b9fdb
+
+	measure 'Total Candidaturas' =
+			
+			DISTINCTCOUNT(Candidatos[CH_CANDIDATO])
+		formatString: 0
+		lineageTag: bc7f44f5-e500-4cfc-9a2e-55e0be6a479d
+
+		changedProperty = IsHidden
+
+	measure 'Aguardando Julgamento' =
+			
+			CALCULATE(
+			    [Total Candidaturas],
+			    Candidatos_Complementar[DS_SITUACAO_JULGAMENTO] = "AGUARDANDO JULGAMENTO"
+			)
+		formatString: 0
+		lineageTag: 535a2bb7-3577-4941-ac89-33c977258dd2
+
+	measure 'Candidaturas Deferidas' =
+			
+			CALCULATE(
+			    [Total Candidaturas],
+			    Candidatos_Complementar[DS_SITUACAO_JULGAMENTO] = "DEFERIDO"
+			)
+		formatString: 0
+		lineageTag: 6e23948c-572c-47b7-9f09-1ee09ec29930
+
+	measure 'Candidaturas na Urna' =
+			
+			CALCULATE(
+			    [Total Candidaturas],
+			    Candidatos_Complementar[ST_CANDIDATO_INSERIDO_URNA] = "SIM"
+			)
+		formatString: 0
+		lineageTag: e8c1d3ff-403e-4ab3-91c0-ecbfdffd06cf
+
+	measure 'Percentual Deferidas' =
+			
+			DIVIDE(
+			    [Candidaturas Deferidas],
+			    [Total Candidaturas],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9e3b6711-516a-4755-b57f-cb94a21a3578
+
+	measure 'Total Vagas' =
+			
+			SUM(vagas[QT_VAGA])
+		formatString: 0
+		lineageTag: 22833ae3-b8f8-4801-97e5-a62e10fd490d
+
+	measure 'Candidaturas por Vaga' =
+			
+			DIVIDE(
+			    [Total Candidaturas],
+			    [Total Vagas],
+			    0
+			)
+		formatString: 0.00
+		lineageTag: eb6fe431-65be-40f9-a44b-93140791e4bd
+
+	measure 'Linhas de Bens' =
+			
+			COUNTROWS(bens)
+		formatString: 0
+		lineageTag: 815ea800-bc18-498d-a5e5-0a87d9b6c17f
+
+	measure 'Patrimônio Declarado' =
+			
+			SUM(bens[VR_BEM_CANDIDATO])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 63f8f1c2-d1f7-4915-a7a8-d20bc20a4045
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Candidatos com Bens' =
+			
+			DISTINCTCOUNT(bens[CH_CANDIDATO])
+		formatString: 0
+		lineageTag: aae61271-6363-4ee6-abd4-9742899e3c0d
+
+	measure 'Candidatos sem Registro de Bens' =
+			
+			[Total Candidaturas] - [Candidatos com Bens]
+		formatString: 0
+		lineageTag: b010fb96-cc9f-4776-969f-06c79ed29a1d
+
+	measure 'Percentual com Bens' =
+			
+			DIVIDE(
+			    [Candidatos com Bens],
+			    [Total Candidaturas],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6fca3fc1-c07d-4d43-92f2-4e782952e929
+
+	measure Dim_UF =
+			
+			DISTINCT(
+			    UNION(
+			        SELECTCOLUMNS(
+			            Dim_Municipio,
+			            "SG_UF", Dim_Municipio[SG_UF]
+			        ),
+			        SELECTCOLUMNS(
+			            vagas,
+			            "SG_UF", vagas[SG_UF]
+			        ),
+			        SELECTCOLUMNS(
+			            eleitorado_cruzado,
+			            "SG_UF", eleitorado_cruzado[SG_UF]
+			        )
+			    )
+			)
+		lineageTag: b8133175-6c2f-4060-ad00-205244e88901
+
+	measure 'Receitas Partidárias' =
+			
+			SUM(Receitas_Partidarias[VR_RECEITA])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: ede883c5-3695-4d4a-a506-051c667877fc
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Gastos Partidários' =
+			
+			SUM(Despesas_Partidarias[VR_GASTO])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: c9afddbb-a4bb-4968-9fb1-c579c0ae52cb
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Despesas Pagas' =
+			
+			SUM(Despesas_Partidarias[VR_PAGAMENTO])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 9f317698-e98d-449c-92f4-d8c99c0c9e42
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Percentual Pago' =
+			
+			DIVIDE(
+			    [Despesas Pagas],
+			    [Gastos Partidários],
+			    0
+			)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 8d2412b3-e2cc-45d4-ae65-f300eba27099
+
+	measure 'Lançamentos de Receita' =
+			
+			COUNTROWS(Receitas_Partidarias)
+		formatString: 0
+		lineageTag: 8d668bc8-37b6-44c7-b302-2d5297da7b9d
+
+	measure 'Lançamentos de Despesa' =
+			
+			COUNTROWS(Despesas_Partidarias)
+		formatString: 0
+		lineageTag: 629f58fa-3443-4a21-b6f9-c0bf8391d21d
+
+	measure 'Despesas a Pagar' =
+			
+			[Gastos Partidários] - [Despesas Pagas]
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 65c35087-dbb0-4eeb-bc03-79f5c7f6746c
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Total Eleitores' =
+			
+			SUM(Eleitorado_Localidade[QT_ELEITORES])
+		formatString: 0
+		lineageTag: c94db664-be6f-4506-877a-18eb5f3f07af
+
+	measure 'Eleitores com Biometria' =
+			
+			SUM(Eleitorado_Localidade[QT_ELEITORES_BIOMETRIA])
+		formatString: 0
+		lineageTag: 976a1775-0811-4bc5-881c-b09d981f0e0a
+
+	measure 'Eleitores com Deficiência' =
+			
+			SUM(Eleitorado_Localidade[QT_ELEITORES_DEFICIENCIA])
+		formatString: 0
+		lineageTag: aacf51c8-d3e3-4848-aa61-43672f1c7faf
+
+	measure 'Eleitores com Nome Social' =
+			
+			SUM(Eleitorado_Localidade[QT_ELEITORES_NOME_SOCIAL])
+		formatString: 0
+		lineageTag: ae1b91ea-0dd3-4ab4-8af4-be38ed2ff16a
+
+	measure 'Eleitores por Perfil' =
+			
+			SUM(eleitorado_municipio[QT_ELEITORES])
+		formatString: 0
+		lineageTag: 6f556956-4000-4303-8214-3620c0871e08
+
+	measure 'Percentual do Perfil' =
+			
+			DIVIDE(
+			    [Eleitores por Perfil],
+			    CALCULATE(
+			        [Eleitores por Perfil],
+			        REMOVEFILTERS(
+			            eleitorado_municipio[CD_CATEGORIA],
+			            eleitorado_municipio[DS_CATEGORIA]
+			        )
+			    ),
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a280009f-eda1-4813-9cc8-214a442f77f6
+
+	measure 'Eleitores Analfabetos' =
+			
+			CALCULATE(
+			    [Eleitores por Perfil],
+			    eleitorado_municipio[DIMENSAO] = "ESCOLARIDADE",
+			    eleitorado_municipio[DS_CATEGORIA] = "ANALFABETO"
+			)
+		formatString: 0
+		lineageTag: ca809c45-7026-467f-84b1-8e60e5743397
+
+	measure 'Percentual de Analfabetos' =
+			
+			DIVIDE(
+			    [Eleitores Analfabetos],
+			    [Total Eleitores],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9f7b8d58-218e-4777-a3fe-f03cc41028b2
+
+	measure 'Eleitores no Perfil Cruzado' =
+			
+			SUM(eleitorado_cruzado[QT_ELEITORES])
+		formatString: 0
+		lineageTag: 6bc3db5a-df32-4b08-9e5c-c60dad2d4e15
+
+	measure 'Percentual por Status' =
+			
+			DIVIDE(
+			    [Total Candidaturas],
+			    CALCULATE(
+			        [Total Candidaturas],
+			        REMOVEFILTERS(Candidatos_Complementar[Status Julgamento])
+			    ),
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 2a23b40d-fdfb-492e-a2af-6c97d60e771c
+
+	measure 'Percentual Aguardando' =
+			
+			DIVIDE(
+			    [Aguardando Julgamento],
+			    [Total Candidaturas],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 72167793-70a8-4db8-817a-c71093b3d98a
+
+	measure 'Total Candidaturas Cartão' = FORMAT([Total Candidaturas], "#,##0")
+		lineageTag: bc2f21ef-3c5b-46bb-9f4b-961caa4da4cf
+
+	measure 'Total Vagas Cartão' = FORMAT([Total Vagas], "#,##0")
+		lineageTag: 48b6e00b-7086-4b07-84d4-572ff5abc159
+
+	measure 'Total Eleitores Cartão' = FORMAT(DIVIDE([Total Eleitores], 1000000), "0.00") & " Mi"
+		lineageTag: 3c44d667-4627-4006-8a7f-b5995f5a5a2c
+
+	measure 'Eleitores - Raça Cor' =
+			
+			CALCULATE(
+			    SUM(eleitorado_municipio[QT_ELEITORES]),
+			    KEEPFILTERS(
+			        eleitorado_municipio[DIMENSAO] = "RACA_COR"
+			    )
+			)
+		formatString: 0
+		lineageTag: 1f88ba39-f9e6-4817-bd0b-4c14ee91df69
+
+	measure 'Total Eleitores Cruzado' =
+			
+			SUM(eleitorado_cruzado[QT_ELEITORES])
+		formatString: 0
+		lineageTag: 62aff0e0-0fdc-432d-87fb-4f944687309e
+
+	measure 'Biometria Cruzado' =
+			
+			SUM(eleitorado_cruzado[QT_ELEITORES_BIOMETRIA])
+		formatString: 0
+		lineageTag: b5ac266c-93a2-47d1-a578-71d81e577418
+
+	measure 'Cobertura Biométrica Cruzado' =
+			
+			DIVIDE(
+			    [Biometria Cruzado],
+			    [Total Eleitores Cruzado],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ac366768-a83b-4e4d-affe-4b29975983ec
+
+	measure 'Biometria Cruzado Cartão' =
+			
+			FORMAT(
+			    [Biometria Cruzado],
+			    "#,##0"
+			)
+			& " | "
+			& FORMAT(
+			    [Cobertura Biométrica Cruzado],
+			    "0.00%"
+			)
+		lineageTag: 22a98e96-ca61-47d9-b121-a003e18c461b
+
+	measure 'Deficiência Cruzado' =
+			
+			SUM(eleitorado_cruzado[QT_ELEITORES_DEFICIENCIA])
+		formatString: 0
+		lineageTag: c0b6a6ee-f73c-44df-a9f6-fb08e561a47a
+
+	measure 'Deficiência Cruzado Cartão' =
+			
+			FORMAT(
+			    [Deficiência Cruzado],
+			    "#,##0"
+			)
+		lineageTag: 797bab2a-6ad7-4b2c-9864-8099ee4143e5
+
+	measure 'Nome Social Cruzado' =
+			
+			SUM(eleitorado_cruzado[QT_ELEITORES_NOME_SOCIAL])
+		formatString: 0
+		lineageTag: a6854664-78f9-4265-ab62-06a4bbd8f4e4
+
+	measure 'Nome Social Cruzado Cartão' =
+			
+			FORMAT(
+			    [Nome Social Cruzado],
+			    "#,##0"
+			)
+		lineageTag: a4097c98-f47e-4eb8-b61f-3977a98132f2
+
+	measure 'Idade Média na Posse' =
+			
+			CALCULATE(
+			    AVERAGE(Candidatos_Complementar[NR_IDADE_DATA_POSSE]),
+			    Candidatos_Complementar[NR_IDADE_DATA_POSSE] >= 18,
+			    Candidatos_Complementar[NR_IDADE_DATA_POSSE] <= 100
+			)
+		lineageTag: f9717d0d-f86d-4f5f-ada2-2c81c19faa79
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Percentual de Reeleição' =
+			
+			VAR CandidatosReeleicao =
+			    CALCULATE(
+			        DISTINCTCOUNT(Candidatos_Complementar[CH_CANDIDATO]),
+			        Candidatos_Complementar[ST_REELEICAO] = "S"
+			    )
+			VAR CandidatosInformados =
+			    CALCULATE(
+			        DISTINCTCOUNT(Candidatos_Complementar[CH_CANDIDATO]),
+			        Candidatos_Complementar[ST_REELEICAO] IN { "S", "N" }
+			    )
+			RETURN
+			    DIVIDE(
+			        CandidatosReeleicao,
+			        CandidatosInformados,
+			        0
+			    )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: cc3eb116-521b-4b0e-9733-9a21325b6dff
+
+	measure 'Candidaturas Quilombolas' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Candidatos_Complementar[CH_CANDIDATO]),
+			    Candidatos_Complementar[ST_QUILOMBOLA] = "S"
+			)
+		formatString: 0
+		lineageTag: 45bdfdb7-3a04-48b3-a290-1831d94902b6
+
+	measure 'Percentual com Presença Digital' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        DISTINCTCOUNT(redes_sociais[CH_CANDIDATO]),
+			        redes_sociais[DS_URL] <> BLANK(),
+			        redes_sociais[DS_URL] <> ""
+			    ),
+			    [Total Candidaturas],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4e205540-ccee-4a7c-bb5f-a2c6d1177806
+
+	measure 'Candidaturas por Idade' =
+			
+			DISTINCTCOUNT(Candidatos_Complementar[CH_CANDIDATO])
+		formatString: 0
+		lineageTag: 10f549a4-a0cd-492d-916e-05180912b4b5
+
+	measure 'Ranking Ocupação' =
+			
+			VAR OcupacaoAtual =
+			    SELECTEDVALUE(Candidatos[DS_OCUPACAO])
+			RETURN
+			IF(
+			    ISBLANK(OcupacaoAtual)
+			        || OcupacaoAtual IN {
+			            "OUTROS",
+			            "NÃO INFORMADO",
+			            "#NE",
+			            "#NULO"
+			        },
+			    BLANK(),
+			    RANKX(
+			        FILTER(
+			            ALLSELECTED(Candidatos[DS_OCUPACAO]),
+			            NOT (
+			                Candidatos[DS_OCUPACAO] IN {
+			                    "OUTROS",
+			                    "NÃO INFORMADO",
+			                    "#NE",
+			                    "#NULO"
+			                }
+			            )
+			        ),
+			        [Total Candidaturas],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			)
+		formatString: 0
+		lineageTag: ba475f97-17b7-4019-88fe-f124fc7cadc5
+
+	measure 'Idade na Posse - Consulta' =
+			
+			VAR Idade =
+			    MAX(Candidatos_Complementar[NR_IDADE_DATA_POSSE])
+			RETURN
+			IF(
+			    Idade >= 18 && Idade <= 100,
+			    Idade,
+			    BLANK()
+			)
+		formatString: 0
+		lineageTag: 00bc1ce8-d2b8-4171-8626-7cf6de95d47b
+
+	measure 'Patrimônio Total' =
+			
+			SUM(bens[VR_BEM_CANDIDATO])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 634b98ea-b0f4-4141-a540-8b8779bb79c3
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Patrimônio Mediano' =
+			
+			MEDIANX(
+			    VALUES(Candidatos[CH_CANDIDATO]),
+			    CALCULATE(SUM(bens[VR_BEM_CANDIDATO]))
+			)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: a48b8fb8-e6b8-4107-bde6-67c069f9b657
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Coluna
+		lineageTag: e9424186-06db-4a5c-b0d3-9781fdf142f5
+
+	measure Medida
+		lineageTag: 598877c6-34a7-456d-bc4b-874dd90c2828
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'Candidatos sem Bens Declarados' =
+			
+			[Total Candidaturas] - [Candidatos com Bens]
+		formatString: 0
+		lineageTag: b354adbc-f31d-43d0-80f4-41cce736d4b7
+
+	measure 'Candidatos com Bens - Cartão' =
+			
+			FORMAT([Candidatos com Bens], "#,##0")
+			    & "  |  "
+			    & FORMAT([Percentual com Bens], "0,0%")
+		lineageTag: 7c8f1bc7-f970-4e94-b93c-ca95ca69ebbf
+
+	measure 'Quantidade de Bens' =
+			
+			COUNTROWS(bens)
+		formatString: 0
+		lineageTag: 613a0f15-516e-4462-a85c-6278c8502d41
+
+	measure 'Resumo dos Bens - Cartão' =
+			
+			FORMAT([Quantidade de Bens], "#,##0")
+			    & " bens  •  "
+			    & FORMAT([Tipos de Bens Distintos], "#,##0")
+			    & " tipos"
+		lineageTag: 985f5375-651a-4f3c-9f3d-92d5f6bb7d5d
+
+	measure 'Tipos de Bens Distintos' =
+			
+			DISTINCTCOUNT(bens[DS_TIPO_BEM_CANDIDATO])
+		formatString: 0
+		lineageTag: 0dc85a93-3657-4fdb-acf0-e6b33bc52e19
+
+	measure 'Valor Médio por Bem' =
+			
+			DIVIDE(
+			    [Patrimônio Total],
+			    [Quantidade de Bens],
+			    0
+			)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 2f098300-ea40-4816-8882-8a34d12b4a68
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Percentual da Receita' =
+			
+			DIVIDE(
+			    [Receitas Partidárias],
+			    CALCULATE(
+			        [Receitas Partidárias],
+			        REMOVEFILTERS(Receitas_Partidarias[DS_TP_FONTE_RECURSO])
+			    ),
+			    0
+			)
+		lineageTag: 51f490fe-a4ab-4ff8-b8da-fc0af8b2e09c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Medida 2'
+		lineageTag: 5d8c81bc-bc43-4e5a-8b08-f47cb45653c3
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'Eleitorado Cruzado Cartão' =
+			
+			FORMAT(
+			    [Total Eleitores Cruzado],
+			    "#,##0"
+			)
+		lineageTag: 0fab191a-1b4c-495a-a9c1-5ec6dd294f30
+
+	measure 'Receitas Eleitorais' =
+			
+			SUM ( receitas_candidatos[VR_RECEITA] )
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 60a43441-86fe-4f59-98f6-25b2bba8964f
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Despesas Eleitorais' =
+			
+			SUM ( despesas_contratadas[VR_DESPESA_CONTRATADA] )
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: d13b8f23-80af-4675-93b7-ec3d421645c5
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Despesas Pagas Eleitorais' =
+			
+			SUM ( Despesas_Pagas_Eleitorais[VR_PAGTO_DESPESA] )
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: b56eafe6-6b0b-4339-a581-0bdc65e12634
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Limite de Gastos Eleitorais' =
+			
+			SUMX (
+			    VALUES ( Candidatos[CH_CANDIDATO] ),
+			    CALCULATE (
+			        MAX (
+			            Candidatos_Complementar[VR_DESPESA_MAX_CAMPANHA]
+			        )
+			    )
+			)
+		formatString: 0
+		lineageTag: 1304ba73-1044-430b-9a2f-68d8f82197b5
+
+	measure 'Percentual do Limite Utilizado' =
+			
+			DIVIDE (
+			    [Despesas Eleitorais],
+			    [Limite de Gastos Eleitorais],
+			    0
+			)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: b5c3f7d3-e03e-417d-ad47-f34f8e7c7578
+
+	measure 'Exibir Detalhamento Patrimonial' =
+			
+			IF(
+			    HASONEVALUE(Candidatos[CH_CANDIDATO]),
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 92262278-2b75-4636-bd63-6a417bb6d6a9
+
+	measure 'FEFC Recebido' =
+			
+			CALCULATE(
+			    [Receitas Eleitorais],
+			    KEEPFILTERS(
+			        receitas_candidatos[DS_FONTE_RECEITA] = "FUNDO ESPECIAL"
+			    )
+			)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 357b7f22-0694-472c-9aaf-60120fcac080
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Fundo Partidário Eleitoral' =
+			
+			CALCULATE(
+			    [Receitas Eleitorais],
+			    KEEPFILTERS(
+			        receitas_candidatos[DS_FONTE_RECEITA] = "FUNDO PARTIDARIO"
+			    )
+			)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 73757040-6995-4664-a3d0-bb5e23efb92d
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Ranking Financeiro Pessoas' =
+			
+			UNION(
+			    SELECTCOLUMNS(
+			        receitas_candidatos,
+			        "Nome", receitas_candidatos[NM_DOADOR],
+			        "Tipo", "Doador",
+			        "Valor", receitas_candidatos[VR_RECEITA]
+			    ),
+			    SELECTCOLUMNS(
+			        despesas_contratadas,
+			        "Nome", despesas_contratadas[NM_FORNECEDOR],
+			        "Tipo", "Fornecedor",
+			        "Valor", despesas_contratadas[VR_DESPESA_CONTRATADA]
+			    )
+			)
+		lineageTag: aa694e9d-672d-4e3f-9846-04f065675f11
+
+	measure 'Receita Flavio' =
+			
+			CALCULATE(
+			    [Receitas Eleitorais],
+			    CONTAINSSTRING(
+			        UPPER(Candidatos[NM_URNA_CANDIDATO]),
+			        "FLAVIO"
+			    )
+			)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: d4e0dfb4-4f4a-46b4-a2ff-cd50fd37282d
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Controle
+		isHidden
+		formatString: 0
+		lineageTag: aa48ebdb-3280-484b-91da-68b67db30f0e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Controle]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Medidas = calculated
+		mode: import
+		source =
+				
+				ROW("Controle", 1)
+
+	annotation PBI_Id = cb126839f6874dd18ad0691fb7a4f236
+

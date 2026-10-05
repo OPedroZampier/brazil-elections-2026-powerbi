@@ -1,0 +1,271 @@
+relationship 0eb780ea-2883-47fb-85aa-9f852644f80d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Candidatos.DT_GERACAO
+	toColumn: LocalDateTable_0ac4aba9-9053-4ebb-ae58-d3b156b5703a.Date
+
+relationship e81460b7-13bb-4f28-bab2-f0848676853a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Candidatos.DT_ELEICAO
+	toColumn: LocalDateTable_9d14eb68-9a4f-4cdc-8b50-cb8c6430e1d3.Date
+
+relationship 33cc04dd-f10f-4c45-b118-c8aa1e9cb065
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Candidatos.DT_NASCIMENTO
+	toColumn: LocalDateTable_58db9d35-7b63-4cb6-bbb2-67e5f480049a.Date
+
+relationship 787b155a-7402-4a79-b9f2-86bdbb8d1dc4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Candidatos_Complementar.DT_GERACAO
+	toColumn: LocalDateTable_4834862a-22b8-4292-87d9-f3a1c733752b.Date
+
+relationship 64aba309-e834-4c8f-9458-efadd136c972
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Candidatos_Complementar.DT_ACEITE_CANDIDATURA
+	toColumn: LocalDateTable_866c9084-34de-41dd-97b3-53f56f284a9f.Date
+
+relationship bd092f2d-771e-b661-b07b-3c9ea9cf4473
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Candidatos_Complementar.CH_CANDIDATO
+	toColumn: Candidatos.CH_CANDIDATO
+
+relationship 7c4276d2-892f-4967-b5f9-0b12406a72bc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bens.DT_GERACAO
+	toColumn: LocalDateTable_0d809fe7-34cd-440e-a3f4-087d99cbbcea.Date
+
+relationship b7881bdc-4841-4a24-83d7-b8103539c22b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bens.DT_ELEICAO
+	toColumn: LocalDateTable_8197cd08-38f9-487c-8bdd-4ae9e16bad49.Date
+
+relationship ba6c0c37-de78-491f-a303-94b698b47e40
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bens.DT_ULT_ATUAL_BEM_CANDIDATO
+	toColumn: LocalDateTable_b0f21d63-5036-4dea-9630-4c3a72d95795.Date
+
+relationship aa441c95-c057-3bef-7f2e-44c6f4c4f843
+	fromColumn: bens.CH_CANDIDATO
+	toColumn: Candidatos.CH_CANDIDATO
+
+relationship b64f94a7-392b-41c3-a965-52a7e62cd052
+	joinOnDateBehavior: datePartOnly
+	fromColumn: redes_sociais.DT_GERACAO
+	toColumn: LocalDateTable_db1f6ca3-0194-4544-bb10-031420c96931.Date
+
+relationship f508a12e-4346-22e0-7b12-f57199b26dde
+	fromColumn: redes_sociais.CH_CANDIDATO
+	toColumn: Candidatos.CH_CANDIDATO
+
+relationship 9864f852-b359-40eb-9b14-0bdb99eda0cf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vagas.DT_GERACAO
+	toColumn: LocalDateTable_5c836dac-abee-4ff8-89af-6954ddfab075.Date
+
+relationship 06035950-08ff-43f7-abbd-a679b785792d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vagas.DT_ELEICAO
+	toColumn: LocalDateTable_1ed4455c-1106-4e04-bd9a-caa84c0e80dc.Date
+
+relationship 5ed58ca7-dd88-4e66-b632-bf2b3df5680f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vagas.DT_POSSE
+	toColumn: LocalDateTable_78ed1ffa-8c6b-47ee-93a4-7382eb459a00.Date
+
+relationship 9f8ee714-fcc3-9979-673d-4e124a8565d6
+	fromColumn: Candidatos.CH_DISPUTA
+	toColumn: vagas.CH_DISPUTA
+
+relationship 61ed36bb-6fe9-46a3-b87e-f017df29c0aa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Coligacoes.DT_GERACAO
+	toColumn: LocalDateTable_3311570e-960d-4401-9055-470901a9c20e.Date
+
+relationship 7dac0811-e410-44e7-8137-6182f625505f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Coligacoes.DT_ELEICAO
+	toColumn: LocalDateTable_0b63b240-7b72-4ab2-b6b8-17e8a0575228.Date
+
+relationship AutoDetected_bb9b886f-968b-4e9c-8332-96e88546037d
+	fromColumn: Coligacoes.CH_DISPUTA
+	toColumn: vagas.CH_DISPUTA
+
+relationship 08ea20fc-aa29-42fc-a973-bad2fcb9d575
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Eleitorado_Localidade.DT_GERACAO
+	toColumn: LocalDateTable_87e40555-b895-409b-92f2-f9ff3eefadde.Date
+
+relationship fd3c44d7-dc58-4527-98f8-31e3b82eec64
+	joinOnDateBehavior: datePartOnly
+	fromColumn: eleitorado_municipio.DT_GERACAO
+	toColumn: LocalDateTable_8aeec30e-a40b-46dd-b16a-7bd53c488204.Date
+
+relationship 7e73357d-84c3-43cd-904f-25c480beadb4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: eleitorado_cruzado.DT_GERACAO
+	toColumn: LocalDateTable_3e772eb3-5135-4865-a556-e068b8abf7a7.Date
+
+relationship 94cc3586-97f1-ea3e-8024-410bcd2f4940
+	fromColumn: Eleitorado_Localidade.CH_MUNICIPIO
+	toColumn: Dim_Municipio.CH_MUNICIPIO
+
+relationship ca44db95-44b8-264b-b7db-aa025f7e177e
+	fromColumn: eleitorado_municipio.CH_MUNICIPIO
+	toColumn: Dim_Municipio.CH_MUNICIPIO
+
+relationship cbcea869-b500-4ce1-4b69-50a9b9fa4a21
+	fromColumn: Dim_Municipio.SG_UF
+	toColumn: Dim_UF.SG_UF
+
+relationship b1c3ca1f-d168-f228-d029-2a5ed2d299bb
+	fromColumn: vagas.SG_UF
+	toColumn: Dim_UF.SG_UF
+
+relationship dd432cdf-a1b2-6370-78c3-e67c83d5da1f
+	fromColumn: eleitorado_cruzado.SG_UF
+	toColumn: Dim_UF.SG_UF
+
+relationship 942712b7-4a4b-4b4a-9b9b-0ee6417a1d63
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Receitas_Partidarias.DT_GERACAO
+	toColumn: LocalDateTable_79c64b32-e53b-4e7a-a780-c94c9a7c621f.Date
+
+relationship f3bd4f65-dc23-4871-a492-e40a77362b5e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Receitas_Partidarias.DT_RECEITA
+	toColumn: LocalDateTable_13711596-1dac-47ee-9127-02fe150788fb.Date
+
+relationship 7b40d535-9bce-4053-b93f-e3f625fd8edd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Despesas_Partidarias.DT_GERACAO
+	toColumn: LocalDateTable_f38e21c7-6bbd-4cf2-bf1a-ee337857e362.Date
+
+relationship 61432800-f368-406d-bb4a-7f355635018a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Despesas_Partidarias.DT_PAGAMENTO
+	toColumn: LocalDateTable_0b27216b-406c-4b9a-8281-d39ef7489af0.Date
+
+relationship b4a6d530-ba99-6717-13c7-04c3ee8d9a30
+	fromColumn: Candidatos.SG_PARTIDO
+	toColumn: Dim_Partido.SG_PARTIDO
+
+relationship d5627243-5bc7-7c47-72ec-8bd82b9e2050
+	fromColumn: Coligacoes.SG_PARTIDO
+	toColumn: Dim_Partido.SG_PARTIDO
+
+relationship cc1e3ba2-9189-e6e1-2354-9d0b43c2939c
+	fromColumn: Receitas_Partidarias.SG_PARTIDO
+	toColumn: Dim_Partido.SG_PARTIDO
+
+relationship a431c7a0-234f-4678-bc68-eef38590bbc9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: receitas_candidatos.DT_GERACAO
+	toColumn: LocalDateTable_af1d3427-82cc-4835-821a-3ec920eb8862.Date
+
+relationship 4d343d4a-c761-4b77-89ec-75edbf0b46a9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: receitas_candidatos.DT_ELEICAO
+	toColumn: LocalDateTable_5a8394bd-f520-45bb-a7e6-7928dccf2de4.Date
+
+relationship dd459324-0aa4-4e55-b65b-288ae511d665
+	joinOnDateBehavior: datePartOnly
+	fromColumn: receitas_candidatos.DT_PRESTACAO_CONTAS
+	toColumn: LocalDateTable_81308bcc-0ec5-4f74-a87d-9af7640416e9.Date
+
+relationship fd175d3c-089a-4ae9-9bd3-5bb15bd306c0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: receitas_candidatos.DT_RECEITA
+	toColumn: LocalDateTable_a9464c58-d375-4e76-896d-2d7328e0a814.Date
+
+relationship 48fc6edd-42c5-1553-619b-bdf6c3a6493d
+	fromColumn: receitas_candidatos.CH_CANDIDATO
+	toColumn: Candidatos.CH_CANDIDATO
+
+relationship e1c8c0f1-12eb-469c-8f7c-baeb8d589b2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: despesas_contratadas.DT_GERACAO
+	toColumn: LocalDateTable_e3b1082f-881a-40f5-8f8f-17f2c572646d.Date
+
+relationship fb4929db-9119-40fd-9f53-f8821395dac9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: despesas_contratadas.DT_ELEICAO
+	toColumn: LocalDateTable_61b0d207-4e0e-4037-b1fb-84b698171770.Date
+
+relationship df6b4544-84e8-4648-ac44-279ad82b2075
+	joinOnDateBehavior: datePartOnly
+	fromColumn: despesas_contratadas.DT_PRESTACAO_CONTAS
+	toColumn: LocalDateTable_b20f2f40-b480-421f-8f51-a4fc33b05458.Date
+
+relationship e2fce2c7-9882-4cad-b6bc-30b6483b09f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: despesas_contratadas.DT_DESPESA
+	toColumn: LocalDateTable_29133084-2749-447d-9808-27c3c036615f.Date
+
+relationship 510e07e2-dbda-4826-5c6c-4d84150f7291
+	fromColumn: despesas_contratadas.CH_CANDIDATO
+	toColumn: Candidatos.CH_CANDIDATO
+
+relationship 4fe5c936-eada-ec58-337f-4924617569c5
+	fromColumn: Despesas_Partidarias.SG_PARTIDO
+	toColumn: Dim_Partido.SG_PARTIDO
+
+relationship 83c7e5f5-cc4b-4e96-b8ee-8275e911abed
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Despesas_Pagas_Eleitorais.DT_GERACAO
+	toColumn: LocalDateTable_87f6980f-145b-4486-a1ea-3c093d8d35ea.Date
+
+relationship 7aac42da-28e2-46bd-93d5-6b5e4f041ba7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Despesas_Pagas_Eleitorais.DT_ELEICAO
+	toColumn: LocalDateTable_6b9c9910-c506-4e82-bb9a-93ddde70e325.Date
+
+relationship 46830a5c-86ce-4b11-92c3-30d154fc16b0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Despesas_Pagas_Eleitorais.DT_PRESTACAO_CONTAS
+	toColumn: LocalDateTable_eaf208cf-055a-4971-8d08-4c3d6194f08f.Date
+
+relationship 83c0fd4b-0326-4f97-8f91-a63508b58d29
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Despesas_Pagas_Eleitorais.DT_PAGTO_DESPESA
+	toColumn: LocalDateTable_d47409f7-df29-473d-b5e7-61683045e3e5.Date
+
+relationship 02dbe1e0-d31b-f1a3-d04a-8873336edb6b
+	fromColumn: Despesas_Pagas_Eleitorais.CH_CANDIDATO
+	toColumn: Candidatos.CH_CANDIDATO
+
+relationship 644a20f4-5155-4bfc-4ba9-c3cd91bd2f74
+	fromColumn: Receitas_Partidarias.DS_TP_ESPERA_PARTIDARIA
+	toColumn: Dim_Esfera.Esfera
+
+relationship a2c2c5af-2d31-39d1-b511-0267b2c69752
+	fromColumn: Despesas_Partidarias.DS_TP_ESFERA_PARTIDARIA
+	toColumn: Dim_Esfera.Esfera
+
+relationship c39dea2f-7734-78d3-3443-05ca05c0b103
+	fromColumn: 'Fornecedores e Doadores'.CH_CANDIDATO
+	toColumn: Candidatos.CH_CANDIDATO
+
+relationship 47e89227-4fec-115d-17e3-23a8bde5bcd9
+	fromColumn: Receitas_Partidarias.SG_UF
+	toColumn: Dim_UF.SG_UF
+
+relationship f28f0042-7c9e-7ad9-cf99-5939f68987a4
+	fromColumn: Despesas_Partidarias.SG_UF
+	toColumn: Dim_UF.SG_UF
+
+relationship fd7df3d0-c99f-441e-8ab8-88a8357179a2
+	fromColumn: PT_Controle.uf
+	toColumn: PT_UF.uf
+
+relationship 084d9d58-0237-49fc-978b-907086d9f839
+	fromColumn: PT_Controle.codigo_cargo
+	toColumn: PT_Cargo.codigo_cargo
+
+relationship fe45d31f-d63a-47b7-9b52-5af787ec4987
+	fromColumn: PT_Votos.chave_resultado
+	toColumn: PT_Controle.chave_resultado
+
+relationship 251960eb-8d6e-43aa-a75b-72784dc11be1
+	fromColumn: PT_Partidos.chave_resultado
+	toColumn: PT_Controle.chave_resultado
+

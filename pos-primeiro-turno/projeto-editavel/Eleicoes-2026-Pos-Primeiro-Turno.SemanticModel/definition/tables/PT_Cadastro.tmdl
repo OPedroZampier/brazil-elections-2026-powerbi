@@ -1,0 +1,140 @@
+table PT_Cadastro
+	lineageTag: 710bb03c-c331-40cc-b8fd-c088ff7a7840
+
+	measure 'Eleitos por QP' = CALCULATE(DISTINCTCOUNT(PT_Cadastro[sq_candidato]), PT_Cadastro[resultado] = "ELEITO POR QP")
+		formatString: #,0
+		lineageTag: 5ee010ba-8ca8-4bf2-936f-788b4e08ccd6
+
+	measure 'Eleitos por média' = CALCULATE(DISTINCTCOUNT(PT_Cadastro[sq_candidato]), PT_Cadastro[resultado] = "ELEITO POR MÉDIA")
+		formatString: #,0
+		lineageTag: 442326a9-70b0-4ef4-bf23-6260ee8f8887
+
+	measure 'Eleitos proporcionais' = [Eleitos por QP] + [Eleitos por média]
+		formatString: #,0
+		lineageTag: bea25d86-d5e7-4280-ad60-64016b2981e0
+
+	measure '% Proporcionais por QP' = DIVIDE([Eleitos por QP], [Eleitos proporcionais])
+		formatString: 0.00%
+		lineageTag: d5233f03-ee6c-43a0-b331-f65941d35aa2
+
+	measure 'Candidatos no segundo turno' = CALCULATE(DISTINCTCOUNT(PT_Cadastro[sq_candidato]), PT_Cadastro[segundo_turno] = 1)
+		formatString: #,0
+		lineageTag: 9453cc4b-bb83-421d-b69c-002152011b6d
+
+	measure 'Consta na consulta' = IF(SELECTEDVALUE(PT_Cadastro[eleito]) = 1 || SELECTEDVALUE(PT_Cadastro[segundo_turno]) = 1, 1, BLANK())
+		formatString: #,0
+		lineageTag: 142766fa-aca7-4fe8-818c-93cef4856ec4
+
+	measure 'Eleitos por QP (cartão)' = FORMAT([Eleitos por QP], "#,0", "pt-BR")
+		lineageTag: e802f288-5bfc-473b-bebf-e84d73e947fb
+
+	measure 'Candidatos no segundo turno (cartão)' = FORMAT([Candidatos no segundo turno], "#,0", "pt-BR")
+		lineageTag: 3878fd8d-c5f9-4c48-afe1-113e7c57000b
+
+	measure 'Eleitos por média (cartão)' = FORMAT([Eleitos por média], "#,0", "pt-BR")
+		lineageTag: 92403dd7-809d-4c0e-b443-e9fef32de7ca
+
+	measure '% Proporcionais por QP (cartão)' = FORMAT([% Proporcionais por QP], "0.00%", "pt-BR")
+		lineageTag: e17cee5f-da23-4a4e-a6ad-61cee9870e99
+
+	column sq_candidato
+		dataType: string
+		lineageTag: 717e91bd-8294-477d-b167-ad3418c69cfb
+		summarizeBy: none
+		sourceColumn: sq_candidato
+
+	column turno
+		dataType: int64
+		lineageTag: 20779e49-2c9a-48b2-928c-e82bf7fdc036
+		summarizeBy: none
+		sourceColumn: turno
+
+	column uf
+		dataType: string
+		lineageTag: f1982737-fa93-4016-aace-893225112d6b
+		summarizeBy: none
+		sourceColumn: uf
+
+	column codigo_cargo
+		dataType: int64
+		lineageTag: 8a942371-5086-44e1-955c-95630ef451a0
+		summarizeBy: none
+		sourceColumn: codigo_cargo
+
+	column cargo
+		dataType: string
+		lineageTag: 40c145dc-1c58-4d79-a571-34949c1e4bf0
+		summarizeBy: none
+		sourceColumn: cargo
+
+	column nome_urna
+		dataType: string
+		lineageTag: 6eff78c5-3910-4c25-9018-b1a931b76fb2
+		summarizeBy: none
+		sourceColumn: nome_urna
+
+	column partido
+		dataType: string
+		lineageTag: b1595d9c-a2e1-4c4f-a934-936c92cc4778
+		summarizeBy: none
+		sourceColumn: partido
+
+	column genero
+		dataType: string
+		lineageTag: 6aad743c-d21d-4330-9994-9918b9aff096
+		summarizeBy: none
+		sourceColumn: genero
+
+	column raca_cor
+		dataType: string
+		lineageTag: bec38105-2102-41fe-8ec1-5bcbc75bf158
+		summarizeBy: none
+		sourceColumn: raca_cor
+
+	column escolaridade
+		dataType: string
+		lineageTag: 1bacc5f2-4092-409d-b024-d758f7bf869c
+		summarizeBy: none
+		sourceColumn: escolaridade
+
+	column resultado
+		dataType: string
+		lineageTag: 4ac59c16-5645-475a-bae5-16c4ee0b08df
+		summarizeBy: none
+		sourceColumn: resultado
+
+	column eleito
+		dataType: int64
+		lineageTag: 9f8be4bc-e8ed-4dd1-aa9d-53c400737409
+		summarizeBy: none
+		sourceColumn: eleito
+
+	column segundo_turno
+		dataType: int64
+		lineageTag: 9b57eaf9-d4f1-42f8-80c9-9ec6ef342438
+		summarizeBy: none
+		sourceColumn: segundo_turno
+
+	column data_geracao
+		dataType: string
+		lineageTag: ecf045e7-db5c-4d7b-931c-e1aab9f89faa
+		summarizeBy: none
+		sourceColumn: data_geracao
+
+	column hora_geracao
+		dataType: string
+		lineageTag: 4fc6b1ce-8b19-496d-a70a-817669a2c506
+		summarizeBy: none
+		sourceColumn: hora_geracao
+
+	partition PT_Cadastro = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\eleicoes-2026-powerbi\pos-primeiro-turno\dados\candidaturas_perfil_resultado.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"sq_candidato", type text}, {"turno", Int64.Type}, {"uf", type text}, {"codigo_cargo", Int64.Type}, {"cargo", type text}, {"nome_urna", type text}, {"partido", type text}, {"genero", type text}, {"raca_cor", type text}, {"escolaridade", type text}, {"resultado", type text}, {"eleito", Int64.Type}, {"segundo_turno", Int64.Type}, {"data_geracao", type text}, {"hora_geracao", type text}}, "en-US"),
+				    Final = Tipos
+				in
+				    Final
+

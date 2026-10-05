@@ -1,0 +1,732 @@
+table Candidatos_Complementar
+	lineageTag: 64d2a77a-7fad-46ce-ac6d-ebe23a961d88
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 174693ac-d202-4371-841f-f37c41c861f8
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: 787b155a-7402-4a79-b9f2-86bdbb8d1dc4
+			defaultHierarchy: LocalDateTable_4834862a-22b8-4292-87d9-f3a1c733752b.'Hierarquia de datas'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 9723f3b2-91de-4c9a-a2f0-8d26b99c6b10
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column ANO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: cb1acd59-943a-41c7-a30d-6390681a81f1
+		summarizeBy: sum
+		sourceColumn: ANO_ELEICAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 32cb9d91-32e2-4278-99ff-c81711121447
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: a93f4f5f-54ab-4305-a138-630608845ada
+		summarizeBy: sum
+		sourceColumn: SQ_CANDIDATO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_DETALHE_SITUACAO_CAND
+		dataType: int64
+		formatString: 0
+		lineageTag: e78df6ec-aec1-4f15-a0d1-4195f040023f
+		summarizeBy: sum
+		sourceColumn: CD_DETALHE_SITUACAO_CAND
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_DETALHE_SITUACAO_CAND
+		dataType: string
+		lineageTag: 93077df1-9c25-453f-8335-deae4d25feab
+		summarizeBy: none
+		sourceColumn: DS_DETALHE_SITUACAO_CAND
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_NACIONALIDADE
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f9365d4-d1fa-4e5d-92e7-bdb27545dbd3
+		summarizeBy: sum
+		sourceColumn: CD_NACIONALIDADE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_NACIONALIDADE
+		dataType: string
+		lineageTag: b25af445-4d72-4136-b627-58256c834ca3
+		summarizeBy: none
+		sourceColumn: DS_NACIONALIDADE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_MUNICIPIO_NASCIMENTO
+		dataType: int64
+		formatString: 0
+		lineageTag: f59ec42f-0d85-48f7-b73d-25e58c460aae
+		summarizeBy: sum
+		sourceColumn: CD_MUNICIPIO_NASCIMENTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_MUNICIPIO_NASCIMENTO
+		dataType: string
+		lineageTag: 3061b749-90dc-4f2e-bb82-83b15f4e9748
+		summarizeBy: none
+		sourceColumn: NM_MUNICIPIO_NASCIMENTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_IDADE_DATA_POSSE
+		dataType: int64
+		formatString: 0
+		lineageTag: ec57bab2-ff41-4bd4-a6ef-490046d2a5df
+		summarizeBy: none
+		sourceColumn: NR_IDADE_DATA_POSSE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column ST_QUILOMBOLA
+		dataType: string
+		lineageTag: cf3976d0-b249-47ed-9c79-1f088923a66b
+		summarizeBy: none
+		sourceColumn: ST_QUILOMBOLA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ETNIA_INDIGENA
+		dataType: int64
+		formatString: 0
+		lineageTag: e1de98fd-ed44-4a69-a8d5-62ab3b15f64c
+		summarizeBy: sum
+		sourceColumn: CD_ETNIA_INDIGENA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ETNIA_INDIGENA
+		dataType: string
+		lineageTag: 02bb303e-3ff0-4cc7-91ac-e7e0e52bf92d
+		summarizeBy: none
+		sourceColumn: DS_ETNIA_INDIGENA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column VR_DESPESA_MAX_CAMPANHA
+		dataType: decimal
+		formatString: 0
+		lineageTag: f95366e3-39c9-4508-8b6a-b61d9573dc67
+		summarizeBy: sum
+		sourceColumn: VR_DESPESA_MAX_CAMPANHA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ST_REELEICAO
+		dataType: string
+		lineageTag: 09afaef7-a338-4b0b-9fd5-7e9e5222de52
+		summarizeBy: none
+		sourceColumn: ST_REELEICAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ST_DECLARAR_BENS
+		dataType: string
+		lineageTag: ce68b87c-d942-45b6-88dd-2b58ed051a88
+		summarizeBy: none
+		sourceColumn: ST_DECLARAR_BENS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_PROTOCOLO_CANDIDATURA
+		dataType: int64
+		formatString: 0
+		lineageTag: d9cc9ab0-f522-4528-b9f7-9b5bc61de379
+		summarizeBy: sum
+		sourceColumn: NR_PROTOCOLO_CANDIDATURA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_PROCESSO
+		dataType: int64
+		formatString: 0
+		lineageTag: e8cbff3b-0a4c-46d7-bbc7-9d1b595dba9b
+		summarizeBy: sum
+		sourceColumn: NR_PROCESSO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_CANDIDATO_PLEITO
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e898acc-a6a0-48a3-a36d-72c0a7cb2e2c
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_CANDIDATO_PLEITO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_CANDIDATO_PLEITO
+		dataType: string
+		lineageTag: 5f6c9100-bc37-4577-b1ef-48f098c960d0
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_CANDIDATO_PLEITO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_CANDIDATO_URNA
+		dataType: int64
+		formatString: 0
+		lineageTag: f05865b7-01f5-4ff1-b36e-0e4a43be38c9
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_CANDIDATO_URNA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_CANDIDATO_URNA
+		dataType: string
+		lineageTag: 114fbb0c-577a-4148-8346-ca17e8b171b0
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_CANDIDATO_URNA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ST_CANDIDATO_INSERIDO_URNA
+		dataType: string
+		lineageTag: dac4b89c-c3c0-4b84-857b-bcb71cc98470
+		summarizeBy: none
+		sourceColumn: ST_CANDIDATO_INSERIDO_URNA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_DESTINACAO_VOTOS
+		dataType: string
+		lineageTag: b6a7c064-408d-493c-b459-a4ca36cbdc43
+		summarizeBy: none
+		sourceColumn: NM_TIPO_DESTINACAO_VOTOS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_CANDIDATO_TOT
+		dataType: int64
+		formatString: 0
+		lineageTag: c2442fbc-85d1-4349-a171-bfb87e87d3ad
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_CANDIDATO_TOT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_CANDIDATO_TOT
+		dataType: string
+		lineageTag: c71b635f-e81a-422a-aa8d-6b5c1583b94f
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_CANDIDATO_TOT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ST_PREST_CONTAS
+		dataType: string
+		lineageTag: e253eeff-81ab-48d2-9c46-26e1d0362344
+		summarizeBy: none
+		sourceColumn: ST_PREST_CONTAS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ST_SUBSTITUIDO
+		dataType: string
+		lineageTag: 9c822ec5-675b-45d0-8090-b7987cf12bce
+		summarizeBy: none
+		sourceColumn: ST_SUBSTITUIDO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_SUBSTITUIDO
+		dataType: int64
+		formatString: 0
+		lineageTag: ec63b8b1-e2f7-4c2e-ae3b-096d1d4a9b8d
+		summarizeBy: sum
+		sourceColumn: SQ_SUBSTITUIDO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_ORDEM_SUPLENCIA
+		dataType: int64
+		formatString: 0
+		lineageTag: 96a72fc5-21c6-4bf3-a6bb-b4642b97cf77
+		summarizeBy: sum
+		sourceColumn: SQ_ORDEM_SUPLENCIA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ACEITE_CANDIDATURA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0e6754ee-a608-46e7-9e0f-beae8633bc2d
+		summarizeBy: none
+		sourceColumn: DT_ACEITE_CANDIDATURA
+
+		variation Variation
+			isDefault
+			relationship: 64aba309-e834-4c8f-9458-efadd136c972
+			defaultHierarchy: LocalDateTable_866c9084-34de-41dd-97b3-53f56f284a9f.'Hierarquia de datas'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_JULGAMENTO
+		dataType: int64
+		formatString: 0
+		lineageTag: b2c02aea-9725-4fee-ae2e-6f7584eb92cf
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_JULGAMENTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_JULGAMENTO
+		dataType: string
+		lineageTag: 5421e2ea-e020-4686-a95d-f943453fe4cc
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_JULGAMENTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_JULGAMENTO_PLEITO
+		dataType: int64
+		formatString: 0
+		lineageTag: 77527dab-9328-4f11-9a21-0f17a102bb0a
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_JULGAMENTO_PLEITO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_JULGAMENTO_PLEITO
+		dataType: string
+		lineageTag: 07910b76-0ec2-4981-bc5c-8acb17197e79
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_JULGAMENTO_PLEITO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_JULGAMENTO_URNA
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ce98386-9409-4cae-8686-b649679c4c5e
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_JULGAMENTO_URNA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_JULGAMENTO_URNA
+		dataType: string
+		lineageTag: 3a1662f7-4aa6-47f4-8620-afd6c521b5db
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_JULGAMENTO_URNA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_CASSACAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c0793d1-d642-4267-a265-a485cef03031
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_CASSACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_CASSACAO
+		dataType: string
+		lineageTag: 27c49254-f8fc-4b94-a139-a6c373038422
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_CASSACAO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_CASSACAO_MIDIA
+		dataType: int64
+		formatString: 0
+		lineageTag: aa45c115-a7df-40eb-9cd6-cfcd274744c1
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_CASSACAO_MIDIA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_CASSACAO_MIDIA
+		dataType: string
+		lineageTag: 9b015bd8-012b-4f54-86f7-587bfed8d472
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_CASSACAO_MIDIA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_DIPLOMA
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f141faa-b2fc-4850-8dd8-cc49003b3f14
+		summarizeBy: sum
+		sourceColumn: CD_SITUACAO_DIPLOMA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO_DIPLOMA
+		dataType: string
+		lineageTag: f12aee87-4cfd-4676-8623-d88f0bdb7e58
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO_DIPLOMA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_GENERO_FEFC
+		dataType: int64
+		formatString: 0
+		lineageTag: 8383d95d-f816-4375-a08c-17d3a3f49348
+		summarizeBy: sum
+		sourceColumn: CD_GENERO_FEFC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_GENERO_FEFC
+		dataType: string
+		lineageTag: de8cc626-fcc9-4f31-bcc7-fd0cdd431a73
+		summarizeBy: none
+		sourceColumn: DS_GENERO_FEFC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_COR_RACA_FEFC
+		dataType: int64
+		formatString: 0
+		lineageTag: 7210675b-e47b-4d13-b536-6a0ba96492dc
+		summarizeBy: sum
+		sourceColumn: CD_COR_RACA_FEFC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_COR_RACA_FEFC
+		dataType: string
+		lineageTag: f37d654b-bec4-4b89-85b4-f7952ed61430
+		summarizeBy: none
+		sourceColumn: DS_COR_RACA_FEFC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_CANDIDATO
+		dataType: string
+		lineageTag: 1f5b2315-b751-4e1c-9fe7-4bd5327d7034
+		summarizeBy: none
+		sourceColumn: CH_CANDIDATO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Julgamento' =
+			
+			SWITCH(
+			    TRUE(),
+			    Candidatos_Complementar[DS_SITUACAO_JULGAMENTO] = "AGUARDANDO JULGAMENTO",
+			        "Aguardando julgamento",
+			    Candidatos_Complementar[DS_SITUACAO_JULGAMENTO] = "DEFERIDO",
+			        "Deferido",
+			    Candidatos_Complementar[DS_SITUACAO_JULGAMENTO] = "RENÚNCIA",
+			        "Renúncia",
+			    Candidatos_Complementar[DS_SITUACAO_JULGAMENTO]
+			        IN {
+			            "INDEFERIDO",
+			            "INDEFERIDO EM PRAZO RECURSAL OU COM RECURSO",
+			            "PEDIDO NÃO CONHECIDO"
+			        },
+			        "Indeferido/Outros",
+			    "Não informado"
+			)
+		lineageTag: 9942f591-465a-4646-93e6-13a4b3e50912
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Faixa Idade na Posse' =
+			
+			VAR Idade = Candidatos_Complementar[NR_IDADE_DATA_POSSE]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(Idade) || Idade < 18 || Idade > 100, "Não informado",
+			    Idade <= 29, "18 a 29",
+			    Idade <= 39, "30 a 39",
+			    Idade <= 49, "40 a 49",
+			    Idade <= 59, "50 a 59",
+			    Idade <= 69, "60 a 69",
+			    "70 ou mais"
+			)
+		lineageTag: 6e03a8b3-2646-4b33-a3d7-a3d3afebffd3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordem Faixa Idade' =
+			
+			SWITCH(
+			    Candidatos_Complementar[Faixa Idade na Posse],
+			    "18 a 29", 1,
+			    "30 a 39", 2,
+			    "40 a 49", 3,
+			    "50 a 59", 4,
+			    "60 a 69", 5,
+			    "70 ou mais", 6,
+			    7
+			)
+		formatString: 0
+		lineageTag: efe523f7-0ffd-464e-b210-2d0a184b1531
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Candidatos_Complementar = m
+		mode: import
+		source =
+				let
+				    Fonte =
+				        Csv.Document(
+				            File.Contents(
+				                "D:\TSE2026\dados\candidatos_complementar\consulta_cand_complementar_2026_BRASIL.csv"
+				            ),
+				            [
+				                Delimiter = ";",
+				                Columns = 49,
+				                Encoding = 1252,
+				                QuoteStyle = QuoteStyle.Csv
+				            ]
+				        ),
+				
+				    #"Cabeçalhos Promovidos" =
+				        Table.PromoteHeaders(
+				            Fonte,
+				            [PromoteAllScalars = true]
+				        ),
+				
+				    #"Marcadores Tratados" =
+				        Table.ReplaceValue(
+				            #"Cabeçalhos Promovidos",
+				            each _,
+				            each
+				                if List.Contains(
+				                    {
+				                        "#NULO",
+				                        "#NULO#",
+				                        "#NE",
+				                        "#NE#",
+				                        "NÃO DIVULGÁVEL"
+				                    },
+				                    Text.Trim(Text.From(_))
+				                )
+				                then null
+				                else _,
+				            Replacer.ReplaceValue,
+				            Table.ColumnNames(#"Cabeçalhos Promovidos")
+				        ),
+				
+				    #"Tipos Gerais Alterados" =
+				        Table.TransformColumnTypes(
+				            #"Marcadores Tratados",
+				            {
+				                {"DT_GERACAO", type date},
+				                {"HH_GERACAO", type time},
+				                {"ANO_ELEICAO", Int64.Type},
+				                {"CD_ELEICAO", Int64.Type},
+				                {"SQ_CANDIDATO", Int64.Type},
+				                {"CD_DETALHE_SITUACAO_CAND", Int64.Type},
+				                {"DS_DETALHE_SITUACAO_CAND", type text},
+				                {"CD_NACIONALIDADE", Int64.Type},
+				                {"DS_NACIONALIDADE", type text},
+				                {"CD_MUNICIPIO_NASCIMENTO", Int64.Type},
+				                {"NM_MUNICIPIO_NASCIMENTO", type text},
+				                {"NR_IDADE_DATA_POSSE", Int64.Type},
+				                {"ST_QUILOMBOLA", type text},
+				                {"CD_ETNIA_INDIGENA", Int64.Type},
+				                {"DS_ETNIA_INDIGENA", type text},
+				                {"ST_REELEICAO", type text},
+				                {"ST_DECLARAR_BENS", type text},
+				                {"NR_PROTOCOLO_CANDIDATURA", Int64.Type},
+				                {"NR_PROCESSO", Int64.Type},
+				                {"CD_SITUACAO_CANDIDATO_PLEITO", Int64.Type},
+				                {"DS_SITUACAO_CANDIDATO_PLEITO", type text},
+				                {"CD_SITUACAO_CANDIDATO_URNA", Int64.Type},
+				                {"DS_SITUACAO_CANDIDATO_URNA", type text},
+				                {"ST_CANDIDATO_INSERIDO_URNA", type text},
+				                {"NM_TIPO_DESTINACAO_VOTOS", type text},
+				                {"CD_SITUACAO_CANDIDATO_TOT", Int64.Type},
+				                {"DS_SITUACAO_CANDIDATO_TOT", type text},
+				                {"ST_PREST_CONTAS", type text},
+				                {"ST_SUBSTITUIDO", type text},
+				                {"SQ_SUBSTITUIDO", Int64.Type},
+				                {"SQ_ORDEM_SUPLENCIA", Int64.Type},
+				                {"DT_ACEITE_CANDIDATURA", type datetime},
+				                {"CD_SITUACAO_JULGAMENTO", Int64.Type},
+				                {"DS_SITUACAO_JULGAMENTO", type text},
+				                {"CD_SITUACAO_JULGAMENTO_PLEITO", Int64.Type},
+				                {"DS_SITUACAO_JULGAMENTO_PLEITO", type text},
+				                {"CD_SITUACAO_JULGAMENTO_URNA", Int64.Type},
+				                {"DS_SITUACAO_JULGAMENTO_URNA", type text},
+				                {"CD_SITUACAO_CASSACAO", Int64.Type},
+				                {"DS_SITUACAO_CASSACAO", type text},
+				                {"CD_SITUACAO_CASSACAO_MIDIA", Int64.Type},
+				                {"DS_SITUACAO_CASSACAO_MIDIA", type text},
+				                {"CD_SITUACAO_DIPLOMA", Int64.Type},
+				                {"DS_SITUACAO_DIPLOMA", type text},
+				                {"CD_GENERO_FEFC", Int64.Type},
+				                {"DS_GENERO_FEFC", type text},
+				                {"CD_COR_RACA_FEFC", Int64.Type},
+				                {"DS_COR_RACA_FEFC", type text}
+				            },
+				            "pt-BR"
+				        ),
+				
+				    // O TSE grava esta coluna usando ponto como separador decimal.
+				    #"Limite de Gastos Corrigido" =
+				        Table.TransformColumnTypes(
+				            #"Tipos Gerais Alterados",
+				            {
+				                {"VR_DESPESA_MAX_CAMPANHA", Currency.Type}
+				            },
+				            "en-US"
+				        ),
+				
+				    #"CH_CANDIDATO Adicionada" =
+				        Table.AddColumn(
+				            #"Limite de Gastos Corrigido",
+				            "CH_CANDIDATO",
+				            each
+				                Text.From([CD_ELEICAO]) & "|" &
+				                Text.From([SQ_CANDIDATO]),
+				            type text
+				        )
+				
+				in
+				    #"CH_CANDIDATO Adicionada"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,49 @@
+table 'Detalhar Patrimônio por'
+	lineageTag: c3329118-cfcd-4bc4-9800-5f7a45608161
+
+	column 'Detalhar Patrimônio por'
+		lineageTag: b38f33c8-b2e4-4ab8-8a95-c3d948548c88
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Detalhar Patrimônio por Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Detalhar Patrimônio por Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Detalhar Patrimônio por Campos'
+		isHidden
+		lineageTag: e16fb69c-7a91-4443-b23c-d75298764df8
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Detalhar Patrimônio por Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Detalhar Patrimônio por Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: db7d4102-e46b-4a41-ac33-a4ab45e07e72
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Detalhar Patrimônio por' = calculated
+		mode: import
+		source =
+				{
+				    ("NM_URNA_CANDIDATO", NAMEOF('Candidatos'[NM_URNA_CANDIDATO]), 0),
+				    ("SG_PARTIDO", NAMEOF('Candidatos'[SG_PARTIDO]), 1),
+				    ("DS_CARGO", NAMEOF('Candidatos'[DS_CARGO]), 2)
+				}
+
+	annotation PBI_Id = c7c8605e1dcd45cebecb9155c42fd9fc
+

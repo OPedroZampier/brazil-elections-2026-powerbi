@@ -1,0 +1,78 @@
+table Dim_UF
+	lineageTag: 963991b6-636d-412e-9ac5-08ec79f6bc4f
+
+	column SG_UF
+		lineageTag: 635ba497-bb4e-413b-a1ff-e7bfa31444df
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SG_UF]
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_UF =
+			
+			SWITCH(
+			    Dim_UF[SG_UF],
+			    "AC", "Acre",
+			    "AL", "Alagoas",
+			    "AP", "Amapá",
+			    "AM", "Amazonas",
+			    "BA", "Bahia",
+			    "CE", "Ceará",
+			    "DF", "Distrito Federal",
+			    "ES", "Espírito Santo",
+			    "GO", "Goiás",
+			    "MA", "Maranhão",
+			    "MT", "Mato Grosso",
+			    "MS", "Mato Grosso do Sul",
+			    "MG", "Minas Gerais",
+			    "PA", "Pará",
+			    "PB", "Paraíba",
+			    "PR", "Paraná",
+			    "PE", "Pernambuco",
+			    "PI", "Piauí",
+			    "RJ", "Rio de Janeiro",
+			    "RN", "Rio Grande do Norte",
+			    "RS", "Rio Grande do Sul",
+			    "RO", "Rondônia",
+			    "RR", "Roraima",
+			    "SC", "Santa Catarina",
+			    "SP", "São Paulo",
+			    "SE", "Sergipe",
+			    "TO", "Tocantins"
+			)
+		lineageTag: 1ad75aa9-8164-467f-b4d2-a791d2e5ce46
+		dataCategory: StateOrProvince
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column UF_Mapa = SWITCH(Dim_UF[SG_UF], "AC", "Acre", "AL", "Alagoas", "AP", "Amapa", "AM", "Amazonas", "BA", "Bahia", "CE", "Ceara", "DF", "Distrito Federal", "ES", "Espirito Santo", "GO", "Goias", "MA", "Maranhao", "MT", "Mato Grosso", "MS", "Mato Grosso do Sul", "MG", "Minas Gerais", "PA", "Para", "PB", "Paraiba", "PR", "Parana", "PE", "Pernambuco", "PI", "Piaui", "RJ", "Rio de Janeiro", "RN", "Rio Grande do Norte", "RS", "Rio Grande do Sul", "RO", "Rondonia", "RR", "Roraima", "SC", "Santa Catarina", "SP", "Sao Paulo", "SE", "Sergipe", "TO", "Tocantins", BLANK())
+		lineageTag: 5c46df56-7b59-4d3b-9750-57a2fb689d44
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_UF = calculated
+		mode: import
+		source =
+				
+				DISTINCT(
+				    UNION(
+				        SELECTCOLUMNS(
+				            Dim_Municipio,
+				            "SG_UF", Dim_Municipio[SG_UF]
+				        ),
+				        SELECTCOLUMNS(
+				            vagas,
+				            "SG_UF", vagas[SG_UF]
+				        ),
+				        SELECTCOLUMNS(
+				            eleitorado_cruzado,
+				            "SG_UF", eleitorado_cruzado[SG_UF]
+				        )
+				    )
+				)
+
+	annotation PBI_Id = 8b7b3425f6d5489bb5a59abb5831071d
+

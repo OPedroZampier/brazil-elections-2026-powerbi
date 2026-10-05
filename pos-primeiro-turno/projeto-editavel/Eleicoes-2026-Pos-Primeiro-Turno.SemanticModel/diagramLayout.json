@@ -1,0 +1,357 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1042.8667580443903,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 200,
+            "y": 384.5
+          },
+          "nodeIndex": "Candidatos",
+          "nodeLineageTag": "912bdcf3-f495-4386-8c2f-b01e3471e977",
+          "size": {
+            "height": 297,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 15.5
+          },
+          "nodeIndex": "Candidatos_Complementar",
+          "nodeLineageTag": "64d2a77a-7fad-46ce-ac6d-ebe23a961d88",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 589,
+            "y": 522
+          },
+          "nodeIndex": "bens",
+          "nodeLineageTag": "a69f82c1-ace6-45d6-bea2-909e61d45da5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 271,
+            "y": 0
+          },
+          "nodeIndex": "redes_sociais",
+          "nodeLineageTag": "c5800e3b-8468-4f0f-be72-ff4bea927d49",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 507,
+            "y": 0
+          },
+          "nodeIndex": "vagas",
+          "nodeLineageTag": "dbae90ec-a366-4542-ae92-62af117a1e9c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 696.20404594208424,
+            "y": 227.17959540579156
+          },
+          "nodeIndex": "Coligacoes",
+          "nodeLineageTag": "c9653012-5af0-4922-a0fe-fac86d74526f",
+          "size": {
+            "height": 300,
+            "width": 600
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 1291,
+            "y": 0
+          },
+          "nodeIndex": "Eleitorado_Localidade",
+          "nodeLineageTag": "148b8cbf-ee51-4370-bc01-dccac51633f1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1644,
+            "y": 268.5
+          },
+          "nodeIndex": "eleitorado_municipio",
+          "nodeLineageTag": "b598dfda-bb1a-49f8-b460-2776d2d9f6bd",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 1369,
+            "y": 402.5
+          },
+          "nodeIndex": "eleitorado_cruzado",
+          "nodeLineageTag": "c22b1aff-2ba5-460c-abac-922444ef0ce2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 1628,
+            "y": 0
+          },
+          "nodeIndex": "Dim_Municipio",
+          "nodeLineageTag": "1aaf4ac7-16fd-4be9-acfd-14d659d3cb48",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 2205.0539395915894,
+            "y": 101.90556317036585
+          },
+          "nodeIndex": "Dim_UF",
+          "nodeLineageTag": "963991b6-636d-412e-9ac5-08ec79f6bc4f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 1023,
+            "y": 592
+          },
+          "nodeIndex": "Dim_Partido",
+          "nodeLineageTag": "9d64f357-d80d-44ca-9f8c-23b6ed292e01",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 1654.2242945611065,
+            "y": 622.84316301843239
+          },
+          "nodeIndex": "Despesas_Partidarias",
+          "nodeLineageTag": "3fe2517d-319a-471e-ac02-aaa03b5942f6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 1928,
+            "y": 261
+          },
+          "nodeIndex": "Receitas_Partidarias",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 2496,
+            "y": 335
+          },
+          "nodeIndex": "Perfil Eleitorado",
+          "nodeLineageTag": "6f51d045-aa43-4c85-a074-25be3d043605",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 2780,
+            "y": 335
+          },
+          "nodeIndex": "Composição das Candidaturas",
+          "nodeLineageTag": "9c2ff41f-a082-45d6-9009-f94c2f38ba2d",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 686,
+            "y": 0
+          },
+          "nodeIndex": "_Medidas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 3064,
+            "y": 335
+          },
+          "nodeIndex": "Analisar Patrimônio por",
+          "nodeLineageTag": "4dc2c558-9e94-46cc-b510-b25454d48441",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 3348,
+            "y": 335
+          },
+          "nodeIndex": "Detalhar Patrimônio por",
+          "nodeLineageTag": "c3329118-cfcd-4bc4-9800-5f7a45608161",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 3632,
+            "y": 335
+          },
+          "nodeIndex": "Detalhar Patrimônio por 2",
+          "nodeLineageTag": "9020187e-47a3-4015-9fd6-d5ad63fc956b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 163.25977218874687,
+            "y": 826.39290069275182
+          },
+          "nodeIndex": "receitas_candidatos",
+          "nodeLineageTag": "6f0a978e-5fd5-4a5e-9507-632d35956859",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 495.08101338468936,
+            "y": 842.9839627525489
+          },
+          "nodeIndex": "despesas_contratadas",
+          "nodeLineageTag": "c4f5da12-cdfa-447d-bfc7-229d692e0b26",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1386.2580611680773,
+            "y": 854.18632603686456
+          },
+          "nodeIndex": "Despesas_Pagas_Eleitorais",
+          "nodeLineageTag": "c1eed9e2-2470-40e6-91cf-6d55f29d8e5f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1899.7909344475122,
+            "y": 684.55226638812178
+          },
+          "nodeIndex": "Dim_Esfera",
+          "nodeLineageTag": "9ce5a89d-2624-4e79-baa5-8dc93ce9994b",
+          "size": {
+            "height": 200,
+            "width": 333.54637235878272
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3916,
+            "y": 477.09316301843228
+          },
+          "nodeIndex": "Ranking Financeiro Pessoas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 997.13497188488009,
+            "y": 935.32249609854318
+          },
+          "nodeIndex": "Fornecedores e Doadores",
+          "nodeLineageTag": "5e340a11-5217-452f-973b-4a82eacea105",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 63.287087723234023,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

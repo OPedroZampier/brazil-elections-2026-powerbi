@@ -1,0 +1,56 @@
+table PT_QE
+	lineageTag: 4c38d210-0d58-4de9-bef9-3a697469d2da
+
+	column uf
+		dataType: string
+		lineageTag: 3238c0bd-700f-4531-9335-e63a80c23c08
+		summarizeBy: none
+		sourceColumn: uf
+
+	column codigo_cargo
+		dataType: int64
+		lineageTag: 9d67bdfa-7373-48c6-96af-68602c26f302
+		summarizeBy: none
+		sourceColumn: codigo_cargo
+
+	column cargo
+		dataType: string
+		lineageTag: 5798b85c-507f-46c1-8ef4-ef2f8e532b59
+		summarizeBy: none
+		sourceColumn: cargo
+
+	column quociente_eleitoral
+		dataType: int64
+		lineageTag: 985569e8-4120-4f27-b553-c7964c9b2a19
+		summarizeBy: none
+		sourceColumn: quociente_eleitoral
+
+	column vagas
+		dataType: int64
+		lineageTag: 97e04d34-5189-4aef-ab1a-e4622d5993d1
+		summarizeBy: none
+		sourceColumn: vagas
+
+	column data_geracao
+		dataType: string
+		lineageTag: 23e16386-41ff-4125-bee5-44ac69d6d085
+		summarizeBy: none
+		sourceColumn: data_geracao
+
+	column hora_geracao
+		dataType: string
+		lineageTag: 8a7aa68c-f465-47d4-8e58-52654bc629e2
+		summarizeBy: none
+		sourceColumn: hora_geracao
+
+	partition PT_QE = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\eleicoes-2026-powerbi\pos-primeiro-turno\dados\quociente_eleitoral_por_uf.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"uf", type text}, {"codigo_cargo", Int64.Type}, {"cargo", type text}, {"quociente_eleitoral", Int64.Type}, {"vagas", Int64.Type}, {"data_geracao", type text}, {"hora_geracao", type text}}, "en-US"),
+				    Final = Tipos
+				in
+				    Final
+

@@ -1,0 +1,27 @@
+{
+  "eleitos_por_qp": 1287,
+  "eleitos_por_media": 285,
+  "total_eleitos_proporcionais": 1572,
+  "percentual_qp": 0.8187022900763359,
+  "por_cargo": {
+    "DEPUTADO DISTRITAL": {
+      "ELEITO POR QP": 16,
+      "ELEITO POR MÉDIA": 8
+    },
+    "DEPUTADO ESTADUAL": {
+      "ELEITO POR QP": 886,
+      "ELEITO POR MÉDIA": 149
+    },
+    "DEPUTADO FEDERAL": {
+      "ELEITO POR QP": 385,
+      "ELEITO POR MÉDIA": 128
+    }
+  },
+  "fonte": "Cadastro TSE BRASIL gerado em 05/10/2026 10:14:11",
+  "definicao": "Classificação oficial, não inferência de candidato puxado por outra pessoa.",
+  "conferencia_json_oficial": {
+    "qp": 1287,
+    "media": 285,
+    "contagens_conferem": true
+  }
+}

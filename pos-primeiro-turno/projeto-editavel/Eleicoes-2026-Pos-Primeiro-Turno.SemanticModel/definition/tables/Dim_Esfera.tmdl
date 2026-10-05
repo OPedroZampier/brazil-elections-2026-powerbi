@@ -1,0 +1,49 @@
+table Dim_Esfera
+	lineageTag: 9ce5a89d-2624-4e79-baa5-8dc93ce9994b
+
+	column Esfera
+		lineageTag: 33a6f61c-e5f9-4b9b-96f5-ae60ca6d5800
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Esfera]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Esfera = calculated
+		mode: import
+		source =
+				
+				VAR EsferasReceitas =
+				    SELECTCOLUMNS(
+				        FILTER(
+				            Receitas_Partidarias,
+				            NOT ISBLANK(
+				                Receitas_Partidarias[DS_TP_ESPERA_PARTIDARIA]
+				            )
+				        ),
+				        "Esfera",
+				        Receitas_Partidarias[DS_TP_ESPERA_PARTIDARIA]
+				    )
+				
+				VAR EsferasDespesas =
+				    SELECTCOLUMNS(
+				        FILTER(
+				            Despesas_Partidarias,
+				            NOT ISBLANK(
+				                Despesas_Partidarias[DS_TP_ESFERA_PARTIDARIA]
+				            )
+				        ),
+				        "Esfera",
+				        Despesas_Partidarias[DS_TP_ESFERA_PARTIDARIA]
+				    )
+				
+				RETURN
+				    DISTINCT(
+				        UNION(
+				            EsferasReceitas,
+				            EsferasDespesas
+				        )
+				    )
+
+	annotation PBI_Id = 5841e8a8b67f46d0afec9f66256a96d1
+

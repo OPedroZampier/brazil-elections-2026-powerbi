@@ -1,0 +1,13 @@
+table PT_UF
+	lineageTag: 30c0693b-d35e-46fa-9e3c-f5faf113f115
+
+	column uf
+		dataType: string
+		lineageTag: 02a03172-5995-4c57-a187-7c44a086c6bd
+		summarizeBy: none
+		sourceColumn: [uf]
+
+	partition PT_UF = calculated
+		mode: import
+		source = DISTINCT(SELECTCOLUMNS(PT_Controle, "uf", PT_Controle[uf]))
+

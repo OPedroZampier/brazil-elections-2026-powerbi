@@ -1,0 +1,87 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "e5a8cb4c7e543e639de4",
+  "displayName": "Perfil das candidaturas ",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "f5347f7abe625d84ff14",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Captura de tela 2026-08-18 193412.png'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Captura_de_tela_2026-08-18_1933673077397425055.png"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fill'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "3c42faa57565c4197ba0",
+      "target": "fafbd5037de6d67e5306",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3c42faa57565c4197ba0",
+      "target": "4d3eacde8721c7bdb376",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3c42faa57565c4197ba0",
+      "target": "5403f1fbc24572aafc71",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3c42faa57565c4197ba0",
+      "target": "1633eba87b3b9ac752fc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3c42faa57565c4197ba0",
+      "target": "6c7453759a4c6aeb4eaa",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3c42faa57565c4197ba0",
+      "target": "bb6f7c4b5de39db5eaec",
+      "type": "NoFilter"
+    }
+  ]
+}

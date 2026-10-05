@@ -1,0 +1,44 @@
+table 'Fornecedores e Doadores'
+	lineageTag: 5e340a11-5217-452f-973b-4a82eacea105
+
+	column Nome
+		lineageTag: b7fb8fd2-9ee5-4a43-9529-24272a27b4b4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Nome]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		lineageTag: e8cf4240-23f9-4881-8f78-49277553d4ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tipo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 0da6a7a0-5c45-4eca-a8a9-eaa57b916ebd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Valor]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column CH_CANDIDATO
+		lineageTag: b6c1eeec-c821-4204-858b-c4ed61149c3b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [CH_CANDIDATO]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fornecedores e Doadores' = calculated
+		mode: import
+		source = FILTER(UNION(SELECTCOLUMNS(receitas_candidatos, "Nome", receitas_candidatos[NM_DOADOR], "Tipo", "Doador", "Valor", receitas_candidatos[VR_RECEITA], "CH_CANDIDATO", receitas_candidatos[CH_CANDIDATO]), SELECTCOLUMNS(despesas_contratadas, "Nome", despesas_contratadas[NM_FORNECEDOR], "Tipo", "Fornecedor", "Valor", despesas_contratadas[VR_DESPESA_CONTRATADA], "CH_CANDIDATO", despesas_contratadas[CH_CANDIDATO])), NOT ISBLANK([Nome]) && [Valor] > 0)
+
+	annotation PBI_Id = 36a5fd6960fb425e9c5172f3388b8fe7
+

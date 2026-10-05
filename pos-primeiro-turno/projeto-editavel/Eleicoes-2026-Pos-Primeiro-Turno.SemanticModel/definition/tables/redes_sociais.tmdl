@@ -1,0 +1,131 @@
+table redes_sociais
+	lineageTag: c5800e3b-8468-4f0f-be72-ff4bea927d49
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d7109fdc-9481-49a1-bef9-2bdff46f03e8
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: b64f94a7-392b-41c3-a965-52a7e62cd052
+			defaultHierarchy: LocalDateTable_db1f6ca3-0194-4544-bb10-031420c96931.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: a3b54b90-a25d-475c-afd2-b291c4a86945
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column AA_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: a3a083f9-e2cc-4100-8a53-2d1e0ad19281
+		summarizeBy: sum
+		sourceColumn: AA_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: 357c316e-188d-48b9-8a3f-cc7248f03d6f
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 040ecead-30c6-40b9-b5be-3ab9b8cf379e
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: 13592eab-e192-4413-aed7-8c872d9b6007
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: e6f0db3b-43b7-46a3-a9a4-5a49e4ca787e
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: 87037bb9-d1c7-460e-b0bd-0283a9c0de26
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: a556661f-42f4-46b1-8c99-7f66d557e1c2
+		summarizeBy: sum
+		sourceColumn: SQ_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_ORDEM_REDE_SOCIAL
+		dataType: int64
+		formatString: 0
+		lineageTag: 90a32602-4877-482a-bf44-f132f42f484d
+		summarizeBy: sum
+		sourceColumn: NR_ORDEM_REDE_SOCIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_URL
+		dataType: string
+		lineageTag: 0cf5e138-833c-4c78-a3c5-115f5c016eee
+		summarizeBy: none
+		sourceColumn: DS_URL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_CANDIDATO
+		dataType: string
+		lineageTag: 724eb22a-de9d-4599-b64b-a1f3b1d9a1de
+		summarizeBy: none
+		sourceColumn: CH_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition redes_sociais = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\TSE2026\dados\redes_sociais\rede_social_candidato_2026_BRASIL.csv"),[Delimiter=";", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.Csv]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"DT_GERACAO", type date}, {"HH_GERACAO", type time}, {"AA_ELEICAO", Int64.Type}, {"SG_UF", type text}, {"CD_TIPO_ELEICAO", Int64.Type}, {"NM_TIPO_ELEICAO", type text}, {"CD_ELEICAO", Int64.Type}, {"DS_ELEICAO", type text}, {"SQ_CANDIDATO", Int64.Type}, {"NR_ORDEM_REDE_SOCIAL", Int64.Type}, {"DS_URL", type text}}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Tipo Alterado", "CH_CANDIDATO", each Text.From([CD_ELEICAO]) & "|" & Text.From([SQ_CANDIDATO])),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"CH_CANDIDATO", type text}})
+				in
+				    #"Tipo Alterado1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,55 @@
+table 'Perfil Eleitorado'
+	lineageTag: 6f51d045-aa43-4c85-a074-25be3d043605
+
+	column 'Perfil Eleitorado'
+		lineageTag: f1260d8c-bfa0-4439-97b6-7cf0938cd5b4
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Perfil Eleitorado Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Perfil Eleitorado Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Perfil Eleitorado Campos'
+		isHidden
+		lineageTag: 0ad3a7fc-a652-4927-8aa4-12b66a4db99a
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Perfil Eleitorado Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Perfil Eleitorado Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 6dd8a66b-c28b-4f94-a32d-177dc004d9f9
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Indice Perfil' = IF('Perfil Eleitorado'[Perfil Eleitorado] = "Escolaridade", 1, 0)
+		formatString: 0
+		lineageTag: 99f932eb-ca1e-4562-b4f5-b0c84bb1c771
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Perfil Eleitorado' = calculated
+		mode: import
+		source =
+				{
+				    ("Faixa etária", NAMEOF('eleitorado_cruzado'[DS_FAIXA_ETARIA]), 0),
+				    ("Escolaridade", NAMEOF('eleitorado_cruzado'[DS_GRAU_ESCOLARIDADE]), 1)
+				}
+
+	annotation PBI_Id = a57293ae2a204713877508a133dd412f
+

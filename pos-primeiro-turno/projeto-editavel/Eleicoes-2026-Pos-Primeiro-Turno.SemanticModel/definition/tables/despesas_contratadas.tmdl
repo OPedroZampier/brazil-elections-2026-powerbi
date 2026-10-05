@@ -1,0 +1,634 @@
+table despesas_contratadas
+	lineageTag: c4f5da12-cdfa-447d-bfc7-229d692e0b26
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 057adf35-4cfd-4825-9ccd-cda8f75d4063
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: e1c8c0f1-12eb-469c-8f7c-baeb8d589b2f
+			defaultHierarchy: LocalDateTable_e3b1082f-881a-40f5-8f8f-17f2c572646d.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: dcb2d566-367d-48d3-a3a4-4dc6dc004b8e
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column AA_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: f8f2c02b-0255-49aa-8bef-314541b1fa8e
+		summarizeBy: sum
+		sourceColumn: AA_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 67406879-cb8b-4f1d-bb8f-c0c0026968d9
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: f5f6fb51-1938-49ec-aeca-19264dc55bd7
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: afca17cc-1a43-4bd7-b162-37ccddab1d57
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: 68bf1d05-8938-4f40-b6d1-dbf9a4eeac3c
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ELEICAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0dc0a060-c5f6-4da0-b55f-befb38fa2a3c
+		summarizeBy: none
+		sourceColumn: DT_ELEICAO
+
+		variation Variation
+			isDefault
+			relationship: fb4929db-9119-40fd-9f53-f8821395dac9
+			defaultHierarchy: LocalDateTable_61b0d207-4e0e-4037-b1fb-84b698171770.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ST_TURNO
+		dataType: int64
+		formatString: 0
+		lineageTag: d8f9204b-c81b-4e7f-84bd-19490dfe276b
+		summarizeBy: sum
+		sourceColumn: ST_TURNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_PRESTACAO_CONTAS
+		dataType: string
+		lineageTag: d790aafa-b40f-4a06-b4d8-214a1afb2ebe
+		summarizeBy: none
+		sourceColumn: TP_PRESTACAO_CONTAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_PRESTACAO_CONTAS
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a9eba644-0fb5-4ec5-ad84-ca090c3d51a4
+		summarizeBy: none
+		sourceColumn: DT_PRESTACAO_CONTAS
+
+		variation Variation
+			isDefault
+			relationship: df6b4544-84e8-4648-ac44-279ad82b2075
+			defaultHierarchy: LocalDateTable_b20f2f40-b480-421f-8f51-a4fc33b05458.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SQ_PRESTADOR_CONTAS
+		dataType: int64
+		formatString: 0
+		lineageTag: ec6397cb-b384-4f8e-a7cd-539658ac03e2
+		summarizeBy: sum
+		sourceColumn: SQ_PRESTADOR_CONTAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: 9412b416-0915-4d0b-a3d8-9ef7929563b0
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UE
+		dataType: string
+		lineageTag: 1ea60af2-1904-4c22-968c-e708a9b98001
+		summarizeBy: none
+		sourceColumn: SG_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_UE
+		dataType: string
+		lineageTag: 9c4a6ad3-c2a5-43b8-8afa-fa3242318a8a
+		summarizeBy: none
+		sourceColumn: NM_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CNPJ_PRESTADOR_CONTA
+		dataType: string
+		lineageTag: a169bdef-d564-4cb8-9d1b-e5292d728492
+		summarizeBy: none
+		sourceColumn: NR_CNPJ_PRESTADOR_CONTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CARGO
+		dataType: int64
+		formatString: 0
+		lineageTag: 604809d8-5629-416a-a4b5-799b627950e7
+		summarizeBy: sum
+		sourceColumn: CD_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CARGO
+		dataType: string
+		lineageTag: fd2b99b7-6aa8-4de8-a4ba-b27f3a4208ed
+		summarizeBy: none
+		sourceColumn: DS_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: 612d6cfe-4ef2-4c8b-bae5-b64e781f6313
+		summarizeBy: sum
+		sourceColumn: SQ_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: a6bc804e-b0e9-4b4b-ba7b-354092379213
+		summarizeBy: sum
+		sourceColumn: NR_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_CANDIDATO
+		dataType: string
+		lineageTag: f18e9875-06ac-4487-91f0-2ebcadcff23a
+		summarizeBy: none
+		sourceColumn: NM_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_PARTIDO
+		dataType: int64
+		formatString: 0
+		lineageTag: bc89af39-3db5-4e12-ac49-4ad6164d918a
+		summarizeBy: sum
+		sourceColumn: NR_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_PARTIDO
+		dataType: string
+		lineageTag: 3f9f924f-83e4-48fc-919c-75dffe1ef076
+		summarizeBy: none
+		sourceColumn: SG_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_PARTIDO
+		dataType: string
+		lineageTag: 68f8b7f4-993d-47d9-875a-856db9fdcd49
+		summarizeBy: none
+		sourceColumn: NM_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_FORNECEDOR
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ff3d3f3-5392-479b-bc63-245ad8d0603a
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_TIPO_FORNECEDOR
+		dataType: string
+		lineageTag: e026f70d-49b9-4767-834c-af999b12b9ad
+		summarizeBy: none
+		sourceColumn: DS_TIPO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CNAE_FORNECEDOR
+		dataType: string
+		lineageTag: fa2152c9-a6c6-47c7-b14e-4e353e3e0a15
+		summarizeBy: none
+		sourceColumn: CD_CNAE_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CNAE_FORNECEDOR
+		dataType: string
+		lineageTag: 0b783598-73d2-41cc-9324-6f6b93c2e35b
+		summarizeBy: none
+		sourceColumn: DS_CNAE_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_FORNECEDOR
+		dataType: string
+		lineageTag: 6f174066-0f08-443f-8da1-3fb5269279dc
+		summarizeBy: none
+		sourceColumn: NM_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_FORNECEDOR_RFB
+		dataType: string
+		lineageTag: 43af37a1-03ff-4713-bdc8-b7970ec4c392
+		summarizeBy: none
+		sourceColumn: NM_FORNECEDOR_RFB
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ESFERA_PART_FORNECEDOR
+		dataType: string
+		lineageTag: 6639a787-e3bc-448d-a048-f0f58d87bd3b
+		summarizeBy: none
+		sourceColumn: CD_ESFERA_PART_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ESFERA_PART_FORNECEDOR
+		dataType: string
+		lineageTag: 5080ff6e-3b50-41d1-9c23-7d79e5ed9df5
+		summarizeBy: none
+		sourceColumn: DS_ESFERA_PART_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF_FORNECEDOR
+		dataType: string
+		lineageTag: 4c7de0e7-bc07-4361-b60c-61c974f7fc80
+		summarizeBy: none
+		sourceColumn: SG_UF_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_MUNICIPIO_FORNECEDOR
+		dataType: string
+		lineageTag: 3af05e3e-b5e0-4c5a-a1b2-8e28a3be70c4
+		summarizeBy: none
+		sourceColumn: CD_MUNICIPIO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_MUNICIPIO_FORNECEDOR
+		dataType: string
+		lineageTag: d1b56428-b4c0-48e3-a39c-7bb4a6011dad
+		summarizeBy: none
+		sourceColumn: NM_MUNICIPIO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO_FORNECEDOR
+		dataType: string
+		lineageTag: 22757970-07ac-42dd-91fb-097fe7176745
+		summarizeBy: none
+		sourceColumn: SQ_CANDIDATO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_CANDIDATO_FORNECEDOR
+		dataType: string
+		lineageTag: 08ebd3b0-ff41-42d3-896c-61cb6219fb22
+		summarizeBy: none
+		sourceColumn: NR_CANDIDATO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CARGO_FORNECEDOR
+		dataType: int64
+		formatString: 0
+		lineageTag: ce7aba19-c70a-437d-99d7-f2f75c7c06c7
+		summarizeBy: sum
+		sourceColumn: CD_CARGO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CARGO_FORNECEDOR
+		dataType: string
+		lineageTag: 463f4085-9fe3-47f2-b380-375f21e83aad
+		summarizeBy: none
+		sourceColumn: DS_CARGO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_PARTIDO_FORNECEDOR
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d96214b-75e9-48f8-acea-83b06859c560
+		summarizeBy: sum
+		sourceColumn: NR_PARTIDO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_PARTIDO_FORNECEDOR
+		dataType: string
+		lineageTag: ffd0be24-5dcc-46fc-bb4c-552673bf6eed
+		summarizeBy: none
+		sourceColumn: SG_PARTIDO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_PARTIDO_FORNECEDOR
+		dataType: string
+		lineageTag: 63636c86-09df-4f6a-a5c3-b3f10c2cb615
+		summarizeBy: none
+		sourceColumn: NM_PARTIDO_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_TIPO_DOCUMENTO
+		dataType: string
+		lineageTag: ba5defe6-1174-4e6b-9d9d-6bee700133ec
+		summarizeBy: none
+		sourceColumn: DS_TIPO_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_DOCUMENTO
+		dataType: string
+		lineageTag: 038b8902-9bf2-487e-960c-2b7a73e197d0
+		summarizeBy: none
+		sourceColumn: NR_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ORIGEM_DESPESA
+		dataType: int64
+		formatString: 0
+		lineageTag: 34c19322-7807-45cd-bc42-d7048f5ee3fc
+		summarizeBy: sum
+		sourceColumn: CD_ORIGEM_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ORIGEM_DESPESA
+		dataType: string
+		lineageTag: 0679deac-98e9-4579-90d8-7fa8586fd578
+		summarizeBy: none
+		sourceColumn: DS_ORIGEM_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_DESPESA
+		dataType: string
+		lineageTag: 6ecb8fc1-aefd-4c8d-b6a8-672b96f95fe5
+		summarizeBy: none
+		sourceColumn: SQ_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_DESPESA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 75a32be0-80c3-40ec-a000-a2b3592ad454
+		summarizeBy: none
+		sourceColumn: DT_DESPESA
+
+		variation Variation
+			isDefault
+			relationship: e2fce2c7-9882-4cad-b6bc-30b6483b09f8
+			defaultHierarchy: LocalDateTable_29133084-2749-447d-9808-27c3c036615f.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DS_DESPESA
+		dataType: string
+		lineageTag: 7795a01a-47b5-4282-a2d7-adba84da7c9f
+		summarizeBy: none
+		sourceColumn: DS_DESPESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column VR_DESPESA_CONTRATADA
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: fa835e70-d93c-449c-a669-27fed90c8653
+		summarizeBy: sum
+		sourceColumn: VR_DESPESA_CONTRATADA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column CH_CANDIDATO
+		dataType: string
+		lineageTag: e3f51c86-c57f-42bb-b07d-c581ff923d67
+		summarizeBy: none
+		sourceColumn: CH_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_PRESTADOR
+		dataType: string
+		lineageTag: dd47063e-9eff-4135-b1b5-d430b1d84059
+		summarizeBy: none
+		sourceColumn: CH_PRESTADOR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition despesas_contratadas = m
+		mode: import
+		source =
+				let
+				    Fonte =
+				        Csv.Document(
+				            File.Contents(
+				                "D:\TSE2026\dados\contas_eleitorais\despesas_contratadas_candidatos_2026_BRASIL.csv"
+				            ),
+				            [
+				                Delimiter = ";",
+				                Columns = 53,
+				                Encoding = 1252,
+				                QuoteStyle = QuoteStyle.Csv
+				            ]
+				        ),
+				
+				    #"Cabeçalhos Promovidos" =
+				        Table.PromoteHeaders(
+				            Fonte,
+				            [PromoteAllScalars = true]
+				        ),
+				
+				    #"Marcadores Tratados" =
+				        Table.TransformColumns(
+				            #"Cabeçalhos Promovidos",
+				            List.Transform(
+				                Table.ColumnNames(#"Cabeçalhos Promovidos"),
+				                (Coluna) =>
+				                    {
+				                        Coluna,
+				                        each
+				                            let
+				                                Valor =
+				                                    if _ is text
+				                                    then Text.Trim(_)
+				                                    else _
+				                            in
+				                                if List.Contains(
+				                                    {
+				                                        "#NULO",
+				                                        "#NULO#",
+				                                        "#NE",
+				                                        "#NE#",
+				                                        "NÃO DIVULGÁVEL",
+				                                        "-1",
+				                                        "-3",
+				                                        "-4",
+				                                        -1,
+				                                        -3,
+				                                        -4
+				                                    },
+				                                    Valor
+				                                )
+				                                then null
+				                                else _,
+				                        type any
+				                    }
+				            )
+				        ),
+				
+				    #"Colunas Sensíveis Removidas" =
+				        Table.RemoveColumns(
+				            #"Marcadores Tratados",
+				            {
+				                "NR_CPF_CANDIDATO",
+				                "NR_CPF_VICE_CANDIDATO",
+				                "NR_CPF_CNPJ_FORNECEDOR"
+				            }
+				        ),
+				
+				    #"Tipos Alterados" =
+				        Table.TransformColumnTypes(
+				            #"Colunas Sensíveis Removidas",
+				            {
+				                {"DT_GERACAO", type date},
+				                {"HH_GERACAO", type time},
+				                {"AA_ELEICAO", Int64.Type},
+				                {"CD_TIPO_ELEICAO", Int64.Type},
+				                {"NM_TIPO_ELEICAO", type text},
+				                {"CD_ELEICAO", Int64.Type},
+				                {"DS_ELEICAO", type text},
+				                {"DT_ELEICAO", type date},
+				                {"ST_TURNO", Int64.Type},
+				                {"TP_PRESTACAO_CONTAS", type text},
+				                {"DT_PRESTACAO_CONTAS", type date},
+				
+				                {"SQ_PRESTADOR_CONTAS", Int64.Type},
+				                {"SG_UF", type text},
+				                {"SG_UE", type text},
+				                {"NM_UE", type text},
+				                {"NR_CNPJ_PRESTADOR_CONTA", type text},
+				
+				                {"CD_CARGO", Int64.Type},
+				                {"DS_CARGO", type text},
+				                {"SQ_CANDIDATO", Int64.Type},
+				                {"NR_CANDIDATO", Int64.Type},
+				                {"NM_CANDIDATO", type text},
+				                {"NR_PARTIDO", Int64.Type},
+				                {"SG_PARTIDO", type text},
+				                {"NM_PARTIDO", type text},
+				
+				                {"CD_TIPO_FORNECEDOR", Int64.Type},
+				                {"DS_TIPO_FORNECEDOR", type text},
+				                {"CD_CNAE_FORNECEDOR", type text},
+				                {"DS_CNAE_FORNECEDOR", type text},
+				                {"NM_FORNECEDOR", type text},
+				                {"NM_FORNECEDOR_RFB", type text},
+				
+				                {"CD_ESFERA_PART_FORNECEDOR", type text},
+				                {"DS_ESFERA_PART_FORNECEDOR", type text},
+				                {"SG_UF_FORNECEDOR", type text},
+				                {"CD_MUNICIPIO_FORNECEDOR", type text},
+				                {"NM_MUNICIPIO_FORNECEDOR", type text},
+				
+				                {"SQ_CANDIDATO_FORNECEDOR", type text},
+				                {"NR_CANDIDATO_FORNECEDOR", type text},
+				                {"CD_CARGO_FORNECEDOR", Int64.Type},
+				                {"DS_CARGO_FORNECEDOR", type text},
+				                {"NR_PARTIDO_FORNECEDOR", Int64.Type},
+				                {"SG_PARTIDO_FORNECEDOR", type text},
+				                {"NM_PARTIDO_FORNECEDOR", type text},
+				
+				                {"DS_TIPO_DOCUMENTO", type text},
+				                {"NR_DOCUMENTO", type text},
+				                {"CD_ORIGEM_DESPESA", Int64.Type},
+				                {"DS_ORIGEM_DESPESA", type text},
+				                {"SQ_DESPESA", type text},
+				                {"DT_DESPESA", type date},
+				                {"DS_DESPESA", type text},
+				                {"VR_DESPESA_CONTRATADA", Currency.Type}
+				            },
+				            "pt-BR"
+				        ),
+				
+				    #"CH_CANDIDATO Adicionada" =
+				        Table.AddColumn(
+				            #"Tipos Alterados",
+				            "CH_CANDIDATO",
+				            each
+				                Text.From([CD_ELEICAO])
+				                & "|"
+				                & Text.From([SQ_CANDIDATO]),
+				            type text
+				        ),
+				
+				    #"CH_PRESTADOR Adicionada" =
+				        Table.AddColumn(
+				            #"CH_CANDIDATO Adicionada",
+				            "CH_PRESTADOR",
+				            each
+				                Text.From([CD_ELEICAO])
+				                & "|"
+				                & Text.From([SQ_PRESTADOR_CONTAS]),
+				            type text
+				        )
+				
+				in
+				    #"CH_PRESTADOR Adicionada"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

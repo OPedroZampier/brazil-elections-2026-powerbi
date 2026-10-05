@@ -1,0 +1,266 @@
+table PT_Controle
+	lineageTag: 2c3c2253-12ce-4353-add5-b0d738848875
+
+	measure 'Votos válidos' = IF(HASONEVALUE(PT_Cargo[cargo]), SUM(PT_Controle[votos_validos]), BLANK())
+		formatString: #,0
+		lineageTag: 07be6aae-6dc0-427c-950d-65189bada018
+
+	measure 'Votos nominais' = IF(HASONEVALUE(PT_Cargo[cargo]), SUM(PT_Controle[votos_nominais]), BLANK())
+		formatString: #,0
+		lineageTag: 6a8ae7a9-8df6-409b-b5db-b0bab2a17984
+
+	measure 'Votos de legenda' = IF(HASONEVALUE(PT_Cargo[cargo]), SUM(PT_Controle[votos_legenda]), BLANK())
+		formatString: #,0
+		lineageTag: 96f2776a-7f61-48ed-b21c-19ef2e2d5d23
+
+	measure '% Seções totalizadas' = IF(HASONEVALUE(PT_Cargo[cargo]), DIVIDE(SUM(PT_Controle[secoes_totalizadas]),SUM(PT_Controle[secoes_total])), BLANK())
+		formatString: 0.00%
+		lineageTag: 88cf0b21-ac87-4389-805b-d7b1e9538489
+
+	measure 'Comparecimento total' = CALCULATE(SUM(PT_Controle[comparecimento]), PT_Controle[codigo_cargo]=1)
+		formatString: #,0
+		lineageTag: 85b2d2a7-27e2-4038-8a69-f234b2fe0f22
+
+	measure Abstenções = CALCULATE(SUM(PT_Controle[abstencoes]), PT_Controle[codigo_cargo]=1)
+		formatString: #,0
+		lineageTag: c79c8915-2e89-4d9f-b534-af544a244973
+
+	measure '% Abstenção' = DIVIDE([Abstenções],[Comparecimento total]+[Abstenções])
+		formatString: 0.00%
+		lineageTag: fa8ee432-5b25-46c3-aeb8-2ae6872ef037
+
+	measure Válidos = CALCULATE(SUM(PT_Controle[votos_validos]), PT_Controle[codigo_cargo]=1)
+		formatString: #,0
+		lineageTag: 2e99b7c9-db46-4d18-82e3-1a8decd10cce
+
+	measure Brancos = CALCULATE(SUM(PT_Controle[votos_brancos]), PT_Controle[codigo_cargo]=1)
+		formatString: #,0
+		lineageTag: 990f1719-6098-4f5d-9461-d866d5524c07
+
+	measure Nulos = CALCULATE(SUM(PT_Controle[votos_nulos_total]), PT_Controle[codigo_cargo]=1)
+		formatString: #,0
+		lineageTag: fd2063d7-1bb8-4085-a23d-085f26f7cc70
+
+	measure Anulados = CALCULATE(SUM(PT_Controle[votos_anulados])+SUM(PT_Controle[votos_anulados_sub_judice]),PT_Controle[codigo_cargo]=1)
+		formatString: #,0
+		lineageTag: db3454c9-39ce-45c0-96cc-33533ddc47c2
+
+	measure 'Total de votos presidencial' = CALCULATE(SUM(PT_Controle[votos_total]),PT_Controle[codigo_cargo]=1)
+		formatString: #,0
+		lineageTag: 78c79c0b-98ab-4da8-a6a1-79ac2b80de38
+
+	measure '% Brancos' = DIVIDE([Brancos],[Total de votos presidencial])
+		formatString: 0.00%
+		lineageTag: 726cd2b6-9ae5-42a0-8b3a-d0e2e529c114
+
+	measure '% Nulos' = DIVIDE([Nulos],[Total de votos presidencial])
+		formatString: 0.00%
+		lineageTag: 2a6a5386-374d-4115-af44-c9dcec11984a
+
+	measure 'Eleitores apurados' = CALCULATE(SUM(PT_Controle[eleitores_secoes_apuradas]),PT_Controle[codigo_cargo]=1)
+		formatString: #,0
+		lineageTag: 4247134e-e489-4cae-877f-6205702b6c04
+
+	measure '% Seções totalizadas (cartão)' = FORMAT([% Seções totalizadas], "0.00%", "pt-BR")
+		lineageTag: 59b029cc-ea90-4b3d-b130-8070f2ec83fb
+
+	measure 'Votos válidos (cartão)' = FORMAT([Votos válidos], "#,0", "pt-BR")
+		lineageTag: e1ccbd89-5f8f-46ee-b81a-3515f2f90681
+
+	measure 'Votos de legenda (cartão)' = FORMAT([Votos de legenda], "#,0", "pt-BR")
+		lineageTag: f8e83cf0-aef2-4a28-95e7-9f451883f33d
+
+	measure 'Votos nominais (cartão)' = FORMAT([Votos nominais], "#,0", "pt-BR")
+		lineageTag: c5445927-a2a4-4b0a-90ac-fb8317094b0a
+
+	measure '% Brancos (cartão)' = FORMAT([% Brancos], "0.00%", "pt-BR")
+		lineageTag: 3eb743e6-9923-44e3-967a-49254e5b8f32
+
+	measure 'Comparecimento total (cartão)' = FORMAT([Comparecimento total], "#,0", "pt-BR")
+		lineageTag: 3b87fec2-eb6b-40de-8d2e-febf35625448
+
+	measure '% Nulos (cartão)' = FORMAT([% Nulos], "0.00%", "pt-BR")
+		lineageTag: ccdc5595-9784-4111-90fd-ec72e5b1c195
+
+	measure '% Abstenção (cartão)' = FORMAT([% Abstenção], "0.00%", "pt-BR")
+		lineageTag: 5c5f2fa3-52d5-4d4c-9c9b-b77362460d4b
+
+	column chave_resultado
+		dataType: string
+		lineageTag: 9f0eaf59-0583-4ff6-873c-6d9e9aa6935f
+		summarizeBy: none
+		sourceColumn: chave_resultado
+
+	column eleicao
+		dataType: int64
+		lineageTag: 57533ed3-e0f0-4996-890f-73b0ba635388
+		summarizeBy: none
+		sourceColumn: eleicao
+
+	column turno
+		dataType: int64
+		lineageTag: 564e0639-2873-41e1-9b78-d831be749c14
+		summarizeBy: none
+		sourceColumn: turno
+
+	column abrangencia
+		dataType: string
+		lineageTag: 6d6c9f7b-5246-46eb-8dfc-6901287ae457
+		summarizeBy: none
+		sourceColumn: abrangencia
+
+	column uf
+		dataType: string
+		lineageTag: d2f88e4d-4501-4c1b-a764-70edee0f6d68
+		summarizeBy: none
+		sourceColumn: uf
+
+	column codigo_cargo
+		dataType: int64
+		lineageTag: 05cc2730-3e7a-4ace-9930-b8f95cf03ce6
+		summarizeBy: none
+		sourceColumn: codigo_cargo
+
+	column cargo
+		dataType: string
+		lineageTag: 81097e5b-a112-481f-8748-a09254484cc4
+		summarizeBy: none
+		sourceColumn: cargo
+
+	column data_geracao
+		dataType: string
+		lineageTag: 9f638da4-f7b1-4ca7-9c15-59dd07b5d87c
+		summarizeBy: none
+		sourceColumn: data_geracao
+
+	column hora_geracao
+		dataType: string
+		lineageTag: a0cb0141-6fc2-44ed-b72f-3f1c22dccaac
+		summarizeBy: none
+		sourceColumn: hora_geracao
+
+	column data_totalizacao
+		dataType: string
+		lineageTag: a1446d04-3fef-4eb5-9e4a-8956d8644099
+		summarizeBy: none
+		sourceColumn: data_totalizacao
+
+	column hora_totalizacao
+		dataType: string
+		lineageTag: 3ff09748-cc40-4f92-aa90-400bbf332de3
+		summarizeBy: none
+		sourceColumn: hora_totalizacao
+
+	column totalizacao_finalizada
+		dataType: string
+		lineageTag: cd3cf9c4-94a9-4edd-b451-0d85ddbfdd1e
+		summarizeBy: none
+		sourceColumn: totalizacao_finalizada
+
+	column secoes_total
+		dataType: int64
+		lineageTag: 98dba043-e098-45d2-b005-8e474aece608
+		summarizeBy: none
+		sourceColumn: secoes_total
+
+	column secoes_totalizadas
+		dataType: int64
+		lineageTag: 2bf39de5-a3bc-4601-b198-c6d81accae33
+		summarizeBy: none
+		sourceColumn: secoes_totalizadas
+
+	column eleitorado
+		dataType: int64
+		lineageTag: 096c367a-5b56-4e7f-bf5c-7e0919f9b807
+		summarizeBy: none
+		sourceColumn: eleitorado
+
+	column eleitores_secoes_apuradas
+		dataType: int64
+		lineageTag: 1971ccf9-7053-4e80-a574-bcd5f1dbae19
+		summarizeBy: none
+		sourceColumn: eleitores_secoes_apuradas
+
+	column comparecimento
+		dataType: int64
+		lineageTag: 87754b5c-b189-4ed2-80f7-7085781f74ee
+		summarizeBy: none
+		sourceColumn: comparecimento
+
+	column abstencoes
+		dataType: int64
+		lineageTag: 0c76bffe-d237-4b99-a22e-f6675051132d
+		summarizeBy: none
+		sourceColumn: abstencoes
+
+	column votos_total
+		dataType: int64
+		lineageTag: 1b75125a-07d3-4fc4-a03c-0dc6bf6ac91e
+		summarizeBy: none
+		sourceColumn: votos_total
+
+	column votos_validos
+		dataType: int64
+		lineageTag: 7d20c7a4-282c-4a15-9805-c31427fbf0b8
+		summarizeBy: none
+		sourceColumn: votos_validos
+
+	column votos_nominais
+		dataType: int64
+		lineageTag: ba5f6a4c-f66c-4b4f-8000-7584d99d6ef1
+		summarizeBy: none
+		sourceColumn: votos_nominais
+
+	column votos_legenda
+		dataType: int64
+		lineageTag: 3f0157b5-c910-483d-9894-915fb079e1ae
+		summarizeBy: none
+		sourceColumn: votos_legenda
+
+	column votos_brancos
+		dataType: int64
+		lineageTag: 35d529d3-ea37-49e9-be81-39d7d4d1bd4a
+		summarizeBy: none
+		sourceColumn: votos_brancos
+
+	column votos_nulos_total
+		dataType: int64
+		lineageTag: 58286d8d-4578-42fd-bb6d-e3efc7432489
+		summarizeBy: none
+		sourceColumn: votos_nulos_total
+
+	column votos_nulos
+		dataType: int64
+		lineageTag: f4f0c23b-fe08-41cd-9b83-c8d54c1ef21f
+		summarizeBy: none
+		sourceColumn: votos_nulos
+
+	column votos_nulos_tecnicos
+		dataType: int64
+		lineageTag: 40541a03-f076-4177-bb3a-025871273601
+		summarizeBy: none
+		sourceColumn: votos_nulos_tecnicos
+
+	column votos_anulados
+		dataType: int64
+		lineageTag: 61e42c96-8429-49bd-8a8b-14bdf1e0a150
+		summarizeBy: none
+		sourceColumn: votos_anulados
+
+	column votos_anulados_sub_judice
+		dataType: int64
+		lineageTag: 3e87baa1-9b74-436e-bad2-631fc2b4a468
+		summarizeBy: none
+		sourceColumn: votos_anulados_sub_judice
+
+	partition PT_Controle = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\eleicoes-2026-powerbi\pos-primeiro-turno\dados\resultados_abrangencia.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"chave_resultado", type text}, {"eleicao", Int64.Type}, {"turno", Int64.Type}, {"abrangencia", type text}, {"uf", type text}, {"codigo_cargo", Int64.Type}, {"cargo", type text}, {"data_geracao", type text}, {"hora_geracao", type text}, {"data_totalizacao", type text}, {"hora_totalizacao", type text}, {"totalizacao_finalizada", type text}, {"secoes_total", Int64.Type}, {"secoes_totalizadas", Int64.Type}, {"eleitorado", Int64.Type}, {"eleitores_secoes_apuradas", Int64.Type}, {"comparecimento", Int64.Type}, {"abstencoes", Int64.Type}, {"votos_total", Int64.Type}, {"votos_validos", Int64.Type}, {"votos_nominais", Int64.Type}, {"votos_legenda", Int64.Type}, {"votos_brancos", Int64.Type}, {"votos_nulos_total", Int64.Type}, {"votos_nulos", Int64.Type}, {"votos_nulos_tecnicos", Int64.Type}, {"votos_anulados", Int64.Type}, {"votos_anulados_sub_judice", Int64.Type}}, "en-US"),
+				    Final = Table.SelectRows(Tipos, each [uf] <> "BR")
+				in
+				    Final
+

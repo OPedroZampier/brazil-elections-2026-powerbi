@@ -1,0 +1,8 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    ROLLUPADDISSUBTOTAL(vagas[DS_CARGO], "Total_Geral"),
+    "Total Candidaturas", [Total Candidaturas],
+    "Total Vagas", [Total Vagas],
+    "Candidaturas por Vaga", [Candidaturas por Vaga]
+)
+ORDER BY [Total_Geral] DESC, [Total Candidaturas] DESC

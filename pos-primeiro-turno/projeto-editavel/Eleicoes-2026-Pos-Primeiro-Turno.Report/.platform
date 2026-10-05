@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Eleicoes-2026-Pos-Primeiro-Turno"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "adf02046-4d96-46c7-86af-a3696eeb24fe"
+  }
+}

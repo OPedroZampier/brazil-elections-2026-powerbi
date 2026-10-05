@@ -1,0 +1,19 @@
+table PT_Cargo
+	lineageTag: 5043c68b-431b-4310-a171-da68dedf9450
+
+	column codigo_cargo
+		dataType: int64
+		lineageTag: 09803fa0-04bd-42a6-ae2a-d5d04a9d7737
+		summarizeBy: none
+		sourceColumn: [codigo_cargo]
+
+	column cargo
+		dataType: string
+		lineageTag: b13c5f45-fb59-4129-b172-17cd04eb054e
+		summarizeBy: none
+		sourceColumn: [cargo]
+
+	partition PT_Cargo = calculated
+		mode: import
+		source = DISTINCT(SELECTCOLUMNS(PT_Controle, "codigo_cargo",PT_Controle[codigo_cargo], "cargo",PT_Controle[cargo]))
+

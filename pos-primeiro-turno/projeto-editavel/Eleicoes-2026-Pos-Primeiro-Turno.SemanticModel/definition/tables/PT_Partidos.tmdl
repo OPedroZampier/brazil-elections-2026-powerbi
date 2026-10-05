@@ -1,0 +1,92 @@
+table PT_Partidos
+	lineageTag: 98ffae19-a452-499d-81b4-4e931365a9d5
+
+	column chave_resultado
+		dataType: string
+		lineageTag: ca8b5e6d-518d-4bde-ab6d-bebb215b13c6
+		summarizeBy: none
+		sourceColumn: chave_resultado
+
+	column eleicao
+		dataType: int64
+		lineageTag: 5e69f207-ed04-4272-a958-bae600b46d9a
+		summarizeBy: none
+		sourceColumn: eleicao
+
+	column turno
+		dataType: int64
+		lineageTag: ccaead62-51de-47f1-b227-fe6aa5a9744d
+		summarizeBy: none
+		sourceColumn: turno
+
+	column abrangencia
+		dataType: string
+		lineageTag: e00d0c3c-f274-4342-aea3-03a8b9a15c92
+		summarizeBy: none
+		sourceColumn: abrangencia
+
+	column uf
+		dataType: string
+		lineageTag: 9a1c1bde-bd37-4b0e-8e5e-81b97686b2e8
+		summarizeBy: none
+		sourceColumn: uf
+
+	column codigo_cargo
+		dataType: int64
+		lineageTag: 50dbaed5-e4e5-4254-bf55-9c7b1b0db856
+		summarizeBy: none
+		sourceColumn: codigo_cargo
+
+	column cargo
+		dataType: string
+		lineageTag: 10d8250a-96fc-45a9-a0be-5871593d7880
+		summarizeBy: none
+		sourceColumn: cargo
+
+	column numero_partido
+		dataType: string
+		lineageTag: 86c6dc4b-c5c9-46ff-bebb-5e7dfe4a6321
+		summarizeBy: none
+		sourceColumn: numero_partido
+
+	column partido
+		dataType: string
+		lineageTag: a7e0d1a4-9bd5-4731-9745-c2191699465b
+		summarizeBy: none
+		sourceColumn: partido
+
+	column nome_partido
+		dataType: string
+		lineageTag: 096a2417-1353-4449-9043-c40df420f3fd
+		summarizeBy: none
+		sourceColumn: nome_partido
+
+	column votos_nominais
+		dataType: int64
+		lineageTag: b294ff98-b499-4d6c-abe2-f0476f30bb5e
+		summarizeBy: none
+		sourceColumn: votos_nominais
+
+	column votos_legenda
+		dataType: int64
+		lineageTag: 5f807ca2-4857-4bcd-b429-46a66ac06abf
+		summarizeBy: none
+		sourceColumn: votos_legenda
+
+	column votos_anulados
+		dataType: int64
+		lineageTag: 78621d4e-93aa-4f23-92d6-8a044c6d21d2
+		summarizeBy: none
+		sourceColumn: votos_anulados
+
+	partition PT_Partidos = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\eleicoes-2026-powerbi\pos-primeiro-turno\dados\votos_partidos.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"chave_resultado", type text}, {"eleicao", Int64.Type}, {"turno", Int64.Type}, {"abrangencia", type text}, {"uf", type text}, {"codigo_cargo", Int64.Type}, {"cargo", type text}, {"numero_partido", type text}, {"partido", type text}, {"nome_partido", type text}, {"votos_nominais", Int64.Type}, {"votos_legenda", Int64.Type}, {"votos_anulados", Int64.Type}}, "en-US"),
+				    Final = Table.SelectRows(Tipos, each [uf] <> "BR")
+				in
+				    Final
+

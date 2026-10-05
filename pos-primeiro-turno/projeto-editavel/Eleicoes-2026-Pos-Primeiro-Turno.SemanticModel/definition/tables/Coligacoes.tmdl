@@ -1,0 +1,294 @@
+table Coligacoes
+	lineageTag: c9653012-5af0-4922-a0fe-fac86d74526f
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7de2911f-ccb5-4b03-8e77-05f76e019114
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variation
+			isDefault
+			relationship: 61ed36bb-6fe9-46a3-b87e-f017df29c0aa
+			defaultHierarchy: LocalDateTable_3311570e-960d-4401-9055-470901a9c20e.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 23a23ad5-90a6-49d5-a882-d804d8240e80
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column ANO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 87661bf9-c00e-4a90-b44b-02945efde804
+		summarizeBy: sum
+		sourceColumn: ANO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 712c5229-8b8d-47c6-8baa-38c09d2bd9e5
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: 980d984a-c359-4586-9b9b-addfb355bce2
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_TURNO
+		dataType: int64
+		formatString: 0
+		lineageTag: 64776b90-719f-4ccf-8fbe-75841a384dd4
+		summarizeBy: sum
+		sourceColumn: NR_TURNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 87abb9fc-6def-445b-baa5-80c03af78cbd
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: 49c684bf-4087-4623-b12b-b90f48de73c9
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ELEICAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d9d43317-041d-4e7f-949d-3b6fa064610d
+		summarizeBy: none
+		sourceColumn: DT_ELEICAO
+
+		variation Variation
+			isDefault
+			relationship: 7dac0811-e410-44e7-8137-6182f625505f
+			defaultHierarchy: LocalDateTable_0b63b240-7b72-4ab2-b6b8-17e8a0575228.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SG_UF
+		dataType: string
+		lineageTag: c1409733-e953-4c83-bc3c-ac9808ac32fb
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UE
+		dataType: string
+		lineageTag: 86c4b8c6-ef43-4064-abcb-98153e8892ea
+		summarizeBy: none
+		sourceColumn: SG_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_UE
+		dataType: string
+		lineageTag: 2b0e7c8f-cfff-4280-a7f2-eb0af71b90fe
+		summarizeBy: none
+		sourceColumn: NM_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CARGO
+		dataType: int64
+		formatString: 0
+		lineageTag: b4c8c80d-01c5-4dfd-bb88-08275b72ee05
+		summarizeBy: sum
+		sourceColumn: CD_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CARGO
+		dataType: string
+		lineageTag: 8b3f45a0-1fc3-4611-be8e-b0a579a1e50b
+		summarizeBy: none
+		sourceColumn: DS_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_AGREMIACAO
+		dataType: string
+		lineageTag: 60c40e1f-bba3-4229-a841-ddb6ae92b941
+		summarizeBy: none
+		sourceColumn: TP_AGREMIACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_PARTIDO
+		dataType: int64
+		formatString: 0
+		lineageTag: f94f3cb7-2a77-4775-a9b5-ca8a4a1643e5
+		summarizeBy: sum
+		sourceColumn: NR_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_PARTIDO
+		dataType: string
+		lineageTag: e3780c20-58e2-494b-abc2-8c36edbe1c2c
+		summarizeBy: none
+		sourceColumn: SG_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_PARTIDO
+		dataType: string
+		lineageTag: 06f9e430-062c-425e-b34e-3db58f86448c
+		summarizeBy: none
+		sourceColumn: NM_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_FEDERACAO
+		dataType: int64
+		formatString: 0
+		lineageTag: c23cea78-1d17-4ca6-bf5a-4be6c61392b8
+		summarizeBy: sum
+		sourceColumn: NR_FEDERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_FEDERACAO
+		dataType: string
+		lineageTag: 74207ff7-0dae-45ba-99b8-d86917b4f120
+		summarizeBy: none
+		sourceColumn: NM_FEDERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_FEDERACAO
+		dataType: string
+		lineageTag: 22a143e9-6515-4bd8-8873-34f7f481cfb6
+		summarizeBy: none
+		sourceColumn: SG_FEDERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_COMPOSICAO_FEDERACAO
+		dataType: string
+		lineageTag: 6499ae46-53f6-4d1a-809e-fb954c9608f2
+		summarizeBy: none
+		sourceColumn: DS_COMPOSICAO_FEDERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_COLIGACAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e0a1bca-48ae-4cab-8dd1-81a395c97605
+		summarizeBy: sum
+		sourceColumn: SQ_COLIGACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_COLIGACAO
+		dataType: string
+		lineageTag: 328cc81f-e4e5-4426-adbe-5353b81f0aa2
+		summarizeBy: none
+		sourceColumn: NM_COLIGACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_COMPOSICAO_COLIGACAO
+		dataType: string
+		lineageTag: 2a4657a7-4d02-4e3c-9053-0c72c4ed522b
+		summarizeBy: none
+		sourceColumn: DS_COMPOSICAO_COLIGACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_SITUACAO_LEGENDA
+		dataType: string
+		lineageTag: 398b3b07-7403-4af7-800a-b8deb111ca34
+		summarizeBy: none
+		sourceColumn: CD_SITUACAO_LEGENDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_SITUACAO
+		dataType: string
+		lineageTag: 158d5d8c-dcca-493c-8736-0e520e6de55c
+		summarizeBy: none
+		sourceColumn: DS_SITUACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_DESTINACAO_VOTOS
+		dataType: string
+		lineageTag: f6572d4c-32be-4e7c-bce3-069db632cf76
+		summarizeBy: none
+		sourceColumn: NM_TIPO_DESTINACAO_VOTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_DISPUTA
+		dataType: string
+		lineageTag: 686fc565-359b-4f8d-bc71-74a99aabf09f
+		summarizeBy: none
+		sourceColumn: CH_DISPUTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH_COLIGACAO_PARTIDO
+		dataType: string
+		lineageTag: 8c23b371-5cff-4521-8a71-9378aaee54e3
+		summarizeBy: none
+		sourceColumn: CH_COLIGACAO_PARTIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Coligacoes = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\TSE2026\dados\coligacoes\consulta_coligacao_2026_BRASIL.csv"),[Delimiter=";", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.Csv]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"DT_GERACAO", type date}, {"HH_GERACAO", type time}, {"ANO_ELEICAO", Int64.Type}, {"CD_TIPO_ELEICAO", Int64.Type}, {"NM_TIPO_ELEICAO", type text}, {"NR_TURNO", Int64.Type}, {"CD_ELEICAO", Int64.Type}, {"DS_ELEICAO", type text}, {"DT_ELEICAO", type date}, {"SG_UF", type text}, {"SG_UE", type text}, {"NM_UE", type text}, {"CD_CARGO", Int64.Type}, {"DS_CARGO", type text}, {"TP_AGREMIACAO", type text}, {"NR_PARTIDO", Int64.Type}, {"SG_PARTIDO", type text}, {"NM_PARTIDO", type text}, {"NR_FEDERACAO", Int64.Type}, {"NM_FEDERACAO", type text}, {"SG_FEDERACAO", type text}, {"DS_COMPOSICAO_FEDERACAO", type text}, {"SQ_COLIGACAO", Int64.Type}, {"NM_COLIGACAO", type text}, {"DS_COMPOSICAO_COLIGACAO", type text}, {"CD_SITUACAO_LEGENDA", type text}, {"DS_SITUACAO", type text}, {"NM_TIPO_DESTINACAO_VOTOS", type text}}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Tipo Alterado", "CH_DISPUTA", each Text.From([CD_ELEICAO]) & "|" &
+				Text.From([SG_UE]) & "|" &
+				Text.From([CD_CARGO])),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"CH_DISPUTA", type text}}),
+				    #"Personalização Adicionada1" = Table.AddColumn(#"Tipo Alterado1", "CH_COLIGACAO_PARTIDO", each Text.From([CD_ELEICAO]) & "|" &
+				Text.From([SG_UE]) & "|" &
+				Text.From([CD_CARGO]) & "|" &
+				Text.From([SQ_COLIGACAO]) & "|" &
+				Text.From([NR_PARTIDO])),
+				    #"Tipo Alterado2" = Table.TransformColumnTypes(#"Personalização Adicionada1",{{"CH_COLIGACAO_PARTIDO", type text}})
+				in
+				    #"Tipo Alterado2"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

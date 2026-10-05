@@ -1,0 +1,66 @@
+table Dim_Partido
+	lineageTag: 9d64f357-d80d-44ca-9f8c-23b6ed292e01
+
+	column SG_PARTIDO
+		lineageTag: 30ebe060-bee3-41dc-91c6-0a2e9ced36d7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SG_PARTIDO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_PARTIDO =
+			
+			VAR Sigla = Dim_Partido[SG_PARTIDO]
+			RETURN
+			COALESCE(
+			    MAXX(
+			        FILTER(Candidatos, Candidatos[SG_PARTIDO] = Sigla),
+			        Candidatos[NM_PARTIDO]
+			    ),
+			    MAXX(
+			        FILTER(Receitas_Partidarias, Receitas_Partidarias[SG_PARTIDO] = Sigla),
+			        Receitas_Partidarias[NM_PARTIDO]
+			    ),
+			    MAXX(
+			        FILTER(Despesas_Partidarias, Despesas_Partidarias[SG_PARTIDO] = Sigla),
+			        Despesas_Partidarias[NM_PARTIDO]
+			    )
+			)
+		lineageTag: 2133ba6e-f8cb-42d3-9812-cc3e8c219a48
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Partido = calculated
+		mode: import
+		source =
+				
+				FILTER(
+				    DISTINCT(
+				        UNION(
+				            SELECTCOLUMNS(
+				                Candidatos,
+				                "SG_PARTIDO", Candidatos[SG_PARTIDO]
+				            ),
+				            SELECTCOLUMNS(
+				                Coligacoes,
+				                "SG_PARTIDO", Coligacoes[SG_PARTIDO]
+				            ),
+				            SELECTCOLUMNS(
+				                Receitas_Partidarias,
+				                "SG_PARTIDO", Receitas_Partidarias[SG_PARTIDO]
+				            ),
+				            SELECTCOLUMNS(
+				                Despesas_Partidarias,
+				                "SG_PARTIDO", Despesas_Partidarias[SG_PARTIDO]
+				            )
+				        )
+				    ),
+				    NOT ISBLANK([SG_PARTIDO])
+				        && [SG_PARTIDO] <> "#NULO#"
+				        && [SG_PARTIDO] <> "#NE#"
+				)
+
+	annotation PBI_Id = e1aec6b3f4664bf88f9135dcd6744192
+
