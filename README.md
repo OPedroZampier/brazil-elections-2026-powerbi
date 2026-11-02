@@ -10,7 +10,7 @@ This interactive project transforms official open data from Brazil's Superior El
 
 The newer light-theme dashboard covers first- and second-round results, voter participation and proportional seats by party quota or averages. The online report currently requires account access. The downloadable PBIX below is the earlier first-round edition; the newer cloud-connected edition has not yet been published in this repository.
 
-The accompanying [TSE ELT pipeline](https://github.com/OPedroZampier/tse-2026-elt) publishes cleaned datasets, including both rounds, to [Kaggle](https://www.kaggle.com/datasets/pedrozampier/brazil-elections-2026-clean-tse-data). A main-branch test successfully published the Kaggle dataset, updated private OneDrive data and triggered Power BI through Power Automate. The Power BI refresh completed with a model warning, which remains under investigation. Public access to the interactive report requires administrator approval.
+The accompanying [TSE ELT pipeline](https://github.com/OPedroZampier/tse-2026-elt) publishes cleaned datasets, including both rounds, to [Kaggle](https://www.kaggle.com/datasets/pedrozampier/brazil-elections-2026-clean-tse-data). A main-branch test successfully published the Kaggle dataset, updated private OneDrive data and triggered Power BI through Power Automate. The initial Power BI refresh reported a model warning; after correcting two measures, a subsequent validation refresh completed without warnings on November 2, 2026. Public access to the interactive report requires administrator approval.
 
 ## Power BI file
 
