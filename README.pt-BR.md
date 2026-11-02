@@ -10,7 +10,7 @@ Este projeto interativo transforma dados abertos oficiais do Tribunal Superior E
 
 A versão mais recente, em tema claro, reúne resultados dos dois turnos, participação eleitoral e distribuição de vagas proporcionais por quociente partidário ou média. O relatório online atualmente exige acesso à conta. O PBIX para download abaixo é a versão anterior, do primeiro turno; a versão conectada à nuvem ainda não foi publicada neste repositório.
 
-O [pipeline ELT do TSE](https://github.com/OPedroZampier/tse-2026-elt) publica dados tratados, incluindo os dois turnos, no [Kaggle](https://www.kaggle.com/datasets/pedrozampier/brazil-elections-2026-clean-tse-data). A automação privada entre OneDrive e Power BI está em validação e ainda não é uma rotina semanal concluída em produção.
+O [pipeline ELT do TSE](https://github.com/OPedroZampier/tse-2026-elt) publica dados tratados, incluindo os dois turnos, no [Kaggle](https://www.kaggle.com/datasets/pedrozampier/brazil-elections-2026-clean-tse-data). Um teste na branch principal publicou o dataset no Kaggle, atualizou os dados privados no OneDrive e acionou o Power BI pelo Power Automate. A atualização do modelo terminou com um aviso, ainda em investigação. O acesso público ao relatório interativo exige autorização do administrador.
 
 ## Arquivo do Power BI
 
