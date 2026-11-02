@@ -6,6 +6,12 @@
 
 This interactive project transforms official open data from Brazil's Superior Electoral Court (TSE) into six connected analytical views covering candidacies, the electorate, declared assets, political parties and campaign financing.
 
+## Latest update: both election rounds
+
+The newer light-theme dashboard covers first- and second-round results, voter participation and proportional seats by party quota or averages. The online report currently requires account access. The downloadable PBIX below is the earlier first-round edition; the newer cloud-connected edition has not yet been published in this repository.
+
+The accompanying [TSE ELT pipeline](https://github.com/OPedroZampier/tse-2026-elt) publishes cleaned datasets, including both rounds, to [Kaggle](https://www.kaggle.com/datasets/pedrozampier/brazil-elections-2026-clean-tse-data). The private OneDrive-to-Power BI automation is being validated and is not yet a completed weekly production workflow.
+
 ## Power BI file
 
 [Download the updated nine-page report](pos-primeiro-turno/Eleicoes-2026-Pos-Primeiro-Turno.pbix): the original six pages plus elected candidates, party-quota seats (QP), first-round voting and turnout. The new pages use a snapshot extracted on October 5, 2026; the original pages retain their previous data.
